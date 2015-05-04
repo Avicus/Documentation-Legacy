@@ -75,6 +75,10 @@ pre[class*="language-"] {
     color: #905;
 }
 
+.token.duration {
+    color: #905;
+}
+
 .token.selector,
 .token.attr-name,
 .token.string,

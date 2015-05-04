@@ -617,7 +617,7 @@ Prism.languages.yaml = {
     lookbehind: true
   },
   'number': {
-    pattern: /([:\-,[{]\s*(![^\s]+)?[ \t]*)[+\-]?(0x[\dA-Fa-f]+|0o[0-7]+|(\d+\.?\d*|\.?\d+)(e[\+\-]?\d+)?|\.inf|\.nan|oo|-oo|.\..\..)[ \t]*(?=\n|$|,|]|})/i,
+    pattern: /([:\-,[{]\s*(![^\s]+)?[ \t]*)[+\-]?(0x[\dA-Fa-f]+|0o[0-7]+|(\d+\.?\d*|\.?\d+)(e[\+\-]?\d+)?|\.inf|\.nan|oo|-oo|.\..\..|.t|..t|.s|..s|.m|..m|.h|..h)[ \t]*(?=\n|$|,|]|})/i,
     lookbehind: true
   },
   'tag': /![^\s]+/,

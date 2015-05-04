@@ -1,0 +1,25 @@
+.page-header
+  %h1
+    Events
+
+%p
+  Events are called when certain things happen during a match. There are a number of events that are called from blocks being broken to a mob taking damage. Each event can be modified through this module.
+
+%b Placeholder, example.
+
+:yaml
+  events:
+  - on: move
+    conditions:
+    - to:
+      - id: jumps
+    trigger:
+    - push: 3.5
+    - icarus: 1.9
+  - on: move
+    conditions:
+    - to:
+      - id: big-jumps
+    trigger:
+    - push: 7.5
+    - icarus: 2.3

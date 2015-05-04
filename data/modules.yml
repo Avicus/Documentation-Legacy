@@ -13,3 +13,5 @@
     path: /modules/regions
   - name: Spawns
     path: /modules/spawns
+  - name: Events
+    path: /modules/events
