@@ -1,0 +1,34 @@
+.page-header
+  %h1
+    Parser Version
+%p
+  The parser module is used when Avicore reads a YAML file. It needs to know when it was written so that it can use appropriate methods to understand outdated modules and features. Whenever you make an update to a YAML file, ensure you have the parser variable set to the appropriate version.
+
+:yaml
+  parser: 2.0.0
+
+.space.versions
+  .page-header#versions
+    %h3 Parser Versions
+
+  .row
+    .col-sm-1
+      %h5.pull-right 2.0.0
+    .col-sm-11
+      %h5 
+        = label "Current", "success"
+        Parser Versioning Update
+      %p
+        This update restructured every module. To get an idea of the changes, simply compare an old version YAML to the current documentation website here. Briefly, some of the changes are listed below.
+        %ul
+          %li Authors UUID and roles.
+          %li Configuration section lists for authors and most modules such as regions and teams.
+          %li Flag and trigger system deprecated.
+
+  .row
+    .col-sm-1
+      %h5.pull-right 1.0.0
+    .col-sm-11
+      %h5 Avicus Release
+      %p
+        This is an unofficial and outdated version that was in use from the release of Avicus until version 2.0.0. It is still supported by Avicore but is not documented on this documentation website.

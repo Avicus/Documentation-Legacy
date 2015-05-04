@@ -1,0 +1,15 @@
+- name: General
+  modules:
+  - name: Parser Version
+    path: /modules
+  - name: Map
+    path: /modules/map
+
+- name: Game Features
+  modules:
+  - name: Teams
+    path: /modules/teams
+  - name: Regions
+    path: /modules/regions
+  - name: Spawns
+    path: /modules/spawns

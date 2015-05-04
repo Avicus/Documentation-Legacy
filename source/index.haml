@@ -1,0 +1,126 @@
+.jumbotron.super
+  .container
+    %h1
+      YAML Documentation
+    %p
+      A comprehensive guide to writing the YAML files required for Avicus maps.
+
+.container
+  .row
+    .col-sm-6
+      .page-header
+        %h2 Beginners
+      
+      %h3 What does YAML do?
+      %p
+        YAML is a data serialization format, a method of converting human readable text into processed computer data in an efficient manner. The Avicore plugin on the Avicus servers reads a YAML file and uses the settings provided to manage a game the way the author of the map intended. YAML files define numerous features such as team colors & names, spawn points, item loadouts, regions and much more.
+
+      %h3 Prerequisites
+      %p
+        Before you dive into understanding and creating your own YAML files, you should first have a basic understanding of the usage and purpose markup languages & data serialization formats such as HTML, XML or JSON.
+
+
+      %h3
+        Formatting Standards
+      %p
+        YAML is a fairly strict format in regards to proper indentation and organization due to the nature of the language. We encourage following these guidelines:
+
+        %ul
+          %li Indent using two spaces as opposed to tabs.
+          %li
+            Surround all
+            = label "String"
+            variables with quotation marks.
+          %li
+            Avoid the use of apostrophes and quotes in keys.
+          %li
+            Make sure you escape quotations with a backslash.
+      
+      %p
+        Below is an example of a valid and clean YAML file.
+        
+      :yaml
+        examples:
+          string: "Welcome to the YAML documentation!"
+          complex-string: "It's full of apostrophes and \"quotations\"."
+          number: 24
+          decimal: 19.321
+          location: 0.4, 1.5, 9.0
+    .col-sm-6
+      .page-header
+        %h2 Reading the Docs
+      %p
+        This documentation is a living document meaning it is constantly being updated by anyone who is willing to contribute.
+
+      %p
+        Each value in YAML is of a specific type. Listed below are the types possible and referenced throughout the documentation.
+
+      %p
+        %h5 Value Types
+        %table.table.table-striped
+          %tr
+            %th Value
+            %th Description
+            %th{:style => "width: 40%"} Examples
+          %tr
+            %td
+              = label "String"
+            %td
+              Represents a block of text that is typically displaced to users in game.
+            %td
+              %code "string"
+              %code "a \"quote\""
+          %tr
+            %td
+              = label "Integer"
+            %td
+              Any integer value from negative infinity to infinity.
+            %td
+              %code -oo
+              %code -23
+              %code 1337
+              %code oo
+          %tr
+            %td
+              = label "Number"
+            %td
+              Any number from negative infinity
+            %td
+              %code -oo
+              %code -1.037
+              %code 5.0
+              %code 36
+              %code oo
+          %tr
+            %td
+              = label "Boolean"
+            %td
+              A binary value of true or false.
+            %td
+              %code true
+              %code false
+          %tr
+            %td
+              = label "ID"
+            %td
+              A string value that must be completely unique within the module. For example, two teams cannot share the same ID.
+            %td
+              %code red-team
+              %code battle-hub
+              %code pathway
+          %tr
+            %td
+              = label "Reference"
+            %td
+              A string value that corresponds to an ID that has been defined in the file somewhere. For example, a spawn references an ID of a team.
+            %td
+              %code yellow-team
+              %code spawn-area
+          %tr
+            %td
+              = label "Location"
+            %td
+              An x, y, z coordinate the corresponds to a point on the map.
+            %td
+              %code 0.0, 72.0, 42.5
+              %code 8, 75, 12

@@ -1,0 +1,26 @@
+= wrap_layout :layout do
+
+  .jumbotron.super
+    .container
+      %h1
+        Modules
+      %p
+        All the components that go into the creation of a YAML file for Avicus maps.
+
+  .container
+    .row
+      .col-sm-3
+        %ul.nav.nav-pills.nav-stacked
+          - data.modules.each do |section|
+            %li
+              %h4
+                = section.name
+            - section.modules.each do |mod|
+              %li{:class => current_page.url == (mod.path + "/") ? "active" : ""}
+                %a{:href => mod.path}
+                  = mod.name
+            .space
+      .col-sm-9
+        .module
+          = yield
+    

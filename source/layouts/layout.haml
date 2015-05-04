@@ -1,0 +1,60 @@
+<!doctype html>
+%html
+  %head
+    %meta{:charset => "utf-8"}
+      %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+
+        %title
+          = yield_content(:title) || "YAML Documentation"
+        = stylesheet_link_tag "all", "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+  %body{:class => page_classes}
+
+    %header.navbar.navbar-default
+      .container
+        .navbar-header
+          %a.navbar-brand{:href => "/"}
+            = image_tag "logo.png", :width => "50"
+            YAML Documentation
+          %button.navbar-toggle{:type => "button", "data-target" => ".navbar-collapse", "data-toggle" => "collapse"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+        %nav.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li{:class => current_page.url == "/" ? "active" : ""}
+              %a{:href => "/"}
+                %i.fa.fa-home
+                Home
+            %li{:class => current_page.url.start_with?("/modules") ? "active" : ""}
+              %a{:href => "/modules"}
+                %i.fa.fa-cubes
+                Modules
+            %li
+              %a{:href => "/references"}
+                %i.fa.fa-book
+                References
+            %li
+              %a{:href => "/examples"}
+                %i.fa.fa-gear
+                Examples
+    
+    = yield
+
+    .container
+      %hr
+      %footer.docs-footer
+        %ul.nav.nav-pills
+          %li.pull-left
+            %a{:href => "https://avicus.net"}
+              &copy;
+              = Time.now.year
+              The Avicus Network 
+          %li.pull-right
+            %a{:href => "https://maps.avicus.net"} Maps
+          %li.pull-right
+            %a{:href => "https://avicus.net/revisions/docs.avicus.net"}
+              Revisions
+        %br
+
+    = javascript_include_tag  "all"

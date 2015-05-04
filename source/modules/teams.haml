@@ -1,0 +1,68 @@
+.page-header
+  %h1
+    Teams
+
+%p
+  The teams module is one of the most essential modules for any gamemode.
+
+%h5.elements Team Elements
+%table.table.table-striped
+  %tr
+    %th Element
+    %th Description
+    %th Value
+    %th Default
+  %tr
+    %td
+      %code id
+    %td
+      = label "Required", "danger"
+      The namespace unique identifier for the team.
+    %td
+      = label "ID"
+    %td
+  %tr
+    %td
+      %code name
+    %td
+      = label "Required", "danger"
+      The name of the team.
+    %td
+      = label "String"
+    %td
+  %tr
+    %td
+      %code color
+    %td
+      = label "Required", "danger"
+      The team's color.
+    %td
+      = link_to "Chat color", "#colors"
+    %td
+  %tr
+    %td
+      %code max
+    %td
+      = label "Required", "danger"
+      The soft maximum number of players on the team.
+    %td
+      = label "Integer"
+    %td
+
+:yaml
+  teams:
+  - id: red
+    name: "Red Team"
+    color: red
+    max: 16
+  - id: blue
+    name: "Blue Team"
+    color: blue
+    max: 16
+
+.space
+
+.page-header
+  %h3 Team Colors
+
+Although any chat color can be used as a team, we strictly enforce the use of the following colors in order to eliminate confusion due to illegible colors.
