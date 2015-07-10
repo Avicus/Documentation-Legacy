@@ -71,6 +71,7 @@
     %td
       %code point
     %td
+      = label "Required", "danger"
       The coordinate of the block.
     %td
       = label "Location"
@@ -93,6 +94,7 @@
     %td
       %code cuboid
     %td
+      = label "Required", "danger"
       A list of the region's two corners. Do not specify more than two values.
     %td
       = label "List"
@@ -114,20 +116,34 @@
     %th Element
     %th Description
     %th Value
+    %th Default
   %tr
     %td
       %code sphere
     %td
+      = label "Required", "danger"
       The center location of the sphere.
     %td
       = label "Location"
+    %td
   %tr
     %td
       %code radius
     %td
+      = label "Required", "danger"
       The radius of the sphere.
     %td
       = label "Integer"
+    %td
+  %tr
+    %td
+      %code hollow
+    %td
+      Toggle selection as hollow or filled.
+    %td
+      = label "Boolean"
+    %td
+      false
 
 :yaml
   - id: example-region
@@ -144,30 +160,46 @@
     %th Element
     %th Description
     %th Value
+    %th Default
   %tr
     %td
-      %code sphere
+      %code cylinder
     %td
+      = label "Required", "danger"
       The base location of the cylinder.
     %td
       = label "Location"
+    %td
   %tr
     %td
       %code radius
     %td
+      = label "Required", "danger"
       The radius of the cylinder.
     %td
       = label "Integer"
+    %td
   %tr
     %td
       %code height
     %td
+      = label "Required", "danger"
       The height of the cylinder.
     %td
       = label "Integer"
+    %td
+  %tr
+    %td
+      %code hollow
+    %td
+      Toggle selection as hollow or filled.
+    %td
+      = label "Boolean"
+    %td
+      false
 
 :yaml
   - id: example-region
-    sphere: 18, 64, 12
+    cylinder: 18, 64, 12
     radius: 3
     height: 15
