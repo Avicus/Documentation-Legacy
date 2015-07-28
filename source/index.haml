@@ -10,7 +10,7 @@
     .col-sm-6
       .page-header
         %h2 Beginners
-      
+
       %h3 What does YAML do?
       %p
         YAML is a data serialization format, a method of converting human readable text into processed computer data in an efficient manner. The Avicore plugin on the Avicus servers reads a YAML file and uses the settings provided to manage a game the way the author of the map intended. YAML files define numerous features such as team colors & names, spawn points, item loadouts, regions and much more.
@@ -35,10 +35,10 @@
             Avoid the use of apostrophes and quotes in keys.
           %li
             Make sure you escape quotations with a backslash.
-      
+
       %p
         Below is an example of a valid and clean YAML file.
-        
+
       :yaml
         examples:
           string: "Welcome to the YAML documentation!"
@@ -84,7 +84,7 @@
             %td
               = label "Number"
             %td
-              Any number from negative infinity
+              Any number from negative infinity to infinity.
             %td
               %code -oo
               %code -1.037
@@ -120,7 +120,7 @@
             %td
               = label "Location"
             %td
-              An x, y, z coordinate the corresponds to a point on the map.
+              An x, y, z coordinate that corresponds to a point in the world.
             %td
               %code 0.0, 72.0, 42.5
               %code 8, 75, 12

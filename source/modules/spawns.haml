@@ -2,8 +2,10 @@
   %h1
     Spawns
 
-%p
-  Spawns are used to define where players should be teleported when the match starts, when players die, or when players join a team during an ongoing match. Spawns can have multiple spawns and will be selected in order of priority, ignoring spawns where the filter conditions are not met. If no regions are found after filtering, an error will occur! Ensure that conditions are met for at least one spawn for each team.
+%p Spawns are used to define where players should be teleported when the match starts, on death, or when they join a team during an ongoing match.
+%p Multiple spawns may be specified for each team and multiple locations for each spawn. Spawn locations will be selected in order of priority, ignoring spawns where the filter conditions are not met.
+= label "Be Aware:", "danger"
+If no regions are found after filtering, an error will occur! Ensure that conditions are met for at least one spawn for each team.
 
 %h5.elements Spawn Elements
 %table.table.table-striped
@@ -93,7 +95,7 @@
   - id: red-spawn
     team: red
     yaw: 0
-    regions: 
+    regions:
     - point: -75, 80, 176.5
   - id: blue-spawn
     team: blue
