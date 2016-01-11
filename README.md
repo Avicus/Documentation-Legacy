@@ -1,5 +1,5 @@
 # docs.avicus.net
-Documentation for YAML files for Avicore Canary Update
+Documentation for YAML files for Avicore Canary Update.
 
 1. Get Ruby
 2. `gem install bundle`
