@@ -2,3 +2,12 @@
   elements:
   - name: Map
     path: /elements/map
+  - name: Authors
+    path: /elements/authors
+
+- name: Game Components
+  elements:
+  - name: Teams
+    path: /elements/teams
+  - name: Spawns
+    path: /elements/spawns

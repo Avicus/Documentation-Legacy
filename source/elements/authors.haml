@@ -1,0 +1,16 @@
+= title('Authors')
+
+%p
+  This is the main, root element the all maps must provide. Every subsequent element is nested inside the map element.
+
+:xml
+  <authors>
+    <author uuid="069a79f444e94726a5befca90e38aaf5" /> <!-- Notch -->
+    <author uuid="8242e55ecc6a458ab272a2b34918045f" role="Assistance with map design." /> <!-- funkystudios -->
+  </authors>
+
+= attribute_table('Author Attributes') do
+  = attribute('uuid', 'The Minecraft UUID that identifies a player', nil, nil, :required) do
+    = link_to 'Minecraft UUID', 'https://mcuuid.net'
+  = attribute('role', 'The role this author played in the creation of the map.', :string, nil) do
+    = link_to 'Semantic version', 'http://semver.org/'

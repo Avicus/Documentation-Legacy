@@ -4,9 +4,13 @@
     %meta{:charset => 'utf-8'}/
     %meta{:content => 'width=device-width, initial-scale=1.0', :name => 'viewport'}/
     = stylesheet_link_tag 'all', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
+    = javascript_include_tag  'all'
 
     %title
-      = yield_content(:title) || 'Atlas Map Documentation'
+      - if content_for?(:title)
+        = yield_content(:title) + ' » Atlas Map Documentation'
+      - else
+        = 'Atlas Map Documentation'
   %body{:class => page_classes}
 
     %header.navbar.navbar-default
@@ -56,5 +60,3 @@
             %a{:href => 'https://avicus.net/development/atlas.avicus.net'}
               Changes
         %br
-
-    = javascript_include_tag  'all'

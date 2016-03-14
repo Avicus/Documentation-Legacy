@@ -1,0 +1,22 @@
+= title('Teams')
+
+%p
+  Teams are defined through the teams module. Each has an unique ID and name association. The team name is
+  specified as text inside each
+  :xmlcode
+    <team>
+  element.
+
+:xml
+  <teams>
+    <team id="lime-team" color="lime" min="16" max="20">Lime</team>
+    <team id="purple-team" color="purple" min="16" max="20">Purple</team>
+  </teams>
+
+= attribute_table('Team Attributes') do
+  = attribute_id
+  = attribute('color', 'The color of this team.', nil, nil, :required) do
+    = link_to 'Team color', '/references/team_color'
+  = attribute('min', 'The minimum number of players on the team for the match to start.', :integer, nil, :required)
+  = attribute('max', 'The soft maximum number of players allowed on the team.', :integer, nil, :required)
+  = attribute('max-overfill', 'The maximum number of players allowed on the team (including premium users and staff).', :integer, '1.25 * max')
