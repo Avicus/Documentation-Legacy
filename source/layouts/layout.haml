@@ -5,7 +5,7 @@
       %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
 
         %title
-          = yield_content(:title) || "YAML Documentation"
+          = yield_content(:title) || "Atlas Map Documentation"
         = stylesheet_link_tag "all", "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
   %body{:class => page_classes}
 
@@ -14,7 +14,7 @@
         .navbar-header
           %a.navbar-brand{:href => "/"}
             = image_tag "logo.png", :width => "50"
-            YAML Documentation
+            Atlas Map Documentation
           %button.navbar-toggle{:type => "button", "data-target" => ".navbar-collapse", "data-toggle" => "collapse"}
             %span.sr-only Toggle navigation
             %span.icon-bar

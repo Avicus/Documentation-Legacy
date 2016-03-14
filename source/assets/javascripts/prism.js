@@ -580,6 +580,7 @@ if (Prism.languages.markup) {
   });
 }
 ;
+Prism.languages.xml = Prism.languages.markup;
 Prism.languages.yaml = {
   'scalar': {
     pattern: /([\-:]\s*(![^\s]+)?[ \t]*[|>])[ \t]*(?:(\n[ \t]+)[^\r\n]+(?:\3[^\r\n]+)*)/,
