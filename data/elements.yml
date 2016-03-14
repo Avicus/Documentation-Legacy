@@ -1,0 +1,4 @@
+- name: General Elements
+  elements:
+  - name: Map
+    path: /elements/map

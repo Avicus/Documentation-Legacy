@@ -11,14 +11,14 @@
     .row
       .col-sm-3
         %ul.nav.nav-pills.nav-stacked
-          - data.modules.each do |section|
+          - data.elements.each do |section|
             %li
               %h4
                 = section.name
-            - section.modules.each do |mod|
-              %li{:class => current_page.url == (mod.path + "/") ? "active" : ""}
-                %a{:href => mod.path}
-                  = mod.name
+            - section.elements.each do |element|
+              %li{:class => current_page.url == (element.path + '/') ? 'active' : ''}
+                %a{:href => element.path}
+                  = element.name
             .space
       .col-sm-9
         .module

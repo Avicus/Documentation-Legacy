@@ -1,41 +1,41 @@
 <!doctype html>
 %html
   %head
-    %meta{:charset => "utf-8"}
-      %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %meta{:charset => 'utf-8'}/
+    %meta{:content => 'width=device-width, initial-scale=1.0', :name => 'viewport'}/
+    = stylesheet_link_tag 'all', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
 
-        %title
-          = yield_content(:title) || "Atlas Map Documentation"
-        = stylesheet_link_tag "all", "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    %title
+      = yield_content(:title) || 'Atlas Map Documentation'
   %body{:class => page_classes}
 
     %header.navbar.navbar-default
       .container
         .navbar-header
-          %a.navbar-brand{:href => "/"}
-            = image_tag "logo.png", :width => "50"
+          %a.navbar-brand{:href => '/'}
+            = image_tag 'logo.png', :width => '50'
             Atlas Map Documentation
-          %button.navbar-toggle{:type => "button", "data-target" => ".navbar-collapse", "data-toggle" => "collapse"}
+          %button.navbar-toggle{:type => 'button', 'data-target' => '.navbar-collapse', 'data-toggle' => 'collapse'}
             %span.sr-only Toggle navigation
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
         %nav.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
-            %li{:class => current_page.url == "/" ? "active" : ""}
-              %a{:href => "/"}
+            %li{:class => current_page.url == '/' ? 'active' : ''}
+              %a{:href => '/'}
                 %i.fa.fa-home
                 Home
-            %li{:class => current_page.url.start_with?("/modules") ? "active" : ""}
-              %a{:href => "/modules"}
+            %li{:class => current_page.url.start_with?('/elements') ? 'active' : ''}
+              %a{:href => '/elements/map'}
                 %i.fa.fa-cubes
-                Modules
-            %li
-              %a{:href => "/references"}
+                Elements
+            %li{:class => current_page.url.start_with?('/references') ? 'active' : ''}
+              %a{:href => '/references'}
                 %i.fa.fa-book
                 References
-            %li
-              %a{:href => "/examples"}
+            %li{:class => current_page.url.start_with?('/examples') ? 'active' : ''}
+              %a{:href => '/examples'}
                 %i.fa.fa-gear
                 Examples
 
@@ -46,15 +46,15 @@
       %footer.docs-footer
         %ul.nav.nav-pills
           %li.pull-left
-            %a{:href => "https://avicus.net"}
+            %a{:href => 'https://avicus.net'}
               &copy;
               = Time.now.year
               The Avicus Network
           %li.pull-right
-            %a{:href => "https://maps.avicus.net"} Maps
+            %a{:href => 'https://maps.avicus.net'} Maps
           %li.pull-right
-            %a{:href => "https://avicus.net/development/atlas.avicus.net"}
+            %a{:href => 'https://avicus.net/development/atlas.avicus.net'}
               Changes
         %br
 
-    = javascript_include_tag  "all"
+    = javascript_include_tag  'all'

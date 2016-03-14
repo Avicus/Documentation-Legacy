@@ -1,0 +1,12 @@
+%tr
+  %td
+    %code= name
+  %td
+    - if flags.include?(:required)
+      = label('Required', 'danger')
+    = description
+  %td
+    = type
+  %td
+    - if default
+      = default

@@ -1,0 +1,16 @@
+.page-header
+  %h1
+    Map Element
+%p
+  This is the main, root element the all maps must provide. Every subsequent element is nested inside the map element.
+
+
+:xml
+  <map name="Revolution" version="1.5.3">
+    ...
+  </map>
+
+= attributes_table('Map Attributes') do
+  = attribute('name', 'The name of the map.', :string, nil, :required)
+  = attribute('version', 'The version of the map.', nil, nil, :required) do
+    = link_to 'Semantic version', 'http://semver.org/'
