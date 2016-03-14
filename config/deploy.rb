@@ -10,7 +10,9 @@ namespace :deploy do
   desc 'Build middleman.'
   task :build do
     on roles(:web) do
-      execute *%w[middleman build]
+      within release_path do
+        execute *%w[middleman build]
+      end
     end
   end
 
