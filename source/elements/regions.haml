@@ -137,12 +137,21 @@
     </translate>
   </invert>
 
+= section('Intersect')
+%p
+  This region is comprised of points that are shared by all of the nested regions.
+:xml
+  <intersect>
+    <cuboid min="0, 5, 0" max="5, 10, 5"/>
+    <cuboid min="0, 5, 0" max="5, W7, 5"/>
+  </intersect>
+
 = section('Subtract')
 %p
   The subtract region takes the first listed region and for each successive region listed, removes points from it.
 :xml
-  <subtract> <!-- these region includes all points in the cuboid, except 60, 40 60 -->
-    <cuboid min="45, 32, 45 max="90, 64, 90"/>
+  <subtract> <!-- these region includes all points in the cuboid, except 60, 40, 60 -->
+    <cuboid min="45, 32, 45" max="90, 64, 90"/>
     <point>60, 40, 60</point>
   </subtract>
 
