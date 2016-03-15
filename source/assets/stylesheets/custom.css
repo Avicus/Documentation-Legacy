@@ -11,8 +11,7 @@ a:focus {
 
 .jumbotron {
     margin-top: -20px;
-    background: url(/assets/images/blueprint.jpg);
-    background-attachment: fixed;
+    background: url(/assets/images/blueprint.jpg) fixed;
     color: #fff;
 }
 
