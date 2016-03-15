@@ -19,7 +19,6 @@
     </invert>
   </regions>
 
-
 = attribute_table('Region Attributes') do
   = attribute_row_id
   = attribute_row(true) do
@@ -121,6 +120,10 @@
 :xml
   <sphere origin="50, 18, 30" radius="12"/>
 
+= subtitle('Abstract Regions')
+%p
+  The following regions modify the previous types in a variety of ways.
+
 = section('Join') do
   %small
     = label('Bounded*', 'info')
@@ -178,6 +181,7 @@
     <point>60, 40, 60</point>
   </subtract>
 
+= subtitle('Other Regions')
 = section('Above, Below')
 %p
   Selects the area above or below and including the specified
