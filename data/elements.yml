@@ -13,3 +13,10 @@
     path: /elements/spawns
   - name: Regions
     path: /elements/regions
+  - name: Objectives
+    path: /elements/objectives
+
+- name: Objectives
+  elements:
+  - name: Monuments
+    path: /elements/objective_monument
