@@ -1,7 +1,7 @@
 # route layouts
 page '/references.html', :layout => 'container'
 page '/examples.html', :layout => 'container'
-page '/elements/*', :layout => 'module'
+page '/elements/*', :layout => 'element'
 
 # view helpers
 require 'lib/element_helpers'
