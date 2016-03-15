@@ -31,7 +31,9 @@
 
 = subtitle('Region Types')
 %p
-  There are a variety of regions to utilize that differ in shape.
+  There are a variety of regions to utilize that differ in shape. The tags listed such as "Bounded" and "Iterable"
+  are referenced specifically in other parts of the documentation to indicate those types of regions are required
+  by the element.
 
 = section('Point') do
   %small
@@ -96,3 +98,64 @@
   \.
 :xml
   <sphere origin="50, 18, 30" radius="12"/>
+
+= section('Join') do
+  %small
+    = label('Bounded*', 'info')
+%p
+  Provide any number of regions within this region type to create a region that combines all
+  the points of the nested regions.
+:xml
+  <join>
+    <cuboid min="-5, 90, -5" max="5, 100, 5" />
+    <sphere origin="0, 100, 0" radius="5" />
+  </join>
+%small
+  * This region is only considered bounded if the regions within it are all of the bounded type.
+
+= section('Translate')
+%p
+  This translates all the regions nested within it by the amount provided in
+  %code offset
+  \.
+:xml
+  <translate offset="-25, -10, 0">
+    <cuboid min="-5, 90, -5" max="5, 100, 5" />
+    <sphere origin="0, 100, 0" radius="5" />
+  </translate>
+
+= section('Invert')
+%p
+  The invert region takes the inverse of the regions provided within the element. For example, if a single
+  point is provided, the inverted version of that region would be every point in the world excluding that point.
+:xml
+  <invert>
+    <cuboid min="32, 112, 52" max="52, 12, 5"/>
+    <translate offset="-25, -10, 0">
+      <cuboid min="-5, 90, -5" max="5, 100, 5" />
+      <sphere origin="0, 100, 0" radius="5" />
+    </translate>
+  </invert>
+
+= section('Subtract')
+%p
+  The subtract region takes the first listed region and for each successive region listed, removes points from it.
+:xml
+  <subtract> <!-- these region includes all points in the cuboid, except 60, 40 60 -->
+    <cuboid min="45, 32, 45 max="90, 64, 90"/>
+    <point>60, 40, 60</point>
+  </subtract>
+
+= section('Above/Below')
+%p
+  Selects the area above or below and including the specified
+  %code x
+  ,
+  %code y
+  or
+  %code z
+  coordinates.
+:xml
+  <above y="25"/> <!-- everything above y=25 -->
+  <above x="25" z="21"/>  <!-- any block in below x=25, z=21 -->
+  <below x="32" y="18" z="52"/> <!-- you get the idea -->

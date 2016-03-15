@@ -1,7 +1,7 @@
 module GeneralHelpers
   def coming_soon
     content_tag :div, :class => 'alert alert-warning' do
-      'Documentation has not been written for this component yet. Please check back later!'
+      'Documentation has not been written for this page yet. Please check back later!'
     end
   end
 
