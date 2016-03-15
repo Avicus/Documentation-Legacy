@@ -9,9 +9,8 @@ a:focus {
     float: left;
 }
 
-.jumbotron.super {
+.jumbotron {
     margin-top: -20px;
-    padding: 70px;
     background: url(/assets/images/blueprint.jpg);
     background-attachment: fixed;
     color: #fff;
