@@ -188,40 +188,36 @@
         </trigger>
       </player-drop>
 
-  <!--         <build condition="spawn-areas">
-    <cancel />
-    </build> -->
+      <player-move condition="small-jump-pads">
+        <trigger>
+          <push>5</push>
+          <icarus>2.5</icarus>
+        </trigger>
+      </player-move>
 
-    <player-move condition="small-jump-pads">
-      <trigger>
-        <push>5</push>
-        <icarus>2.5</icarus>
-      </trigger>
-    </player-move>
-
-    <player-move condition="big-jump-pads">
-      <trigger>
-        <push>13</push>
-        <icarus>4</icarus>
-      </trigger>
-    </player-move>
+      <player-move condition="big-jump-pads">
+        <trigger>
+          <push>13</push>
+          <icarus>4</icarus>
+        </trigger>
+      </player-move>
     </events>
 
 
     <conditions>
       <condition id="small-jump-pads">
-        <leave>
+        <enter>
           <point>-18,65,-56</point> <!-- Red -->
           <point>-38,65,-56</point>
           <point>-38,65,70</point> <!-- Blue -->
           <point>-18,65,70</point>
-        </leave>
+        </enter>
       </condition>
       <condition id="big-jump-pads">
-        <leave>
+        <enter>
           <point>-28,65,-13</point> <!-- Red -->
           <point>-28,65,27</point> <!-- Blue -->
-        </leave>
+        </enter>
       </condition>
 
       <condition id="spawn-areas">
