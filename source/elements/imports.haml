@@ -1,0 +1,32 @@
+= title('Imports')
+
+%p
+  Imports are used to split a large and redundant configuration file into multiple smaller files.
+  :xmlcode
+    <include>
+  elements should only be found directly as a child of the main
+  :xmlcode
+    <map>
+  element.
+
+:xml
+  <?xml version="1.0"?>
+  <map name="Revolution" version="1.5.3">
+    <import src="defaults.xml"/>
+    <import src="rev-classes.xml" local="true"/>
+
+    ...
+
+  </map>
+
+= attribute_table('Import Attributes') do
+  = attribute_row(true) do
+    = attribute_name('src')
+    = attribute_desc('The path to another map configuration file.')
+    = attribute_type(:string)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('local')
+    = attribute_desc('If set to to true, it will search for the import in the same directory as the map.xml, otherwise it searches in the shared maps directory.')
+    = attribute_type(:boolean)
+    = attribute_default('false')

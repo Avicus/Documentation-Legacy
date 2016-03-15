@@ -4,6 +4,8 @@
     path: /elements/map
   - name: Authors
     path: /elements/authors
+  - name: Imports
+    path: /elements/imports
 
 - name: Game Components
   elements:

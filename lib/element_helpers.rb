@@ -63,6 +63,8 @@ module ElementHelpers
             label('String')
           when :number
             label('Number')
+          when :boolean
+            label('True/False')
           when :xyz
             label('X, Y, Z')
           when :id

@@ -2,8 +2,13 @@
 
 %p
   This is the main, root element the all maps must provide. Every subsequent element is nested inside the map element.
+  Note that for an XML file to be valid, it must contain the
+  :xmlcode
+    <?xml version="1.0"?>
+  header.
 
 :xml
+  <?xml version="1.0"?>
   <map name="Revolution" version="1.5.3">
     ...
   </map>
