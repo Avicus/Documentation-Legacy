@@ -35,6 +35,28 @@
   are referenced specifically in other parts of the documentation to indicate those types of regions are required
   by the element.
 
+= section('Region') do
+  %small
+    = label('Bounded*', 'info')
+    = label('Iterable*', 'info')
+%p
+  You may use the
+  :xmlcode
+    <region>
+  type to reference regions that are listed in the
+  :xmlcode
+    <regions>
+  element by their id.
+
+:xml
+  <point id="a-point">24, 15, 60</point>
+
+  <join id="reference-example">
+    <region id="a-point"/>
+  </join>
+%small
+  * This region is only considered bounded or iterable if the referenced region is bounded or iterable respectively.
+
 = section('Point') do
   %small
     = label('Bounded', 'info')
@@ -42,7 +64,7 @@
 %p
   A point is a single location, designated by its x, y and z coordinates, provided within the
   :xmlcode
-    <point></point>
+    <point>
   element. There are no attributes necessary.
 :xml
   <point>24, 15, 60</point>
@@ -102,6 +124,7 @@
 = section('Join') do
   %small
     = label('Bounded*', 'info')
+    = label('Iterable*', 'info')
 %p
   Provide any number of regions within this region type to create a region that combines all
   the points of the nested regions.
@@ -111,7 +134,7 @@
     <sphere origin="0, 100, 0" radius="5" />
   </join>
 %small
-  * This region is only considered bounded if the regions within it are all of the bounded type.
+  * This region is only considered bounded or iterable if the regions within it are all of the bounded or iterable type respectively.
 
 = section('Translate')
 %p
@@ -155,7 +178,7 @@
     <point>60, 40, 60</point>
   </subtract>
 
-= section('Above/Below')
+= section('Above, Below')
 %p
   Selects the area above or below and including the specified
   %code x
