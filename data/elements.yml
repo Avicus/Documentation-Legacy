@@ -15,6 +15,14 @@
     path: /elements/regions
   - name: Objectives
     path: /elements/objectives
+  - name: Loadouts
+    path: /elements/loadouts
+  - name: Events
+    path: /elements/events
+  - name: Conditions
+    path: /elements/conditions
+  - name: Triggers
+    path: /elements/triggers
 
 - name: Objectives
   elements:
