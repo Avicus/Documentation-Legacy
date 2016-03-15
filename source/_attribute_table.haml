@@ -1,9 +1,12 @@
 %h5.attributes
   = header
-%table.table.table-striped
-  %tr
-    %th{:style => 'width: 18%'} Attribute
-    %th Description
-    %th Type
-    %th Default
-  = capture(&block)
+%table.table.table-condensed
+  %thead
+    %tr
+      %th{:style => 'width: 18%'} Attribute
+      %th Description
+      %th Type
+      - if default
+        %th{:style => 'width: 13%'} Default
+  %tbody
+    = capture(&block)

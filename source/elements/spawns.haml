@@ -19,18 +19,40 @@
   </spawns>
 
 = attribute_table('Spawn Attributes') do
-  = attribute('team', 'The team of which this spawn should apply.', :id)
-  = attribute('region', ['A reference to a region into which players should spawn.', 'This is not required if a region is specified inside the spawn element.'], :id, nil, :required)
-  = attribute('look', ['The coordinate that the player looks at when spawned', 'This value overrides the pitch and yaw attributes.'], 'X,Y,Z')
-  = attribute('yaw', 'The yaw (horizontal angle) the player looks when spawned.', '[-180, 180]', '0')
-  = attribute('pitch', 'The pitch (vertical angle) the player looks when spawned.', '[-90, 90]', '0')
+  = attribute_row do
+    = attribute_name('team')
+    = attribute_desc('The team of which this spawn should apply.')
+    = attribute_type_element(:team)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('region')
+    = attribute_desc('The region into which players should spawn.', 'This is only required if a region is not specified within the spawn element.')
+    = attribute_type_element(:region, 'Bounded region')
+    = attribute_column
+  = attribute_row do
+    = attribute_name('look')
+    = attribute_desc('The coordinate that the player looks at when spawned.', 'This value overrides the pitch and yaw attributes.')
+    = attribute_type(:xyz)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('yaw')
+    = attribute_desc('The yaw (horizontal angle) the player looks when spawned.')
+    = attribute_type do
+      [-180, 180]
+    = attribute_default(0)
+  = attribute_row do
+    = attribute_name('pitch')
+    = attribute_desc('The pitch (vertical angle) the player looks when spawned.')
+    = attribute_type do
+      [-90, 90]
+    = attribute_default(0)
 
-= element_table('Spawn Elements') do
-  %tr
-    %td
-      :xmlcode
-        <region></region>
-    %td
-      A region into which players should spawn.
-    %td
-      = link_to 'Bounded region', '/elements/regions'
+-#= element_table('Spawn Elements') do
+-#  %tr
+-#    %td
+-#      :xmlcode
+-#        <region>
+-#    %td
+-#      A region into which players should spawn.
+-#    %td
+-#      = link_to 'Bounded region', '/elements/regions'

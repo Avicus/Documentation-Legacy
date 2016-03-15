@@ -8,7 +8,25 @@ module GeneralHelpers
   def title(text)
     content_for(:title, text)
     content_tag :div, :class => 'page-header' do
-      content_tag :h1 do
+      content_tag :h2 do
+        text
+      end
+    end
+  end
+
+  def subtitle(text)
+    content_tag :div, :class => 'page-header', :style => 'padding-top: 15px' do
+      content_tag :h3 do
+        text
+      end
+    end
+  end
+
+  def section(text, &block)
+    content_tag :h4, :style => 'padding-top: 15px' do
+      if block_given?
+        text + capture(&block)
+      else
         text
       end
     end

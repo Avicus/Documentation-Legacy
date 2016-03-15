@@ -11,3 +11,5 @@
     path: /elements/teams
   - name: Spawns
     path: /elements/spawns
+  - name: Regions
+    path: /elements/regions

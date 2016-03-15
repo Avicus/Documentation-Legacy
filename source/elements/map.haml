@@ -8,7 +8,13 @@
     ...
   </map>
 
-= attribute_table('Map Attributes') do
-  = attribute('name', 'The name of the map.', :string, nil, :required)
-  = attribute('version', 'The version of the map.', nil, nil, :required) do
-    = link_to 'Semantic version', 'http://semver.org/'
+= attribute_table('Map Attributes', false) do
+  = attribute_row(true) do
+    = attribute_name('name')
+    = attribute_desc('The name of the map.')
+    = attribute_type(:string)
+  = attribute_row(true) do
+    = attribute_name('version')
+    = attribute_desc('The version of the map.')
+    = attribute_column do
+      = link_to('Semantic version', 'http://semver.org')

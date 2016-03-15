@@ -1,0 +1,98 @@
+= title('Regions')
+
+%p
+  The regions element is used to store a collection of regions that can be referenced elsewhere by their ID.
+
+:xml
+  <regions>
+    <point id="sign-block">51,21,50</point>
+
+    <join id="flag-areas">
+      <cuboid min="10,50,10" max="30,50,30" />
+      <cuboid min="-10,50,-10" max="-30,50,-30" />
+    </join>
+
+    <cuboid id="inside-map" min="-125,0,-125 max="150, 256, 150" />
+
+    <invert id="outside-map">
+      <region id="inside-map"/>
+    </invert>
+  </regions>
+
+
+= attribute_table('Region Attributes') do
+  = attribute_row_id
+  = attribute_row(true) do
+    = attribute_name('...')
+    = attribute_desc('A variety of attributes depending on the type of region.')
+    = attribute_column
+    = attribute_column
+
+
+= subtitle('Region Types')
+%p
+  There are a variety of regions to utilize that differ in shape.
+
+= section('Point') do
+  %small
+    = label('Bounded', 'info')
+    = label('Iterable', 'info')
+%p
+  A point is a single location, designated by its x, y and z coordinates, provided within the
+  :xmlcode
+    <point></point>
+  element. There are no attributes necessary.
+:xml
+  <point>24, 15, 60</point>
+
+= section('Cuboid') do
+  %small
+    = label('Bounded', 'info')
+    = label('Iterable', 'info')
+%p
+  A cuboid is a three-dimensional box with its corners at
+  %code min
+  and
+  %code max
+  \.
+:xml
+  <cuboid min="23, 50, 15" max="40, 62, 31"/>
+  <cuboid min="50, 30, 30" max="25, 18, 25"/> <!-- min doesn't strictly require to be below max -->
+
+= section('Cylinder') do
+  %small
+    = label('Bounded', 'info')
+%p
+  A cylinder with its base at
+  %code base
+  with a radius as specified in
+  %code radius
+  and a height as specified in
+  %code height
+  \.
+:xml
+  <cylinder origin="23, 50, 15" radius="5" height="10"/>
+
+= section('Circle') do
+  %small
+    = label('Bounded', 'info')
+%p
+  A circle is essentially a cylinder with a height of 1. Its base is specified in
+  %code base
+  and has a radius as specified in
+  %code radius
+  \.
+:xml
+  <circle origin="23, 50, 15" radius="5"/>
+
+= section('Sphere') do
+  %small
+    = label('Bounded', 'info')
+%p
+  A spherical area with its origin at
+  %code origin
+  and with a radius specified in
+  %code radius
+  \.
+:xml
+  <sphere origin="50, 18, 30" radius="12"/>

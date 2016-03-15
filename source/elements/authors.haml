@@ -1,7 +1,8 @@
 = title('Authors')
 
 %p
-  This is the main, root element the all maps must provide. Every subsequent element is nested inside the map element.
+  The authors element is provided to give credit to the people that made contributions to the creation of a map.
+  Their minecraft usernames are listed in a variety of locations while the map is being played.
 
 :xml
   <authors>
@@ -9,8 +10,12 @@
     <author uuid="8242e55ecc6a458ab272a2b34918045f" role="Assistance with map design." /> <!-- funkystudios -->
   </authors>
 
-= attribute_table('Author Attributes') do
-  = attribute('uuid', 'The Minecraft UUID that identifies a player', nil, nil, :required) do
-    = link_to 'Minecraft UUID', 'https://mcuuid.net'
-  = attribute('role', 'The role this author played in the creation of the map.', :string, nil) do
-    = link_to 'Semantic version', 'http://semver.org/'
+= attribute_table('Author Attributes', false) do
+  = attribute_row(true) do
+    = attribute_name('uuid')
+    = attribute_desc('The Minecraft UUID that identifies a player.')
+    = attribute_type(:string)
+  = attribute_row(true) do
+    = attribute_name('role')
+    = attribute_desc('The role this author played in the creation of the map.')
+    = attribute_type(:string)

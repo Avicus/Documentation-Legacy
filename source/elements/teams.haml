@@ -13,10 +13,26 @@
     <team id="purple-team" color="purple" min="16" max="20">Purple</team>
   </teams>
 
+
 = attribute_table('Team Attributes') do
-  = attribute_id
-  = attribute('color', 'The color of this team.', nil, nil, :required) do
-    = link_to 'Team color', '/references/team_color'
-  = attribute('min', 'The minimum number of players on the team for the match to start.', :integer, nil, :required)
-  = attribute('max', 'The soft maximum number of players allowed on the team.', :integer, nil, :required)
-  = attribute('max-overfill', 'The maximum number of players allowed on the team (including premium users and staff).', :integer, '1.25 * max')
+  = attribute_row(true) do
+    = attribute_name('color')
+    = attribute_desc('The color of the team.')
+    = attribute_column do
+      = link_to 'Team color', '/references/team_color'
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('min')
+    = attribute_desc('The minimum number of players on the team for the match to start.')
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('max')
+    = attribute_desc('The soft maximum number of players allowed on the team.', 'Premium users and staff are able to join beyond this value.')
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('max-overfill')
+    = attribute_desc('The maximum number of players allowed on the team.')
+    = attribute_type(:number)
+    = attribute_default('1.25 * max')
