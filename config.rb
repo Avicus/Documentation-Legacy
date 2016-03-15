@@ -1,6 +1,6 @@
 # route layouts
-page '/references.html', :layout => 'container'
 page '/examples.html', :layout => 'container'
+page '/references/*', :layout => 'reference'
 page '/elements/*', :layout => 'element'
 
 # view helpers

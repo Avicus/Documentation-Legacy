@@ -1,1 +1,285 @@
+= title('Examples')
 = coming_soon
+
+
+:xml
+  <?xml version="1.0"?>
+  <map name="Axis" version="1.2.0">
+    <authors>
+      <author uuid="8242e55ecc6a458ab272a2b34918045f" role="Built the majority of the map."/>
+      <author uuid="bf3319534f9243ee8abc7544b8234936" role="Helped design and build portions of the map."/>
+    </authors>
+
+    <include src="defaults.xml"/>
+
+    <states>
+      <state id="starting" playing="false"/>
+      <state id="playing"/>
+      <state id="cycling" playing="false"/>
+    </states>
+
+    <teams>
+      <team id="spectators" color="aqua" min="0" max="9999" spectator="true">Spectators</team>
+      <team id="blue" color="blue" min="12" max="16">Blue Team</team>
+      <team id="red" color="red" min="12" max="16">Red Team</team>
+    </teams>
+
+    <spawns>
+      <spawn id="default" team="spectators">
+        <region>
+          <point>-9,79,-86</point>
+        </region>
+      </spawn>
+
+      <spawn id="blue-spawn" team="blue" loadout="default-loadout">
+        <region>
+          <point>-27.5,71,109.5</point>
+        </region>
+      </spawn>
+      <spawn id="red-spawn" team="red" loadout="default-loadout">
+        <region>
+          <point>-27.5,71,-94.5</point>
+        </region>
+      </spawn>
+    </spawns>
+
+    <monuments materials="obsidian">
+      <monuments owner="red">
+        <monument name="Left">
+          <region><point>-75,67,-56</point></region>
+        </monument>
+        <monument name="Center">
+          <region><point>-28,67,-29</point></region>
+        </monument>
+        <monument name="Right">
+          <region><point>19,67,-56</point></region>
+        </monument>
+      </monuments>
+
+      <monuments owner="blue">
+        <monument name="Left">
+          <region><point>19,67,70</point></region>
+        </monument>
+        <monument name="Center">
+          <region><point>-28,67,43</point></region>
+        </monument>
+        <monument name="Right">
+          <region><point>-75,67,70</point></region>
+        </monument>
+      </monuments>
+    </monuments>
+
+    <loadouts>
+      <loadout id="default-loadout">
+        <helmet material="leather helmet" team-color="true"/>
+        <chestplate material="leather chestplate" team-color="true"/>
+        <leggings material="leather leggings" team-color="true"/>
+        <boots material="leather boots" team-color="true"/>
+        <item material="iron ingot" slot="8" />
+        <effect>night vision</effect>
+      </loadout>
+
+      <loadout id="combat">
+        <item slot="0" material="stone sword" />
+        <item slot="1" material="diamond pickaxe" enchantment="dig speed:3" />
+        <item slot="2" material="apple" count="3" />
+      </loadout>
+
+      <loadout id="dash">
+        <item slot="0" material="wood sword" />
+        <item slot="1" material="diamond pickaxe" enchantment="dig speed:3" />
+        <item slot="2" material="apple" count="3" />
+        <effect>speed</effect>
+      </loadout>
+
+      <loadout id="snipe">
+        <item slot="1" material="wood sword" />
+        <item slot="0" material="bow" enchantment="arrow knockback:1" />
+        <item slot="2" material="diamond pickaxe" enchantment="dig speed:3" />
+        <item slot="3" material="apple" count="3" />
+        <item slot="4" material="arrow" count="16" />
+      </loadout>
+
+      <loadout id="kill-reward">
+        <item material="iron ingot" />
+      </loadout>
+    </loadouts>
+
+
+    <events>
+      <block-click condition="snipe-red">
+        <trigger>
+          <apply-loadout loadout="snipe" />
+          <teleport>
+            <region>
+              <point>-27.5,65,-71.5</point>
+            </region>
+          </teleport>
+          <icarus>2</icarus>
+        </trigger>
+      </block-click>
+
+      <block-click condition="dash-red">
+        <trigger>
+          <apply-loadout loadout="dash" />
+          <teleport>
+            <region>
+              <point>-27.5,65,-71.5</point>
+            </region>
+          </teleport>
+        </trigger>
+      </block-click>
+
+      <block-click condition="combat-red">
+        <trigger>
+          <apply-loadout loadout="combat" />
+          <teleport>
+            <region>
+              <point>-27.5,65,-71.5</point>
+            </region>
+          </teleport>
+        </trigger>
+      </block-click>
+
+
+      <block-click condition="snipe-blue">
+        <trigger>
+          <apply-loadout loadout="snipe" />
+          <teleport>
+            <region>
+              <point>-27.5,65,86.5</point>
+            </region>
+          </teleport>
+        </trigger>
+      </block-click>
+
+      <block-click condition="dash-blue">
+        <trigger>
+          <apply-loadout loadout="dash" />
+          <teleport>
+            <region>
+              <point>-27.5,65,86.5</point>
+            </region>
+          </teleport>
+        </trigger>
+      </block-click>
+
+      <block-click condition="combat-blue">
+        <trigger>
+          <apply-loadout loadout="combat" />
+          <teleport>
+            <region>
+              <point>-27.5,65,86.5</point>
+            </region>
+          </teleport>
+        </trigger>
+      </block-click>
+
+      <player-damage>
+        <condition>
+          <damage>fall</damage>
+        </condition>
+        <trigger><cancel /></trigger>
+      </player-damage>
+
+      <player-drop condition="remove-drops">
+        <trigger>
+          <remove/>
+        </trigger>
+      </player-drop>
+
+  <!--         <build condition="spawn-areas">
+    <cancel />
+    </build> -->
+
+    <player-move condition="small-jump-pads">
+      <trigger>
+        <push>5</push>
+        <icarus>2.5</icarus>
+      </trigger>
+    </player-move>
+
+    <player-move condition="big-jump-pads">
+      <trigger>
+        <push>13</push>
+        <icarus>4</icarus>
+      </trigger>
+    </player-move>
+    </events>
+
+
+    <conditions>
+      <condition id="small-jump-pads">
+        <leave>
+          <point>-18,65,-56</point> <!-- Red -->
+          <point>-38,65,-56</point>
+          <point>-38,65,70</point> <!-- Blue -->
+          <point>-18,65,70</point>
+        </leave>
+      </condition>
+      <condition id="big-jump-pads">
+        <leave>
+          <point>-28,65,-13</point> <!-- Red -->
+          <point>-28,65,27</point> <!-- Blue -->
+        </leave>
+      </condition>
+
+      <condition id="spawn-areas">
+        <region>
+          <cuboid min="-24,66,-97" max="-32,74,-89"/> <!-- Red -->
+          <cuboid min="-24,66,103" max="-32,74,111"/> <!-- Blue -->
+        </region>
+      </condition>
+
+      <condition id="remove-drops">
+        <any>
+          <item-type>leather helmet</item-type>
+          <item-type>leather chestplate</item-type>
+          <item-type>leather leggings</item-type>
+          <item-type>leather boots</item-type>
+          <item-type>iron ingot</item-type>
+          <item-type>bow</item-type>
+          <item-type>wood sword</item-type>
+          <item-type>stone sword</item-type>
+          <item-type>diamond pickaxe</item-type>
+        </any>
+      </condition>
+
+      <condition id="snipe-red">
+        <region>
+          <point>-25,72,-93</point>
+        </region>
+      </condition>
+
+      <condition id="dash-red">
+        <region>
+          <point>-28,72,-90</point>
+        </region>
+      </condition>
+
+      <condition id="combat-red">
+        <region>
+          <point>-31,72,-93</point>
+        </region>
+      </condition>
+
+      <condition id="snipe-blue">
+        <region>
+          <point>-31,72,107</point>
+        </region>
+      </condition>
+
+      <condition id="dash-blue">
+        <region>
+          <point>-28,72,104</point>
+        </region>
+      </condition>
+
+      <condition id="combat-blue">
+        <region>
+          <point>-25,72,107</point>
+        </region>
+      </condition>
+    </conditions>
+  </map>
+

@@ -1,0 +1,4 @@
+- name: General
+  references:
+  - name: Colors
+    path: /references/colors

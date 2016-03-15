@@ -1,0 +1,23 @@
+= wrap_layout :layout do
+  .jumbotron.super
+    .container
+      %h1
+        References
+
+  .container
+    .row
+      .col-sm-3
+        %ul.nav.nav-pills.nav-stacked.nav-elements
+          - data.references.each do |section|
+            %li
+              %h4
+                = section.name
+            - section.references.each do |reference|
+              %li{:class => current_page.url == (reference.path + '/') ? 'active' : ''}
+                %a{:href => reference.path}
+                  = reference.name
+            .space
+      .col-sm-9
+        .module
+          = yield
+    
