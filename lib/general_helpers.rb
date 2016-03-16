@@ -5,12 +5,16 @@ module GeneralHelpers
     end
   end
 
+  def link_to_link(link)
+    link_to(link, link)
+  end
+
   def link_to_slug(text, slug)
     link_to(text, "#{current_page.url}##{to_slug(slug)}")
   end
 
   def to_slug(text)
-    text.downcase.strip.gsub(' ', '_').gsub(/[^\w-]/, '')
+    text.downcase.strip.gsub(' ', '_').gsub('-', '_').gsub(/[^\w-]/, '')
   end
 
   def title(text)

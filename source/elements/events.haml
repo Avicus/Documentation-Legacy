@@ -2,116 +2,117 @@
 %p
   The real power of an Atlas map configuration file comes from the events element. Events are
   called when certain actions take place in the map. Anything from a block being broken to a
-  player firing an arrow to the weather changing int he map is tracked and can be taken advantage of
-  through an event handler.
+  player firing an arrow to the weather changing is tracked and can be manipulated in a variety of
+  ways through an event handler.
 
 = subtitle('Event Types')
-%table.table.table-striped.table-condensed
-  %thead
-    %tr
-      %th{:style => 'width: 15%'} Event
-      %th Description
-      %th{:style => 'width: 40%'} Categories
-    %tr
-      %td
-        :xmlcode
-          <block-break>
-      %td
-        A player breaks a block.
-      %td
-        = category('Player')
-        = category('Block')
-        = category('Cancellable')
-        = category('Mutable Item', 'Modify drops produced from breaking the block.')
-    %tr
-      %td
-        :xmlcode
-          <block-click>
-      %td
-        A player right clicks a block.
-      %td
-        = category('Player')
-        = category('Block')
-    %tr
-      %td
-        :xmlcode
-          <block-place>
-      %td
-        A player breaks a block.
-      %td
-        = category('Player')
-        = category('Block')
-        = category('Cancellable')
-    %tr
-      %td
-        :xmlcode
-          <block-punch>
-      %td
-        A player punches (left clicks) a block (and potentially holds left click).
-      %td
-        = category('Player')
-        = category('Block')
-    %tr
-      %td
-        :xmlcode
-          <player-damage>
-      %td
-        A player takes damage.
-      %td
-        = category('Player')
-        = category('Block')
-        = category('Damage Info')
-        = category('Cancellable')
-    %tr
-      %td
-        :xmlcode
-          <drop-item>
-      %td
-        A player drops an item from their inventory.
-      %td
-        = category('Player')
-        = category('Item')
-        = category('Cancellable')
-        = category('Block', 'The location of the player.')
-        = category('Mutable Item', 'Modify the item being dropped.')
-        = category('Removable', 'Removes the item from the map.')
-    %tr
-      %td
-        :xmlcode
-          <fire-arrow>
-      %td
-        A player releases an arrow from their bow.
-      %td
-        = category('Player')
-        = category('Cancellable')
-        = category('Item', 'The player\'s bow')
-        = category('Block', 'The location of the player.')
-        = category('Mutable Entity', 'Modify the arrow being fired.')
-    %tr
-      %td
-        :xmlcode
-          <move>
-      %td
-        A player moves from one block to another.
-      %td
-        = category('Player')
-        = category('Cancellable')
-        = category('From/To')
-        = category('Block', 'The location the player is moving to.')
-    %tr
-      %td
-        :xmlcode
-          <pickup-item>
-      %td
-        A player picks up an item drop and it moves to their inventory.
-      %td
-        = category('Player')
-        = category('Item')
-        = category('Cancellable')
-        = category('Repairable')
-        = category('Removable', 'Removes the item from the map.')
-        = category('Block', 'The location of the player.')
-        = category('Mutable Item', 'Modify the item being dropped.')
+.table-responsive
+  %table.table.table-striped.table-condensed
+    %thead
+      %tr
+        %th{:style => 'width: 15%'} Event
+        %th Description
+        %th{:style => 'width: 40%'} Categories
+      %tr
+        %td
+          :xmlcode
+            <block-break>
+        %td
+          A player breaks a block.
+        %td
+          = category('Player')
+          = category('Block')
+          = category('Cancellable')
+          = category('Mutable Item', 'Modify drops produced from breaking the block.')
+      %tr
+        %td
+          :xmlcode
+            <block-click>
+        %td
+          A player right clicks a block.
+        %td
+          = category('Player')
+          = category('Block')
+      %tr
+        %td
+          :xmlcode
+            <block-place>
+        %td
+          A player breaks a block.
+        %td
+          = category('Player')
+          = category('Block')
+          = category('Cancellable')
+      %tr
+        %td
+          :xmlcode
+            <block-punch>
+        %td
+          A player punches (left clicks) a block (and potentially holds left click).
+        %td
+          = category('Player')
+          = category('Block')
+      %tr
+        %td
+          :xmlcode
+            <player-damage>
+        %td
+          A player takes damage.
+        %td
+          = category('Player')
+          = category('Block')
+          = category('Damage Info')
+          = category('Cancellable')
+      %tr
+        %td
+          :xmlcode
+            <drop-item>
+        %td
+          A player drops an item from their inventory.
+        %td
+          = category('Player')
+          = category('Item')
+          = category('Cancellable')
+          = category('Block', 'The location of the player.')
+          = category('Mutable Item', 'Modify the item being dropped.')
+          = category('Removable', 'Removes the item from the map.')
+      %tr
+        %td
+          :xmlcode
+            <fire-arrow>
+        %td
+          A player releases an arrow from their bow.
+        %td
+          = category('Player')
+          = category('Cancellable')
+          = category('Item', 'The player\'s bow')
+          = category('Block', 'The location of the player.')
+          = category('Mutable Entity', 'Modify the arrow being fired.')
+      %tr
+        %td
+          :xmlcode
+            <move>
+        %td
+          A player moves from one block to another.
+        %td
+          = category('Player')
+          = category('Cancellable')
+          = category('From/To')
+          = category('Block', 'The location the player is moving to.')
+      %tr
+        %td
+          :xmlcode
+            <pickup-item>
+        %td
+          A player picks up an item drop and it moves to their inventory.
+        %td
+          = category('Player')
+          = category('Item')
+          = category('Cancellable')
+          = category('Repairable')
+          = category('Removable', 'Removes the item from the map.')
+          = category('Block', 'The location of the player.')
+          = category('Mutable Item', 'Modify the item being dropped.')
 
 
 = subtitle('Event Categories')

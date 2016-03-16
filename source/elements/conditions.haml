@@ -1,2 +1,272 @@
 = title('Conditions')
-= coming_soon
+%p
+  The conditions element serves no purpose on its own. It is simply used to centralize a list
+  of conditions. Often times, the same conditions are used in multiple locations, using this element
+  you can put the condition here and reference it by
+  %code
+    id
+  in other locations.
+
+:xml
+  <conditions>
+    <condition id="lime-allies">
+      <team>orange</team>
+    </condition>
+
+    <condition id="damage-filter">
+      <any>
+        <damage>fall</damage>
+        <damage>contact</damage>
+      </any>
+    </condition>
+
+    <!-- other conditions -->
+  </conditions>
+
+= attribute_table('Condition Attributes', false) do
+  = attribute_row_id
+
+= subtitle('Checks')
+.table-responsive
+  %table.table.table-condensed.table-striped
+    %thead
+      %tr
+        %th Check
+        %th Description
+        %th Event Category
+    %tr
+      %td
+        :xmlcode
+          <block-type/>
+      %td
+        %p
+          Check if the material and data of a block matches.
+        :xml
+          <block-type material="grass"/>
+      %td
+        = category('Block')
+    %tr
+      %td
+        :xmlcode
+          <can-fly/>
+      %td
+        Check if a player has flight enabled.
+      %td
+        = category('Player')
+    %tr
+      %td
+        :xmlcode
+          <damage>
+      %td
+        Check if the damage type matches.
+        :xml
+          <damage>fall</damage>
+      %td
+        = category('Damage Info')
+    %tr
+      %td
+        :xmlcode
+          <enter>
+      %td
+        Check if a player is entering a region.
+        :xml
+          <enter>
+            <region><point>32, 65, 32</point></region>
+          </enter>
+
+          <enter region="region-id"/>
+      %td
+        = category('From/To')
+    %tr
+      %td
+        :xmlcode
+          <item-type/>
+      %td
+        Check if the material and data of an item matches.
+        :xml
+          <item material="wool" data="14"/>
+      %td
+        = category('Item')
+    %tr
+      %td
+        :xmlcode
+          <player-attribute/>
+      %td
+        Check a variety of attributes for a player.
+        = link_to 'More Info.', '#player_attribute'
+        :xml
+          <player-attribute health="15" food-level="3"/>
+          <player-attribute food-level="6" action="less"/>
+          <player-attribute level="0" action="mod 5"/>
+      %td
+        = category('Player')
+    %tr
+      %td
+        :xmlcode
+          <random>
+      %td
+        Checks based on random probability.
+        :xml
+          <random>0.9</random> <!-- allows 90% of the time -->
+          <random>0.05</random> <!-- allows 5% of the time -->
+      %td
+    %tr
+      %td
+        :xmlcode
+          <region>
+      %td
+        Checks if a location is within a region.
+        :xml
+          <region>
+            <cuboid min="4, 20, 15" max="16, 40, 60"/>
+          </region>
+          <region id="spawn-area"/> <!-- reference to <regions/> element -->
+      %td
+        = category('Block')
+    %tr
+      %td
+        :xmlcode
+          <team>
+      %td
+        Checks if a player is currently on a given team.
+        :xml
+          <team>red</team>
+      %td
+        = category('Player')
+
+= subtitle('Check Details')
+%p
+  Some checks have complex elements and are documented below.
+
+= section('Player Attribute')
+:xml
+  <player-attribute health="20" food-level="20"/> <!-- health and food must be 20 -->
+  <player-attribute health="10" compare="greater than equal"/> <!-- health must be >= to 10 -->
+  <player-attribute health="0" compare="mod 5" /> <!-- health must be a multiple of 5 -->
+
+  <any> <!-- health must be 10 OR food level must be 10 -->
+    <player-attribute health="10" />
+    <player-attribute food-level="10" />
+  </any>
+
+= attribute_table('Player Attribute Attributes', true) do
+  = attribute_row do
+    = attribute_name('compare')
+    = attribute_desc('Configures how to match the given attributes.')
+    = attribute_type(:comparator)
+    = attribute_column do
+      %code equals
+  = attribute_row do
+    = attribute_name('health')
+    = attribute_desc('Sets the current health where 1 corresponds to half a hunger.')
+    = attribute_column do
+      = label('[0, 20]')
+    = attribute_column
+  = attribute_row do
+    = attribute_name('max-health')
+    = attribute_desc('Sets the maximum health where 1 corresponds to half a heart.')
+    = attribute_column do
+      = label('[1, 40]')
+    = attribute_column
+  = attribute_row do
+    = attribute_name('health-scale')
+    = attribute_desc('Sets the hearts visible.')
+    = attribute_column do
+      = label('[1, 40]')
+    = attribute_column
+  = attribute_row do
+    = attribute_name('food-level')
+    = attribute_desc('Sets the current food level where 1 corresponds to half a hunger.')
+    = attribute_column do
+      = label('[0, 20]')
+    = attribute_column
+  = attribute_row do
+    = attribute_name('saturation')
+    = attribute_desc('Sets the saturation.', 'See ' + link_to_link('http://minecraft.gamepedia.com/Hunger#Food_level_and_saturation_level_restoration'))
+    = attribute_column do
+      = label('[0, 20]')
+    = attribute_column
+  = attribute_row do
+    = attribute_name('exp-level')
+    = attribute_desc('Sets the experience level.')
+    = attribute_column do
+      = label('[0, 21863]')
+    = attribute_column
+  = attribute_row do
+    = attribute_name('exp-points')
+    = attribute_desc('Sets the experience points.')
+    = attribute_column do
+      = label('[0, 2^31]')
+    = attribute_column
+  = attribute_row do
+    = attribute_name('total-exp')
+    = attribute_desc('Sets the total experiences points.', 'This value modifies experience level and points.')
+    = attribute_column do
+      = label('[0, 2^31]')
+    = attribute_column
+  = attribute_row do
+    = attribute_name('exhaustion')
+    = attribute_desc('Sets the exhaustion level.', 'See ' + link_to_link('http://minecraft.gamepedia.com/Hunger#Exhaustion_level_increase'))
+    = attribute_column do
+      = label('[0, 2^31]')
+    = attribute_column
+  = attribute_row do
+    = attribute_name('fly-speed')
+    = attribute_desc('Sets the flying speed, higher values correspond to faster movement (default is 0.1)', 'The behavior of these values is not normal in the upper and lower ranges.')
+    = attribute_column do
+      = label('(0, 1)')
+    = attribute_column
+  = attribute_row do
+    = attribute_name('walk-speed')
+    = attribute_desc('Sets the walking speed, higher values correspond to faster movement (default is 0.2).', 'The behavior of these values is not normal in the upper and lower ranges.')
+    = attribute_column do
+      = label('(0, 1)')
+    = attribute_column
+
+
+
+= subtitle('Condition Modifiers')
+%p
+  Condition modifiers accept any number of checks as children of the element and modify how
+  the combination of these checks behave.
+
+
+.table-responsive
+  %table.table.table-condensed.table-striped
+    %thead
+      %tr
+        %th Modifier
+        %th Description
+    %tr
+      %td
+        :xmlcode
+          <all>
+        or
+        :xmlcode
+          <condition>
+      %td
+        Allow if and only if all of the checks yield allow. Otherwise, deny.
+    %tr
+      %td
+        :xmlcode
+          <none>
+      %td
+        Allow if and only if all of the checks yield deny. Otherwise, deny.
+    %tr
+      %td
+        :xmlcode
+          <any>
+      %td
+        Allow if any of the checks yield allow. Otherwise, deny.
+    %tr
+      %td
+        :xmlcode
+          <allow>
+      %td
+        Allow if and only if all the checks yield allow. Otherwise, abstain.
+    %tr
+      %td
+        :xmlcode
+          <deny>
+      %td
+        Deny if and only if all the checks yield deny. Otherwise, abstain.

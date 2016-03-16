@@ -67,6 +67,8 @@ module ElementHelpers
             label('True/False')
           when :xyz
             label('X, Y, Z')
+          when :comparator
+            label('Comparator')
           when :id
             label('ID')
           else
