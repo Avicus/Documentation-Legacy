@@ -4,6 +4,7 @@ page '/references/*', :layout => 'reference'
 page '/elements/*', :layout => 'element'
 
 # view helpers
+require 'lib/event_helpers'
 require 'lib/element_helpers'
 require 'lib/general_helpers'
 helpers ElementHelpers

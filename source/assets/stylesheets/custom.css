@@ -41,3 +41,11 @@ a:focus {
 .versions .col-sm-1 {
     padding-right: 0px;
 }
+
+.decoration-none {
+    text-decoration: none !important;
+}
+
+.decoration-none:hover {
+    text-decoration: none !important;
+}
