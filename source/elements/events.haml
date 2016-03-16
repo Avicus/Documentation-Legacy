@@ -66,16 +66,27 @@
       %tr
         %td
           :xmlcode
+            <player-death>
+        %td
+          A player dies.
+        %td
+          = category('Player')
+          = category('Block')
+          = category('Item Drop', 'The items dropped by the player on death.')
+          = category('Damage Info', 'The last damage taken by the player.')
+      %tr
+        %td
+          :xmlcode
             <drop-item>
         %td
           A player drops an item from their inventory.
         %td
           = category('Player')
+          = category('Block')
           = category('Item')
+          = category('Item Drop')
           = category('Cancellable')
-          = category('Block', 'The location of the player.')
           = category('Mutable Item', 'Modify the item being dropped.')
-          = category('Removable', 'Removes the item from the map.')
       %tr
         %td
           :xmlcode
@@ -84,9 +95,9 @@
           A player releases an arrow from their bow.
         %td
           = category('Player')
+          = category('Block')
           = category('Cancellable')
           = category('Item', 'The player\'s bow')
-          = category('Block', 'The location of the player.')
           = category('Mutable Entity', 'Modify the arrow being fired.')
       %tr
         %td
@@ -107,11 +118,11 @@
           A player picks up an item drop and it moves to their inventory.
         %td
           = category('Player')
+          = category('Block')
           = category('Item')
+          = category('Item Drop')
           = category('Cancellable')
           = category('Repairable')
-          = category('Removable', 'Removes the item from the map.')
-          = category('Block', 'The location of the player.')
           = category('Mutable Item', 'Modify the item being dropped.')
 
 
