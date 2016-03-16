@@ -15,7 +15,7 @@
     %tr
       %td
         :xmlcode
-          block-break
+          <block-break>
       %td
         A player breaks a block.
       %td
@@ -34,7 +34,8 @@
         = category('Block')
     %tr
       %td
-        %code block-place
+        :xmlcode
+          <block-place>
       %td
         A player breaks a block.
       %td
@@ -43,7 +44,8 @@
         = category('Cancellable')
     %tr
       %td
-        %code block-punch
+        :xmlcode
+          <block-punch>
       %td
         A player punches (left clicks) a block (and potentially holds left click).
       %td
@@ -51,7 +53,8 @@
         = category('Block')
     %tr
       %td
-        %code player-damage
+        :xmlcode
+          <player-damage>
       %td
         A player takes damage.
       %td
@@ -61,7 +64,8 @@
         = category('Cancellable')
     %tr
       %td
-        %code drop-item
+        :xmlcode
+          <drop-item>
       %td
         A player drops an item from their inventory.
       %td
@@ -73,7 +77,8 @@
         = category('Removable', 'Removes the item from the map.')
     %tr
       %td
-        %code fire-arrow
+        :xmlcode
+          <fire-arrow>
       %td
         A player releases an arrow from their bow.
       %td
@@ -84,7 +89,8 @@
         = category('Mutable Entity', 'Modify the arrow being fired.')
     %tr
       %td
-        %code move
+        :xmlcode
+          <move>
       %td
         A player moves from one block to another.
       %td
@@ -94,7 +100,8 @@
         = category('Block', 'The location the player is moving to.')
     %tr
       %td
-        %code pickup-item
+        :xmlcode
+          <pickup-item>
       %td
         A player picks up an item drop and it moves to their inventory.
       %td
