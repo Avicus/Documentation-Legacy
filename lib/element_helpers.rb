@@ -65,6 +65,8 @@ module ElementHelpers
             label('Number')
           when :boolean
             label('True/False')
+          when :material
+            label('Material')
           when :xyz
             label('X, Y, Z')
           when :comparator

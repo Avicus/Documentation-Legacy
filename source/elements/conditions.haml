@@ -40,7 +40,8 @@
           <block-type/>
       %td
         %p
-          Check if the material and data of a block matches.
+          Check if the material and data of a block matches. This check behaves as a
+          = link_to 'material matcher.', '#material_matcher'
         :xml
           <block-type material="grass"/>
       %td
@@ -86,9 +87,10 @@
         :xmlcode
           <item-type/>
       %td
-        Check if the material and data of an item matches.
+        Check if the material and data of an item matches. This check behaves as a
+        = link_to 'material matcher.', '#material_matcher'
         :xml
-          <item material="wool" data="14"/>
+          <item-type material="wool:5"/>
       %td
         = category('Item')
     %tr
@@ -257,6 +259,21 @@
       = label('(0, 1)')
     = attribute_column
 
+= section('Material Matcher')
+%p
+  Some checks behave as a material matcher where the input is a type of block or item.
+
+= attribute_table('Material Matcher Attributes', false) do
+  = attribute_row(true) do
+    = attribute_name('material')
+    = attribute_desc('The type of material with an optional data value.', 'If not provided, the material matcher matches all data values.')
+    = attribute_type(:material)
+    = attribute_column
+Here are some examples of material matchers.
+:xml
+  <item-type material="stained glass"/> <!-- all colors of stained glass -->
+  <block-type material="wool:14"/> <!-- only red wool -->
+  <block-type material="wool"/> <!-- all colors of wool -->
 
 
 = subtitle('Condition Modifiers')
