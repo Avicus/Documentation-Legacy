@@ -10,18 +10,17 @@
 :xml
   <?xml version="1.0"?>
   <map>
-    <name>Revolution</name>
-    <version>1.5.3</version>
-    ...
+    <-- Map modules (authors, objectives, conditions, triggers, etc)
   </map>
 
-= attribute_table('Map Attributes', false) do
-  = attribute_row(true) do
-    = attribute_name('name')
-    = attribute_desc('The name of the map.')
-    = attribute_type(:string)
-  = attribute_row(true) do
-    = attribute_name('version')
-    = attribute_desc('The version of the map.')
-    = attribute_column do
-      = link_to('Semantic version', 'http://semver.org')
+= subtitle("Name")
+%p
+  The name of the map, displayed in game and on the web.
+
+:xml
+  <name>Revolution</name>
+
+= subtitle("Version")
+%p
+  The version of the map. The version should comply with the
+  = link_to('Semantic versioning system', 'http://semver.org')
