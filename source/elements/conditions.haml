@@ -48,49 +48,13 @@
     %tr
       %td
         :xmlcode
-          <can-fly/>
+          <movement/>
       %td
-        Check if a player has flight enabled.
-      %td
-        = category('Player')
-    %tr
-      %td
-        :xmlcode
-          <can-sprint/>
-      %td
-        Checks if a player has a food level greater than 3.
-      %td
-        = category('Player')
-    %tr
-      %td
-        :xmlcode
-          <sneaking/>
-      %td
-        Checks if a player is currently sneaking/crouching.
-      %td
-        = category('Player')
-    %tr
-      %td
-        :xmlcode
-          <walking/>
-      %td
-        Checks if a player is currently walking and not sprinting.
-      %td
-        = category('Player')
-    %tr
-      %td
-        :xmlcode
-          <flying/>
-      %td
-        Checks if a player is currently in fly mode.
-      %td
-        = category('Player')
-    %tr
-      %td
-        :xmlcode
-          <sprinting/>
-      %td
-        Checks if a player is currently sprinting.
+        Checks the status of a variety of different movement attributes.
+        = link_to 'More info.', '#movement'
+        :xml
+          <movement can-sprint="true"/>
+          <movement sprinting="true"/>
       %td
         = category('Player')
     %tr
@@ -133,7 +97,7 @@
           <player-attribute/>
       %td
         Check a variety of attributes for a player.
-        = link_to 'More Info.', '#player_attribute'
+        = link_to 'More info.', '#player_attribute'
         :xml
           <player-attribute health="15" food-level="3"/>
           <player-attribute food-level="6" action="less"/>
@@ -178,6 +142,37 @@
 %p
   Some checks have complex elements and are documented below.
 
+= section('Movement')
+:xml
+  <movement can-fly="true"/> <!-- the player has fly enabled -->
+  <movement flying="true"/> <!-- the player is currently hovering/flying -->
+  <movement sprinting="true" can-fly="true"/> <!-- the player is sprinting and can fly -->
+= attribute_table('Player Attribute Attributes', false) do
+  = attribute_row do
+    = attribute_name('can-fly')
+    = attribute_desc('Checks if the player can fly.')
+    = attribute_type(:boolean)
+  = attribute_row do
+    = attribute_name('can-sprint')
+    = attribute_desc('Checks if the player can sprint (food level greater than 3).')
+    = attribute_type(:boolean)
+  = attribute_row do
+    = attribute_name('sneaking')
+    = attribute_desc('Checks if the player is currently in sneak mode.')
+    = attribute_type(:boolean)
+  = attribute_row do
+    = attribute_name('sprinting')
+    = attribute_desc('Checks if the player is currently sprinting.')
+    = attribute_type(:boolean)
+  = attribute_row do
+    = attribute_name('walking')
+    = attribute_desc('Checks if the player is currently not sneaking or sprinting.')
+    = attribute_type(:boolean)
+  = attribute_row do
+    = attribute_name('flying')
+    = attribute_desc('Checks if the player is currently flying/hovering.')
+    = attribute_type(:boolean)
+
 = section('Player Attribute')
 :xml
   <player-attribute health="20" food-level="20"/> <!-- health and food must be 20 -->
@@ -188,7 +183,6 @@
     <player-attribute health="10" />
     <player-attribute food-level="10" />
   </any>
-
 = attribute_table('Player Attribute Attributes', true) do
   = attribute_row do
     = attribute_name('compare')
@@ -289,15 +283,15 @@
     %tr
       %td
         :xmlcode
-          <none>
-      %td
-        Allow if and only if all of the checks yield deny. Otherwise, deny.
-    %tr
-      %td
-        :xmlcode
           <any>
       %td
         Allow if any of the checks yield allow. Otherwise, deny.
+    %tr
+      %td
+        :xmlcode
+          <none>
+      %td
+        Allow if and only if all of the checks yield deny. Otherwise, deny.
     %tr
       %td
         :xmlcode
