@@ -23,7 +23,7 @@
               %h4
                 = section.name
             - section.elements.each do |element|
-              %li{:class => current_page.url == (element.path + '/') ? 'active' : ''}
+              %li{:class => current_page.url.end_with?(element.path + '/') ? 'active' : ''}
                 %a{:href => element.path}
                   = element.name
             .space

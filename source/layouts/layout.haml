@@ -28,19 +28,19 @@
             %span.icon-bar
         %nav.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
-            %li{:class => current_page.url == '/' ? 'active' : ''}
+            %li{:class => current_page.url.length <= 4 ? 'active' : ''}
               %a{:href => '/'}
                 %i.fa.fa-home
                 Home
-            %li{:class => current_page.url.start_with?('/elements') ? 'active' : ''}
+            %li{:class => current_page.url.include?('/elements') ? 'active' : ''}
               %a{:href => '/elements/map'}
                 %i.fa.fa-cubes
                 Elements
-            %li{:class => current_page.url.start_with?('/references') ? 'active' : ''}
+            %li{:class => current_page.url.include?('/references') ? 'active' : ''}
               %a{:href => '/references/colors'}
                 %i.fa.fa-book
                 References
-            %li{:class => current_page.url.start_with?('/examples') ? 'active' : ''}
+            %li{:class => current_page.url.include?('/examples') ? 'active' : ''}
               %a{:href => '/examples'}
                 %i.fa.fa-gear
                 Examples
