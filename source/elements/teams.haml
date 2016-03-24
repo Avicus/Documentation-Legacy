@@ -36,3 +36,8 @@
     = attribute_desc('The maximum number of players allowed on the team.')
     = attribute_type(:number)
     = attribute_default('1.25 * max')
+  = attribute_row do
+    = attribute_name('spectator')
+    = attribute_desc('Set this team as a spectator team', 'This can break certain maps and should be used with caution.')
+    = attribute_type(:boolean)
+    = attribute_default('false')
