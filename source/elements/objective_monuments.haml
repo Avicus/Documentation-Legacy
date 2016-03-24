@@ -1,0 +1,77 @@
+= title('Monuments')
+%p
+  Monuments are regions of blocks that can be destroyed by teams and must be protected by its owner.
+
+%p
+  Monuments belong inside of a
+  :xmlcode
+    <monuments/>
+  tag within the
+  :xmlcode
+    <objectives/>
+  element. The
+  :xmlcode
+    <monument/>
+  tag inherits attributes from parent
+  :xmlcode
+    <monuments/>
+  as demonstrated below.
+
+:xml
+  <objectives>
+    <monuments materials="obsidian">
+      <monuments owner="red">
+        <monument name="Core">
+          <region><point>32,21,50</point></region>
+        </monument>
+
+        <monument name="Zone Red">
+          <region><cuboid min="-41, 50, -90" max="-100, 40, -100"/></region>
+        </monument>
+      </monuments>
+
+      <monuments owner="blue">
+        <monument name="Core">
+          <region><point>-32,21,-50</point></region>
+        </monument>
+
+        <monument name="Zone Blue">
+          <region><cuboid min="41, 50, 90" max="100, 40, 100"/></region>
+        </monument>
+      </monuments>
+    </monuments>
+  </objectives>
+
+= attribute_table('Monument Attributes') do
+  = attribute_row_id(false)
+  = attribute_row(true) do
+    = attribute_name('materials')
+    = attribute_desc('The materials that can be destroyed.')
+    = attribute_type(:materials)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('owner')
+    = attribute_desc('The owner of the monument.')
+    = attribute_type_element(:team)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('region')
+    = attribute_desc('The region that encapsulates the monument.')
+    = attribute_type_element(:iterable_region)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('completed-state')
+    = attribute_desc('The material that blocks change to once broken.')
+    = attribute_type(:material)
+    = attribute_default('air')
+  = attribute_row do
+    = attribute_name('completion')
+    = attribute_desc('The material that blocks change to once broken.')
+    = attribute_type do
+      [0.0, 1.0]
+    = attribute_default(1.0)
+  = attribute_row do
+    = attribute_name('fireworks')
+    = attribute_desc('The material that blocks change to once broken.')
+    = attribute_type(:boolean)
+    = attribute_default('false')

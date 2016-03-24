@@ -29,4 +29,6 @@
 - name: Objectives
   elements:
   - name: Monuments
-    path: /elements/objective_monument
+    path: /elements/objective_monuments
+  - name: Hills
+    path: /elements/objective_hills

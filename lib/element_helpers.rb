@@ -9,13 +9,13 @@ module ElementHelpers
     partial('attribute_table', :locals => {:header => header, :block => block, :default => show_default_column})
   end
 
-  def attribute_row_id
+  def attribute_row_id(required = false)
     name = attribute_name('id')
     desc = attribute_desc('The unique identifier used to reference this element from elsewhere.')
     type = attribute_type(:id)
     default = attribute_column
 
-    attribute_row(true) do
+    attribute_row(required) do
       name + desc + type + default
     end
   end
@@ -43,8 +43,14 @@ module ElementHelpers
       case type
         when :team
           label('Element ID') + tag('br') + link_to(text ? text : 'Team', '/elements/teams')
+        when :condition
+          label('Element ID') + tag('br') + link_to(text ? text : 'Condition', '/elements/conditions')
         when :region
           label('Element ID') + tag('br') + link_to(text ? text : 'Region', '/elements/regions')
+        when :bounded_region
+          label('Element ID') + tag('br') + link_to(text ? text : 'Bounded region', '/elements/regions')
+        when :iterable_region
+          label('Element ID') + tag('br') + link_to(text ? text : 'Iterable region', '/elements/regions')
         else
           raise "#{type} is not a valid attribute_type_reference"
       end
@@ -63,10 +69,14 @@ module ElementHelpers
             label('String')
           when :number
             label('Number')
+          when :duration
+            label('Duration')
           when :boolean
             label('True/False')
           when :material
-            label('Material')
+            label('Material Matcher')
+          when :materials
+            label('Multi Material Matcher')
           when :xyz
             label('X, Y, Z')
           when :comparator
