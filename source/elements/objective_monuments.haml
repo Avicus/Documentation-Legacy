@@ -66,12 +66,12 @@
     = attribute_default('air')
   = attribute_row do
     = attribute_name('completion')
-    = attribute_desc('The material that blocks change to once broken.')
+    = attribute_desc('The percentage necessary to consider the objective complete.')
     = attribute_type do
-      [0.0, 1.0]
+      [0, 100]
     = attribute_default(1.0)
   = attribute_row do
     = attribute_name('fireworks')
-    = attribute_desc('The material that blocks change to once broken.')
+    = attribute_desc('Spawn a firework effect and sound to players when a block is broken.')
     = attribute_type(:boolean)
     = attribute_default('false')
