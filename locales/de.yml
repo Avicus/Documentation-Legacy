@@ -1,0 +1,26 @@
+de:
+  pages:
+    map: Map
+    authors: Autoren
+    imports: Importe
+    teams: Teams
+    spawns: Spawns
+    regions: Regionen
+    objectives: Objekte
+    loadouts: Inventare
+    events: Ereignisse
+    conditions: Bedingungen
+    triggers: Auslöser
+    monuments: Monumente
+    hills: Hügel
+    colors: Farben
+  elements:
+    map:
+      text: This is the main, root element the all maps must provide. Every subsequent element is nested inside the map element. Note that for an XML file to be valid, it must contain the %s header.
+  references:
+    colors:
+      desc: Die folgenden Farben können für Teams verwendet werden.
+      color: Farbe
+      aqua: Diese sollte für die Beobachter Teams reserviert werden.
+      green: 'Eine ähnliche und bevorzugte Alternative ist oft <code>Hellgrün</code>.'
+      lime: Dies sollte nicht in Verbindung mit Grün wegen ihrer Ähnlichkeiten verwendet werden.

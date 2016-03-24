@@ -1,21 +1,21 @@
-= title('Colors')
+= title(t(:pages)[:colors])
 
-= subtitle('Team Colors')
 %p
-  The following colors can be used for teams.
+  = t(:references)[:colors][:desc]
 
 .table-responsive
   %table.table.table-striped
     %thead
       %tr
-        %th Color
-        %th Notes
+        %th
+          = t(:references)[:colors][:color]
+        %th
     %tbody
       %tr
         %td
           %code aqua
         %td
-          This should be reserved for spectator teams.
+          = t(:references)[:colors][:aqua]
       %tr
         %td
           %code red
@@ -28,14 +28,12 @@
         %td
           %code green
         %td
-          A similar and preferred alternative is often
-          %code lime
-          \.
+          = t(:references)[:colors][:green]
       %tr
         %td
           %code lime
         %td
-          Should not be used in conjunction with green due to their similarities.
+          = t(:references)[:colors][:lime]
       %tr
         %td
           %code yellow

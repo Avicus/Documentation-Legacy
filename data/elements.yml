@@ -1,34 +1,34 @@
 - name: General Elements
   elements:
-  - name: Map
+  - name: map
     path: /elements/map
-  - name: Authors
+  - name: authors
     path: /elements/authors
-  - name: Imports
+  - name: imports
     path: /elements/imports
 
 - name: Game Components
   elements:
-  - name: Teams
+  - name: teams
     path: /elements/teams
-  - name: Spawns
+  - name: spawns
     path: /elements/spawns
-  - name: Regions
+  - name: regions
     path: /elements/regions
-  - name: Objectives
+  - name: objectives
     path: /elements/objectives
-  - name: Loadouts
+  - name: loadouts
     path: /elements/loadouts
-  - name: Events
+  - name: events
     path: /elements/events
-  - name: Conditions
+  - name: conditions
     path: /elements/conditions
-  - name: Triggers
+  - name: triggers
     path: /elements/triggers
 
 - name: Objectives
   elements:
-  - name: Monuments
+  - name: monuments
     path: /elements/objective_monuments
-  - name: Hills
+  - name: hills
     path: /elements/objective_hills

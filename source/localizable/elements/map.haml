@@ -1,11 +1,10 @@
 = title('Map Element')
 
 %p
-  This is the main, root element the all maps must provide. Every subsequent element is nested inside the map element.
-  Note that for an XML file to be valid, it must contain the
-  :xmlcode
-    <?xml version="1.0"?>
-  header.
+  - @code = capture do
+    :xmlcode
+      <?xml version="1.0"?>
+  = t(:elements)[:map][:text] % @code
 
 :xml
   <?xml version="1.0"?>

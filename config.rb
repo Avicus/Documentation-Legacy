@@ -24,7 +24,7 @@ set :images_dir, 'assets/images'
 
 # plugins
 activate :livereload
-activate :i18n
+activate :i18n, :mount_at_root => :en
 activate :directory_indexes
 configure :build do
   activate :minify_css

@@ -1,3 +1,27 @@
 ---
-es:
-  hello: hola
+en:
+  pages:
+    map: Map
+    authors: Authors
+    imports: Imports
+    teams: Teams
+    spawns: Spawns
+    regions: Regions
+    objectives: Objectives
+    loadouts: Loadouts
+    events: Events
+    conditions: Conditions
+    triggers: Triggers
+    monuments: Monuments
+    hills: Hills
+    colors: Colors
+  elements:
+    map:
+      text: This is the main, root element the all maps must provide. Every subsequent element is nested inside the map element. Note that for an XML file to be valid, it must contain the %s header.
+  references:
+    colors:
+      desc: The following colors can be used for teams.
+      color: Color
+      aqua: This should be reserved for spectator teams.
+      green: A similar and preferred alternative is often <code>lime</code>.
+      lime: Should not be used in conjunction with green due to their similarities.

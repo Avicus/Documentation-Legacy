@@ -25,7 +25,7 @@
             - section.elements.each do |element|
               %li{:class => current_page.url.end_with?(element.path + '/') ? 'active' : ''}
                 %a{:href => element.path}
-                  = element.name
+                  = t(:pages)[element.name.downcase.to_sym]
             .space
       .col-sm-9
         .module
