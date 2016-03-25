@@ -42,15 +42,15 @@ module ElementHelpers
     attribute_column do
       case type
         when :team
-          label('Element ID') + tag('br') + link_to(text ? text : 'Team', '/elements/teams')
+          label('Element ID') + tag('br') + link(text ? text : 'Team', '/elements/teams')
         when :condition
-          label('Element ID') + tag('br') + link_to(text ? text : 'Condition', '/elements/conditions')
+          label('Element ID') + tag('br') + link(text ? text : 'Condition', '/elements/conditions')
         when :region
-          label('Element ID') + tag('br') + link_to(text ? text : 'Region', '/elements/regions')
+          label('Element ID') + tag('br') + link(text ? text : 'Region', '/elements/regions')
         when :bounded_region
-          label('Element ID') + tag('br') + link_to(text ? text : 'Bounded region', '/elements/regions')
+          label('Element ID') + tag('br') + link(text ? text : 'Bounded region', '/elements/regions')
         when :iterable_region
-          label('Element ID') + tag('br') + link_to(text ? text : 'Iterable region', '/elements/regions')
+          label('Element ID') + tag('br') + link(text ? text : 'Iterable region', '/elements/regions')
         else
           raise "#{type} is not a valid attribute_type_reference"
       end

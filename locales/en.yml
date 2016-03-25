@@ -23,5 +23,5 @@ en:
       desc: The following colors can be used for teams.
       color: Color
       aqua: This should be reserved for spectator teams.
-      green: A similar and preferred alternative is often <code>lime</code>.
+      green: A similar and preferred alternative is often %s.
       lime: Should not be used in conjunction with green due to their similarities.

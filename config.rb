@@ -2,9 +2,7 @@
 page '*/examples.html', :layout => 'container'
 page '*/references/*', :layout => 'reference'
 page '*/elements/*', :layout => 'element'
-page 'examples.html', :layout => 'container'
-page 'references/*', :layout => 'reference'
-page 'elements/*', :layout => 'element'
+page '/', :layout => 'home'
 
 # view helpers
 require 'lib/event_helpers'
@@ -24,7 +22,7 @@ set :images_dir, 'assets/images'
 
 # plugins
 activate :livereload
-activate :i18n, :mount_at_root => :en
+activate :i18n, :mount_at_root => false
 activate :directory_indexes
 configure :build do
   activate :minify_css

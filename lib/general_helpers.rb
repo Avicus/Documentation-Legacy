@@ -5,12 +5,26 @@ module GeneralHelpers
     end
   end
 
-  def link_to_link(link)
-    link_to(link, link)
+  def link(*args, &block)
+    options  = args.extract_options!
+    name = block_given? ? '' : args.shift
+    href = args.first
+    if fragment = options[:fragment] || options[:anchor]
+      warn 'Options :anchor and :fragment are deprecated for #link_to. Please use :fragment for #url'
+      href << '#' << fragment.to_s
+    end
+    href = current_page.url[0..2] + href
+    options.reverse_merge!(:href => href || '#')
+    return name unless parse_conditions(href, options)
+    block_given? ? content_tag(:a, options, &block) : content_tag(:a, name, options)
   end
 
-  def link_to_slug(text, slug)
-    link_to(text, "#{current_page.url}##{to_slug(slug)}")
+  def link_link(link)
+    link(link, link)
+  end
+
+  def link_slug(text, slug)
+    link(text, "#{current_page.url}##{to_slug(slug)}")
   end
 
   def to_slug(text)

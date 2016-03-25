@@ -15,7 +15,7 @@
             - if title.is_a?(String)
               - any_subtitles = true
               %li
-                = link_to_slug(title, title)
+                = link_slug(title, title)
           - if any_subtitles
             %br/
           - data.elements.each do |section|
@@ -24,7 +24,7 @@
                 = section.name
             - section.elements.each do |element|
               %li{:class => current_page.url.end_with?(element.path + '/') ? 'active' : ''}
-                %a{:href => element.path}
+                = link(element.path) do
                   = t(:pages)[element.name.downcase.to_sym]
             .space
       .col-sm-9

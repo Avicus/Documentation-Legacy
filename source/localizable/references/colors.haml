@@ -28,7 +28,9 @@
         %td
           %code green
         %td
-          = t(:references)[:colors][:green]
+          - lime = capture do
+            %code lime
+          = t(:references)[:colors][:green] % lime
       %tr
         %td
           %code lime

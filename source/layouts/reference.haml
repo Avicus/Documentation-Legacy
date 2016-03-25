@@ -14,8 +14,7 @@
                 = section.name
             - section.references.each do |reference|
               %li{:class => current_page.url.end_with?(reference.path + '/') ? 'active' : ''}
-                %a{:href => reference.path}
-                  = reference.name
+                = link(reference.name, reference.path)
             .space
       .col-sm-9
         .module

@@ -21,29 +21,6 @@
           %a.navbar-brand{:href => '/'}
             = image_tag 'logo.png', :width => '50'
             Atlas Map Documentation
-          %button.navbar-toggle{:type => 'button', 'data-target' => '.navbar-collapse', 'data-toggle' => 'collapse'}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-        %nav.collapse.navbar-collapse
-          %ul.nav.navbar-nav.navbar-right
-            %li{:class => current_page.url.length <= 4 ? 'active' : ''}
-              = link('/') do
-                %i.fa.fa-home
-                Home
-            %li{:class => current_page.url.include?('/elements') ? 'active' : ''}
-              = link('/elements/map') do
-                %i.fa.fa-cubes
-                Elements
-            %li{:class => current_page.url.include?('/references') ? 'active' : ''}
-              = link('/references/colors') do
-                %i.fa.fa-book
-                References
-            %li{:class => current_page.url.include?('/examples') ? 'active' : ''}
-              = link('/examples') do
-                %i.fa.fa-gear
-                Examples
 
     = yield
 
