@@ -1,5 +1,5 @@
-# docs.avicus.net
-Documentation for YAML files for Avicore Canary Update
+# atlas.avicus.net
+Documentation for Atlas map configuration files.
 
 1. Get Ruby
 2. `gem install bundle`

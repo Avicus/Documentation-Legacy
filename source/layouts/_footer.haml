@@ -1,0 +1,17 @@
+.container
+  %hr
+  %footer.docs-footer
+    %ul.nav.nav-pills
+      %li.pull-left
+        %a{:href => 'https://avicus.net'}
+          &copy;
+          = Time.now.year
+          The Avicus Network
+      %li.pull-right
+        = link_to('https://github.com/Avicus/atlas.avicus.net') do
+          %i.fa.fa-github
+          Contribute
+      %li.pull-right
+        = link_to('https://maps.avicus.net') do
+          Maps
+    %br

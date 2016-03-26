@@ -47,18 +47,4 @@
 
     = yield
 
-    .container
-      %hr
-      %footer.docs-footer
-        %ul.nav.nav-pills
-          %li.pull-left
-            %a{:href => 'https://avicus.net'}
-              &copy;
-              = Time.now.year
-              The Avicus Network
-          %li.pull-right
-            %a{:href => 'https://maps.avicus.net'} Maps
-          %li.pull-right
-            %a{:href => 'https://avicus.net/development/atlas.avicus.net'}
-              Changes
-        %br
+    = partial 'layouts/footer'
