@@ -18,6 +18,15 @@ en:
   elements:
     map:
       text: This is the main, root element the all maps must provide. Every subsequent element is nested inside the map element. Note that for an XML file to be valid, it must contain the %s header.
+      attributes: Map Attributes
+      attributes_name: The name of the map.
+      attributes_version: The version of the map.
+      semantic: Semantic version
+    authors:
+      text: The authors element is provided to give credit to the people that made contributions to the creation of a map. Their minecraft usernames are listed in a variety of locations while the map is being played.
+      attributes: Author Attributes
+      attributes_uuid: The Minecraft UUID that identifies a player.
+      attributes_role: The role this author played in the creation of the map.
   references:
     colors:
       desc: The following colors can be used for teams.

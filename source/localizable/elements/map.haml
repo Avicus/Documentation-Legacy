@@ -12,13 +12,13 @@
     ...
   </map>
 
-= attribute_table('Map Attributes', false) do
+= attribute_table(t(:elements)[:map][:attributes], false) do
   = attribute_row(true) do
     = attribute_name('name')
-    = attribute_desc('The name of the map.')
+    = attribute_desc(t(:elements)[:map][:attributes_name])
     = attribute_type(:string)
   = attribute_row(true) do
     = attribute_name('version')
-    = attribute_desc('The version of the map.')
+    = attribute_desc(t(:elements)[:map][:attributes_version])
     = attribute_column do
-      = link_to('Semantic version', 'http://semver.org')
+      = link_to(t(:elements)[:map][:semantic], 'http://semver.org')

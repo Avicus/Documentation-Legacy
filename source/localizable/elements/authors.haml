@@ -1,8 +1,7 @@
 = title(t(:pages)[:authors])
 
 %p
-  The authors element is provided to give credit to the people that made contributions to the creation of a map.
-  Their minecraft usernames are listed in a variety of locations while the map is being played.
+  = t(:elements)[:authors][:text]
 
 :xml
   <authors>
@@ -10,12 +9,12 @@
     <author uuid="8242e55ecc6a458ab272a2b34918045f" role="Assistance with map design." /> <!-- funkystudios -->
   </authors>
 
-= attribute_table('Author Attributes', false) do
+= attribute_table(t(:elements)[:authors][:attributes], false) do
   = attribute_row(true) do
     = attribute_name('uuid')
-    = attribute_desc('The Minecraft UUID that identifies a player.')
+    = attribute_desc(t(:elements)[:authors][:attributes_uuid])
     = attribute_type(:string)
-  = attribute_row(true) do
+  = attribute_row do
     = attribute_name('role')
-    = attribute_desc('The role this author played in the creation of the map.')
+    = attribute_desc(t(:elements)[:authors][:attributes_role])
     = attribute_type(:string)
