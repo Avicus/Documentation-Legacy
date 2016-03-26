@@ -24,7 +24,7 @@ module GeneralHelpers
   end
 
   def link_slug(text, slug)
-    link(text, "#{current_page.url}##{to_slug(slug)}")
+    link(text, "##{to_slug(slug)}")
   end
 
   def to_slug(text)
