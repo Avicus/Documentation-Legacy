@@ -21,6 +21,7 @@ en:
       attributes: Map Attributes
       attributes_name: The name of the map.
       attributes_version: The version of the map.
+      attributes_description: A brief description of the map.
       semantic: Semantic version
     authors:
       text: The authors element is provided to give credit to the people that made contributions to the creation of a map. Their minecraft usernames are listed in a variety of locations while the map is being played.

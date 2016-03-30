@@ -16,11 +16,20 @@ de:
     colors: Farben
   elements:
     map:
-      text: This is the main, root element the all maps must provide. Every subsequent element is nested inside the map element. Note that for an XML file to be valid, it must contain the %s header.
+      text: 'Dies ist das Haupt Element, das für alle Maps verwendet werden muss. Jedes nachfolgende Element ist innerhalb des Map Elements verschachtelt. Beachte, dass es die %s Kopfzeile enthalten muss damit die XML Datei gültig ist.'
+      attributes: Map Attribute
+      attributes_name: Der Name der Map.
+      attributes_version: Die Version der Map.
+      semantic: Semantische Version
+    authors:
+      text: Das Autoren Element ist vorgesehen um den Spielern Anerkennung zu geben, die bei der Erstellung der Map beigetragen haben. Ihre Minecraft Nutzernamen werden in einer Vielzahl von Stellen aufgelistet, während die Map gespielt wird.
+      attributes: Autoren Attribute
+      attributes_uuid: Die Minecraft UUID, die den Spieler identifiziert.
+      attributes_role: Die Rolle, die der Autor bei der Erstellung der Map gespielt hat.
   references:
     colors:
       desc: Die folgenden Farben können für Teams verwendet werden.
       color: Farbe
       aqua: Diese sollte für die Beobachter Teams reserviert werden.
-      green: 'Eine ähnliche und bevorzugte Alternative ist oft <code>Hellgrün</code>.'
+      green: 'Eine ähnliche und bevorzugte Alternative ist oft %s.'
       lime: Dies sollte nicht in Verbindung mit Grün wegen ihrer Ähnlichkeiten verwendet werden.

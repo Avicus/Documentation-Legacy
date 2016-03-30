@@ -1,27 +1,35 @@
----
-en:
+es:
   pages:
-    map: Map
-    authors: Authors
-    imports: Imports
-    teams: Teams
+    map: Mapa
+    authors: Autores
+    imports: Importes
+    teams: Equipos
     spawns: Spawns
-    regions: Regions
-    objectives: Objectives
-    loadouts: Loadouts
-    events: Events
-    conditions: Conditions
-    triggers: Triggers
-    monuments: Monuments
-    hills: Hills
-    colors: Colors
+    regions: Regiones
+    objectives: Objetivos
+    loadouts: Armamento
+    events: Eventos
+    conditions: Condiciones
+    triggers: Factores desencadenantes
+    monuments: Monumentos
+    hills: Colinas
+    colors: Colores
   elements:
     map:
-      text: This is the main, root element the all maps must provide. Every subsequent element is nested inside the map element. Note that for an XML file to be valid, it must contain the %s header.
+      text: 'Este es el elemento raíz principal, que debe ser proporcionado por todos los mapas. Cada elemento subsecuente se anida dentro del elemento mapa. Tenga en cuenta que para que un archivo XML sea válido, debe contener el encabezado %s.'
+      attributes: Atributos del Mapa
+      attributes_name: El nombre del mapa.
+      attributes_version: La versión del mapa.
+      semantic: Versión semántica
+    authors:
+      text: El elemento autores sirve para dar crédito a las personas que contribuyeron a la creación de un mapa. Sus nombres de usuario de minecraft aparecen en diferentes lugares mientras que el mapa se está jugando.
+      attributes: Atributos de Autor
+      attributes_uuid: El UUID de Minecraft que identifica al jugador.
+      attributes_role: El papel de este autor en la creación del mapa.
   references:
     colors:
-      desc: The following colors can be used for teams.
+      desc: Los siguientes colores pueden ser usados para los equipos.
       color: Color
-      aqua: This should be reserved for spectator teams.
-      green: A similar and preferred alternative is often <code>lime</code>.
-      lime: Should not be used in conjunction with green due to their similarities.
+      aqua: Este debería no ser usado para otro equipo que no sea el de espectador.
+      green: 'Una alternativa preferida y similar es a menudo %s.'
+      lime: No debe utilizarse en combinación con el color verde debido a sus similitudes.
