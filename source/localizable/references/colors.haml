@@ -35,7 +35,9 @@
         %td
           %code lime
         %td
-          = t(:references)[:colors][:lime]
+          - green = capture do
+            %code green
+          = t(:references)[:colors][:lime] % green
       %tr
         %td
           %code yellow
@@ -52,3 +54,62 @@
         %td
           %code pink
         %td
+
+%p
+  = t('references.colors.wool')
+
+.table-responsive
+  %table.table.table-striped
+    %thead
+      %tr
+        %th
+          = t(:references)[:colors][:color]
+    %tbody
+      %tr
+        %td
+          %code black
+      %tr
+        %td
+          %code blue
+      %tr
+        %td
+          %code brown
+      %tr
+        %td
+          %code cyan
+      %tr
+        %td
+          %code gray
+      %tr
+        %td
+          %code green
+      %tr
+        %td
+          %code light blue
+      %tr
+        %td
+          %code lime
+      %tr
+        %td
+          %code magenta
+      %tr
+        %td
+          %code orange
+      %tr
+        %td
+          %code pink
+      %tr
+        %td
+          %code purple
+      %tr
+        %td
+          %code red
+      %tr
+        %td
+          %code silver
+      %tr
+        %td
+          %code white
+      %tr
+        %td
+          %code yellow

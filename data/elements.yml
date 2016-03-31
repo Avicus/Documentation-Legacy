@@ -32,3 +32,5 @@
     path: /elements/objective_monuments
   - name: hills
     path: /elements/objective_hills
+  - name: wools
+    path: /elements/objective_wools

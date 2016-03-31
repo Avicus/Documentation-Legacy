@@ -45,6 +45,11 @@
 = attribute_table('Monument Attributes') do
   = attribute_row_id(false)
   = attribute_row(true) do
+    = attribute_name('name')
+    = attribute_desc('The name of the monument.')
+    = attribute_type(:localizable)
+    = attribute_column
+  = attribute_row(true) do
     = attribute_name('materials')
     = attribute_desc('The materials that can be destroyed.')
     = attribute_type(:materials)

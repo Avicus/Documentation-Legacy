@@ -1,0 +1,77 @@
+= title('Wools')
+%p
+  Players must retrieve wool blocks and place them within a region.
+
+%p
+  Wools belong inside of the
+  :xmlcode
+    <objectives/>
+  element. The
+  :xmlcode
+    <wool/>
+  tag inherits attributes from parent
+  :xmlcode
+    <wools/>
+  as demonstrated below.
+
+:xml
+  <objectives>
+    <wools>
+      <wools team="lime">
+        <wool color="magenta">
+          <source><point>70,60,42</point></source>
+          <destination><cuboid min="20,60,0" max="24,62,4"/></destination>
+        </wool>
+        <wool color="purple">
+          <source><point>50,60,45</point></source>
+          <destination><cuboid min="25,60,5" max="29,62,10"/></destination>
+        </wool>
+      </wools>
+
+      <wools team="orange">
+        <wool color="white" source="orange-white-wool" destination="orange-white-dest"/>
+        <wool color="yellow">
+          <source><point>-50,60,-45</point></source>
+          <destination><cuboid min="-25,60,-5" max="-29,62,-10"/></destination>
+        </wool>
+      </wools>
+    </wools>
+  </objectives>
+
+= attribute_table('Monument Attributes') do
+  = attribute_row_id(false)
+  = attribute_row(true) do
+    = attribute_name('color')
+    = attribute_desc('The color of the wool.')
+    = attribute_type(:dye)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('team')
+    = attribute_desc('The team that must place the wool.')
+    = attribute_type_element(:team)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('source')
+    = attribute_desc('The area that contains the wool.')
+    = attribute_type_element(:iterable_region)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('destination')
+    = attribute_desc('The area where the wool must be placed.')
+    = attribute_type_element(:bounded_region)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('refill')
+    = attribute_desc('Refill chests located in the source region automatically.')
+    = attribute_type(:boolean)
+    = attribute_default('true')
+  = attribute_row do
+    = attribute_name('craftable')
+    = attribute_desc('Prevent this wool from being crafted by a player.')
+    = attribute_type(:boolean)
+    = attribute_default('false')
+  = attribute_row do
+    = attribute_name('fireworks')
+    = attribute_desc('Spawn a firework effect and sound to players when the hill is captured.')
+    = attribute_type(:boolean)
+    = attribute_default('true')

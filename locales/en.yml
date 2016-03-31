@@ -15,6 +15,7 @@ en:
     monuments: Monuments
     hills: Hills
     colors: Colors
+    wools: Wools
   elements:
     map:
       text: This is the main, root element the all maps must provide. Every subsequent element is nested inside the map element. Note that for an XML file to be valid, it must contain the %s header.
@@ -34,4 +35,5 @@ en:
       color: Color
       aqua: This should be reserved for spectator teams.
       green: A similar and preferred alternative is often %s.
-      lime: Should not be used in conjunction with green due to their similarities.
+      lime: Should not be used in conjunction with %s due to their similarities.
+      wool: The following colors can be used for wool.

@@ -67,8 +67,12 @@ module ElementHelpers
         case type
           when :string
             label('String')
+          when :localizable
+            label('Localizable String')
           when :number
             label('Number')
+          when :dye
+            label('Dye Color')
           when :duration
             label('Duration')
           when :boolean
