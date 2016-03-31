@@ -9,7 +9,7 @@ module ElementHelpers
     partial('attribute_table', :locals => {:header => header, :block => block, :default => show_default_column})
   end
 
-  def attribute_row_id(required = false)
+  def attribute_row_id(required = true)
     name = attribute_name('id')
     desc = attribute_desc('The unique identifier used to reference this element from elsewhere.')
     type = attribute_type(:id)
