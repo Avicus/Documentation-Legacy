@@ -1,19 +1,8 @@
 <!doctype html>
 %html
   %head
-    %meta{:charset => 'utf-8'}/
-    %meta{:content => 'width=device-width, initial-scale=1.0', :name => 'viewport'}/
-    %link{:href => '/favicon.ico?v=3', :rel => 'icon', :type => 'image/x-icon'}/
-    = stylesheet_link_tag('all')
-    = stylesheet_link_tag('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
-    = javascript_include_tag('all')
-
-    %title
-      - if content_for?(:title)
-        = yield_content(:title) + ' » Atlas Map Documentation'
-      - else
-        = 'Atlas Map Documentation'
-  %body{:class => page_classes}
+    = partial 'layouts/head'
+  %body
 
     %header.navbar.navbar-default
       .container

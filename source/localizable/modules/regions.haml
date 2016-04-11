@@ -1,7 +1,7 @@
 = title('Regions')
 
 %p
-  The regions element is used to store a collection of regions that can be referenced elsewhere by their ID.
+  = t('modules.regions.text')
 
 :xml
   <regions>
@@ -23,21 +23,18 @@
   = attribute_row_id
   = attribute_row(true) do
     = attribute_name('...')
-    = attribute_desc('A variety of attributes depending on the type of region.')
+    = attribute_desc(t('modules.regions.attribute'))
     = attribute_column
     = attribute_column
 
 
 = subtitle('Region Types')
 %p
-  There are a variety of regions to utilize that differ in shape. The tags listed such as "Bounded" and "Iterable"
-  are referenced specifically in other parts of the documentation to indicate those types of regions are required
-  by the element.
+  = t('modules.regions.types')
 
-= section('Region') do
+= section(t('modules.regions.reference')) do
   %small
     = label('Bounded*', 'info')
-    = label('Iterable*', 'info')
 %p
   You may use the
   :xmlcode
@@ -54,24 +51,19 @@
     <region id="a-point"/>
   </join>
 %small
-  * This region is only considered bounded or iterable if the referenced region is bounded or iterable respectively.
+  = t('modules.regions.bounded_note')
 
 = section('Point') do
   %small
     = label('Bounded', 'info')
-    = label('Iterable', 'info')
 %p
-  A point is a single location, designated by its x, y and z coordinates, provided within the
-  :xmlcode
-    <point>
-  element. There are no attributes necessary.
+  = t('modules.regions.point')
 :xml
   <point>24, 15, 60</point>
 
 = section('Cuboid') do
   %small
     = label('Bounded', 'info')
-    = label('Iterable', 'info')
 %p
   A cuboid is a three-dimensional box with its corners at
   %code min
@@ -127,7 +119,6 @@
 = section('Join') do
   %small
     = label('Bounded*', 'info')
-    = label('Iterable*', 'info')
 %p
   Provide any number of regions within this region type to create a region that combines all
   the points of the nested regions.

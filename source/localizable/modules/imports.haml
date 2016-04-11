@@ -1,13 +1,15 @@
-= title('Imports')
+= title(t('pages.imports'))
 
 %p
-  Imports are used to split a large and redundant configuration file into multiple smaller files.
-  :xmlcode
-    <import>
-  elements should only be found directly as a child of the main
-  :xmlcode
-    <map>
-  element.
+  - tag = capture do
+    :xmlcode
+            <import>
+
+  - tag2 = capture do
+    :xmlcode
+            <map>
+
+  = t('modules.imports.text') % {:tag => tag, :tag2 => tag2}
 
 :xml
   <?xml version="1.0"?>

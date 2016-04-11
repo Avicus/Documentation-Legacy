@@ -1,9 +1,9 @@
 .jumbotron
   .container
     %h1
-      Atlas Map Documentation
+      = t('home.title')
     %p
-      A comprehensive guide to writing Atlas map configuration files.
+      = t('home.lead')
 
 .container
   .page-header
@@ -12,64 +12,31 @@
     .col-lg-8
       %h4 What is Atlas?
       %p
-        Atlas Game Manager is a Minecraft server modification for
-        = link_to('Spigot', 'https://spigotmc.org')
-        that powers multiplayer, objective-based game modes within Minecraft. Much like the
-        = link_to('Forge', 'http://www.forgehub.com/')
-        game mode of the popular video game franchise,
-        = link_to('Halo', 'https://www.halowaypoint.com') + ','
-        one can create their own game modes through modifying the actual layout and design of the world, spawn points, team colors, game rules, weapons, tools, objectives and more.
-        Though unlike in Halo Forge, Minecraft is designed around building and design, which enables Atlas map developers to create completely unique maps not based around
-        a pre-existing map. Atlas is also an ever- evolving platform that is driven by the community and the developers behind it.
+        = t('home.main')
 
       %br
       %h4 How can I use this website?
-      %p
-        This website documents how to create your own maps for the Atlas plugin. Each map has two components:
-      %ol
-        %li
-          Minecraft world containing
-          %code level.dat
-          and the
-          %code regions
-          folder.
-        %li
-          The XML map configuration file,
-          %code map.xml
-          \. This defines the elements of the map such as spawn points, team colors, names, and more.
+      = t('home.about')
 
-      %p
-        This website primarily focuses on the latter, but a tutorial and guidelines for creating an Atlas map world can be
-        = link_to('found too', '#') + '.'
-        We also do not provide instruction on how extensible markup language (XML) files are written, instead you can look
-        = link_to('here', 'http://www.xmlnews.org/docs/xml-basics.html')
-        for a basic introduction. We recommend you use your favorite application that helps you to write XML files. The following programs
-        work on most operating systems and help to spot errors and inconsistencies in the code you write:
-
-        %br
-        %table.table.table-striped
-          %thead
-            %tr
-              %th Name
-              %th Cost
-          %tbody
-            %tr
-              %td
-                = link_to('Atom', 'https://atom.io')
-              %td
-                Free & open-source, by Github.
-            %tr
-              %td
-                = link_to('Sublime Text', 'https://www.sublimetext.com')
-              %td
-                $70, free download for evaluation of the product.
-            %tr
-              %td
-                = link_to('Lime Text', 'http://limetext.org')
-              %td
-                Free & open-source, "successor to Sublime Text".
-            %tr
-              %td
-                = link_to('Brackets', 'http://brackets.io')
-              %td
-                Free & open-source, by Adobe.
+      %table.table.table-striped
+        %tbody
+          %tr
+            %td
+              = link_to('Atom', 'https://atom.io')
+            %td
+              = t('home.atom')
+          %tr
+            %td
+              = link_to('Sublime Text', 'https://www.sublimetext.com')
+            %td
+              = t('home.sublime')
+          %tr
+            %td
+              = link_to('Lime Text', 'http://limetext.org')
+            %td
+              = t('home.lime')
+          %tr
+            %td
+              = link_to('Brackets', 'http://brackets.io')
+            %td
+              = t('home.brackets')

@@ -1,16 +1,15 @@
 = title('Teams')
 
 %p
-  Teams are defined through the teams module. Each has an unique ID and name association. The team name is
-  specified as text inside each
-  :xmlcode
-    <team>
-  element.
+  = t('modules.teams.text')
+
+%p
+  = t('modules.teams.name')
 
 :xml
   <teams>
-    <team id="lime-team" color="lime" min="16" max="20">Lime</team>
-    <team id="purple-team" color="purple" min="16" max="20">Purple</team>
+    <team id="lime-team" color="lime" min="16" max="20">{lime}</team>
+    <team id="purple-team" color="purple" min="16" max="20">{purple}</team>
   </teams>
 
 
@@ -18,27 +17,22 @@
   = attribute_row_id
   = attribute_row(true) do
     = attribute_name('color')
-    = attribute_desc('The color of the team.')
+    = attribute_desc(t('modules.teams.attribute_color'))
     = attribute_column do
-      = link 'Team color', '/references/team_color'
+      = link t('modules.attributes.team_color'), '/references/colors'
     = attribute_column
   = attribute_row(true) do
     = attribute_name('min')
-    = attribute_desc('The minimum number of players on the team for the match to start.')
+    = attribute_desc(t('modules.teams.attribute_min'))
     = attribute_type(:number)
     = attribute_column
   = attribute_row(true) do
     = attribute_name('max')
-    = attribute_desc('The soft maximum number of players allowed on the team.', 'Premium users and staff are able to join beyond this value.')
+    = attribute_desc(t('modules.teams.attribute_max'), t('modules.teams.attribute_max2'))
     = attribute_type(:number)
     = attribute_column
   = attribute_row do
     = attribute_name('max-overfill')
-    = attribute_desc('The maximum number of players allowed on the team.')
+    = attribute_desc(t('modules.teams.attribute_max_overfill'))
     = attribute_type(:number)
     = attribute_default('1.25 * max')
-  = attribute_row do
-    = attribute_name('spectator')
-    = attribute_desc('Set this team as a spectator team', 'This can break certain maps and should be used with caution.')
-    = attribute_type(:boolean)
-    = attribute_default('false')

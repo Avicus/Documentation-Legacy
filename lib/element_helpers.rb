@@ -11,7 +11,7 @@ module ElementHelpers
 
   def attribute_row_id(required = true)
     name = attribute_name('id')
-    desc = attribute_desc('The unique identifier used to reference this element from elsewhere.')
+    desc = attribute_desc(t('modules.attributes.id'))
     type = attribute_type(:id)
     default = attribute_column
 

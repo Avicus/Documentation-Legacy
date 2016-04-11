@@ -1,7 +1,7 @@
-= title(t(:pages)[:authors])
+= title(t('pages.authors'))
 
 %p
-  = t(:modules)[:authors][:text]
+  = t('modules.authors.text')
 
 :xml
   <authors>
@@ -12,9 +12,9 @@
 = attribute_table(t(:modules)[:authors][:attributes], false) do
   = attribute_row(true) do
     = attribute_name('uuid')
-    = attribute_desc(t(:modules)[:authors][:attributes_uuid])
+    = attribute_desc(t('modules.authors.attributes_uuid'))
     = attribute_type(:string)
   = attribute_row do
     = attribute_name('role')
-    = attribute_desc(t(:modules)[:authors][:attributes_role])
+    = attribute_desc(t('modules.authors.attributes_role'))
     = attribute_type(:localizable)

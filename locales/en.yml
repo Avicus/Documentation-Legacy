@@ -1,6 +1,11 @@
 ---
 en:
   pages:
+    modules: Modules
+    references: References
+    contribute: Contribute
+    examples: Examples
+    maps: Maps
     map: Map
     authors: Authors
     imports: Imports
@@ -16,6 +21,49 @@ en:
     hills: Hills
     colors: Colors
     wools: Wools
+  home:
+    main:
+      Atlas Game Manager is a Minecraft server modification for
+      <a href="https://spigotmc.org">Spigot</a>
+      that powers multiplayer, objective-based game modes within Minecraft. Much like the
+      <a href="http://www.forgehub.com/">Forge</a>
+      game mode of the popular video game franchise,
+      <a href="https://www.halowaypoint.com">Halo</a>,
+      one can create their own game modes through modifying the actual layout and design of the world, spawn points, team colors, game rules, weapons, tools, objectives and more.
+      Though unlike in Halo Forge, Minecraft is designed around building and design, which enables Atlas map developers to create completely unique maps not based around
+      a pre-existing map. Atlas is also an ever- evolving platform that is driven by the community and the developers behind it.
+    about: >
+      <p>
+        This website documents how to create your own maps for the Atlas plugin. Each map has two components:
+      </p>
+      <ol>
+        <li>
+          Minecraft world containing
+          <code>level.dat</code>
+          and the
+          <code>regions</code>
+          folder.
+        </li>
+        <li>
+          The XML map configuration file,
+          <code>map.xml</code>
+          . This defines the elements of the map such as spawn points, team colors, names, and more.
+        </li>
+      </ol>
+      <p>
+        This website primarily focuses on the latter, but a tutorial and guidelines for creating an Atlas map world can be
+        <a href="#">found too</a>.
+        We also do not provide instruction on how extensible markup language (XML) files are written, instead you can look
+        <a href="http://www.xmlnews.org/docs/xml-basics.html">here</a>
+        for a basic introduction. We recommend you use your favorite application that helps you to write XML files. The following programs
+        work on most operating systems and help to spot errors and inconsistencies in the code you write:
+      </p>
+    title: "Atlas Map Documentation"
+    lead: "A comprehensive guide on creating maps and game modes for Atlas."
+    atom: "Free & open-source, by Github."
+    sublime: "$70, free download for evaluation of the product."
+    lime: "Free & open-source, "
+    brackets: "Free & open-source, by Adobe."
   modules:
     map:
       text: This is the main, root element the all maps must provide. Every subsequent element is nested inside the map element. Note that for an XML file to be valid, it must contain the %s header.
@@ -29,6 +77,28 @@ en:
       attributes: Author Attributes
       attributes_uuid: The Minecraft UUID that identifies a player.
       attributes_role: The role this author played in the creation of the map.
+    imports:
+      text: >
+        Imports are used to split a large and redundant configuration file into multiple smaller files. %{tag}
+        elements should only be found directly as a child of the main %{tag2} element.
+    teams:
+      text: "This module is used to define how many and what attributes teams should possess in the match."
+      name: "Note that the team name is not an attribute but rather is defined as text within the element. Team names should be localized, short, easy to remember and not contain "
+      attribute_color: "The color of the team."
+      attribute_min: "The minimum number of players on the team for the match to start."
+      attribute_max: "The soft maximum number of players allowed on the team."
+      attribute_max2: "Premium users and staff are able to join beyond this value."
+      attribute_max_overfill: "The maximum number of players allowed on the team."
+    attributes:
+      id: "'The unique identifier used to reference this element from elsewhere.'"
+      team_color: "Team color"
+    regions:
+      text: "The regions element is used to store a collection of regions that can be referenced elsewhere by their ID."
+      attribute: "A variety of attributes depending on the type of region."
+      types: 'There are a variety of regions to utilize that differ in shape. The "Bounded" tag are referenced specifically in other parts of the documentation to indicate that type of regions is required by the element.'
+      point: "A point is a single location, designated by its x, y and z coordinates, provided as text within the element. There are no attributes necessary."
+      bounded_note: "* This region is only considered bounded if the referenced region is bounded.."
+      reference: "Region Reference"
   references:
     colors:
       desc: The following colors can be used for teams.
