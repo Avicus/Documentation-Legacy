@@ -14,7 +14,7 @@ de:
     monuments: Monumente
     hills: Hügel
     colors: Farben
-  elements:
+  modules:
     map:
       text: 'Dies ist das Haupt Element, das für alle Maps verwendet werden muss. Jedes nachfolgende Element ist innerhalb des Map Elements verschachtelt. Beachte, dass es die %s Kopfzeile enthalten muss damit die XML Datei gültig ist.'
       attributes: Map Attribute

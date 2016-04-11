@@ -1,6 +1,6 @@
 module GeneralHelpers
   def category(text, desc = nil)
-    label = link("/elements/events##{to_slug(text)}", :class => 'decoration-none') do
+    label = link("/modules/events##{to_slug(text)}", :class => 'decoration-none') do
       label(text, 'info')
     end
     if desc

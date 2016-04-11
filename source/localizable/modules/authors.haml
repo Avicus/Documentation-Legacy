@@ -1,7 +1,7 @@
 = title(t(:pages)[:authors])
 
 %p
-  = t(:elements)[:authors][:text]
+  = t(:modules)[:authors][:text]
 
 :xml
   <authors>
@@ -9,12 +9,12 @@
     <author uuid="8242e55ecc6a458ab272a2b34918045f" role="Assistance with map design." /> <!-- funkystudios -->
   </authors>
 
-= attribute_table(t(:elements)[:authors][:attributes], false) do
+= attribute_table(t(:modules)[:authors][:attributes], false) do
   = attribute_row(true) do
     = attribute_name('uuid')
-    = attribute_desc(t(:elements)[:authors][:attributes_uuid])
+    = attribute_desc(t(:modules)[:authors][:attributes_uuid])
     = attribute_type(:string)
   = attribute_row do
     = attribute_name('role')
-    = attribute_desc(t(:elements)[:authors][:attributes_role])
+    = attribute_desc(t(:modules)[:authors][:attributes_role])
     = attribute_type(:localizable)

@@ -1,0 +1,36 @@
+- name: General Elements
+  modules:
+  - name: map
+    path: /modules/map
+  - name: authors
+    path: /modules/authors
+  - name: imports
+    path: /modules/imports
+
+- name: Game Components
+  modules:
+  - name: teams
+    path: /modules/teams
+  - name: spawns
+    path: /modules/spawns
+  - name: regions
+    path: /modules/regions
+  - name: objectives
+    path: /modules/objectives
+  - name: loadouts
+    path: /modules/loadouts
+  - name: events
+    path: /modules/events
+  - name: conditions
+    path: /modules/conditions
+  - name: triggers
+    path: /modules/triggers
+
+- name: Objectives
+  modules:
+  - name: monuments
+    path: /modules/objective_monuments
+  - name: hills
+    path: /modules/objective_hills
+  - name: wools
+    path: /modules/objective_wools

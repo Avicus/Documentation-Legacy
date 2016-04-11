@@ -4,7 +4,7 @@
   - @code = capture do
     :xmlcode
       <?xml version="1.0"?>
-  = t(:elements)[:map][:text] % @code
+  = t(:modules)[:map][:text] % @code
 
 :xml
   <?xml version="1.0"?>
@@ -12,17 +12,17 @@
     ...
   </map>
 
-= attribute_table(t(:elements)[:map][:attributes], false) do
+= attribute_table(t(:modules)[:map][:attributes], false) do
   = attribute_row(true) do
     = attribute_name('name')
-    = attribute_desc(t(:elements)[:map][:attributes_name])
+    = attribute_desc(t(:modules)[:map][:attributes_name])
     = attribute_type(:string)
   = attribute_row(true) do
     = attribute_name('version')
-    = attribute_desc(t('elements.map.attributes_version'))
+    = attribute_desc(t('modules.map.attributes_version'))
     = attribute_column do
-      = link_to(t(:elements)[:map][:semantic], 'http://semver.org')
+      = link_to(t(:modules)[:map][:semantic], 'http://semver.org')
   = attribute_row do
     = attribute_name('description')
-    = attribute_desc(t('elements.map.attributes_description'))
+    = attribute_desc(t('modules.map.attributes_description'))
     = attribute_type(:string)

@@ -16,7 +16,7 @@ en:
     hills: Hills
     colors: Colors
     wools: Wools
-  elements:
+  modules:
     map:
       text: This is the main, root element the all maps must provide. Every subsequent element is nested inside the map element. Note that for an XML file to be valid, it must contain the %s header.
       attributes: Map Attributes

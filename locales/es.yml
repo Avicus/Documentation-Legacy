@@ -14,7 +14,7 @@ es:
     monuments: Monumentos
     hills: Colinas
     colors: Colores
-  elements:
+  modules:
     map:
       text: 'Este es el elemento raíz principal, que debe ser proporcionado por todos los mapas. Cada elemento subsecuente se anida dentro del elemento mapa. Tenga en cuenta que para que un archivo XML sea válido, debe contener el encabezado %s.'
       attributes: Atributos del Mapa

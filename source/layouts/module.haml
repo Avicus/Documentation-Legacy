@@ -18,14 +18,14 @@
                 = link_slug(title, title)
           - if any_subtitles
             %br/
-          - data.elements.each do |section|
+          - data.modules.each do |section|
             %li
               %h4
                 = section.name
-            - section.elements.each do |element|
-              %li{:class => current_page.url.end_with?(element.path + '/') ? 'active' : ''}
-                = link(element.path) do
-                  = t(:pages)[element.name.downcase.to_sym]
+            - section.modules.each do |mod|
+              %li{:class => current_page.url.end_with?(mod.path + '/') ? 'active' : ''}
+                = link(mod.path) do
+                  = t(:pages)[mod.name.downcase.to_sym]
             .space
       .col-sm-9
         .module

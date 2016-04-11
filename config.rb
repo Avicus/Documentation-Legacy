@@ -1,7 +1,7 @@
 # route layouts
 page '*/examples.html', :layout => 'container'
 page '*/references/*', :layout => 'reference'
-page '*/elements/*', :layout => 'element'
+page '*/modules/*', :layout => 'module'
 page '/', :layout => 'home'
 
 # view helpers
