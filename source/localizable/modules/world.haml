@@ -1,2 +1,26 @@
 = title(t('pages.world'))
+
+:xml
+  <world>
+    <!-- set the world difficulty -->
+    <difficulty>hard</difficulty>
+
+    <!-- set Minecraft world game rules -->
+    <gamerules>
+      <doDaylightCycle>false</doDaylightCycle>
+      <doFireTick>false</doFireTick>
+    </gamerules>
+
+    <!-- allow cows to spawn and pigs to spawn from eggs -->
+    <mobs>
+      <any>
+        <entity>cow</entity>
+        <all>
+          <entity>pig</entity>
+          <spawn>spawner egg</spawn>
+        </all>
+      </any>
+    </mobs>
+  </world>
+
 = coming_soon
