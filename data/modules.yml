@@ -21,6 +21,8 @@
     path: /modules/objectives
   - name: loadouts
     path: /modules/loadouts
+  - name: items_and_drops
+    path: /modules/items_and_drops
   - name: checks
     path: /modules/checks
   - name: world

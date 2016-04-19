@@ -1,0 +1,44 @@
+= title(t('pages.items_and_drops'))
+
+:xml
+  <items>
+    <!-- remove all glass and wood when dropped -->
+    <remove-drops>
+      <any>
+        <material>glass</material>
+        <material>wood</material>
+      </any>
+    </remove-drops>
+
+    <!-- keep diamond sword in inventory after death -->
+    <keep-items>
+      <any>
+        <material>diamond sword</material>
+      </any>
+    </keep-items>
+
+    <!-- keep diamond helmet in inventory after death -->
+    <keep-armor>
+      <any>
+        <material>diamond helmet</material>
+      </any>
+    </keep-armor>
+
+  </items>
+
+= coming_soon
+
+%p
+  Potential modules...
+
+:xml
+  <items>
+    <modify-drops>
+      <!-- change cobblestone to stone -->
+      <item material="stone">
+        <any>
+          <material>cobblestone</material>
+        </any>
+      </item>
+    </modify-drops>
+  </items>

@@ -25,6 +25,7 @@ en:
     world: "World"
     zones: "Zones"
     localization: "Localization"
+    items_and_drops: "Items & Drops"
   home:
     main:
       Atlas Game Manager is a Minecraft server modification for
