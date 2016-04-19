@@ -1,0 +1,27 @@
+= title(t('pages.localization'))
+
+:xml
+  <locales>
+    <locale lang="en">
+      <errors>
+        <build-north>You cannot build in the North.</build-north>
+      </errors>
+    </locale>
+
+    <locale lang="es">
+      <errors>
+        <build-north>No puedes construir en el norte.</build-north>
+      </errors>
+    </locale>
+  </locales>
+
+
+  <!-- then you can do -->
+  <zones>
+    <zone build="false" region="the-north">
+      <build-message>{errors.build-north}</build-message>
+    </zone>
+  </zones>
+
+
+= coming_soon

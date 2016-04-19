@@ -25,6 +25,8 @@
     path: /modules/checks
   - name: world
     path: /modules/world
+  - name: localization
+    path: /modules/localization
 
 - name: Objectives
   modules:
