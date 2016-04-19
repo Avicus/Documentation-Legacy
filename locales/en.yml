@@ -21,6 +21,8 @@ en:
     hills: Hills
     colors: Colors
     wools: Wools
+    checks: "Checks"
+    world: "World"
   home:
     main:
       Atlas Game Manager is a Minecraft server modification for

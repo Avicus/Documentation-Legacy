@@ -19,12 +19,10 @@
     path: /modules/objectives
   - name: loadouts
     path: /modules/loadouts
-  - name: events
-    path: /modules/events
-  - name: conditions
-    path: /modules/conditions
-  - name: triggers
-    path: /modules/triggers
+  - name: checks
+    path: /modules/checks
+  - name: world
+    path: /modules/world
 
 - name: Objectives
   modules:
