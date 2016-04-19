@@ -24,7 +24,7 @@ en:
     checks: "Checks"
     world: "World"
     zones: "Zones"
-    localization: ""
+    localization: "Localization"
   home:
     main:
       Atlas Game Manager is a Minecraft server modification for
