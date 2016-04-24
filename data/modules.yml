@@ -38,3 +38,5 @@
     path: /modules/objective_hills
   - name: wools
     path: /modules/objective_wools
+  - name: flags
+    path: /modules/objective_flags
