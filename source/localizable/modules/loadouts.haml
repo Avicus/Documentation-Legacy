@@ -1,2 +1,48 @@
 = title('Loadouts')
 = coming_soon
+
+
+:xml
+  <loadouts>
+    <loadout id="default">
+      <helmet material="iron helmet"/>
+      <chestplate materal="leather chestplate" team-color="true">
+        <enchantment level="2">protection all</enchantment>
+      </chestplate>
+
+      <item slot="0" material="stone sword"/>
+      <item slot="1" material="bow"/>
+      <item slot="8" material="arrow" amount="16"/>
+      <item slot="2" material="wool" color="red"/>
+      <glow/>
+    </loadout">
+  </loadouts>
+
+:xml
+  <!-- a black banner with a silver border and red skull -->
+  <item material="banner" color="black">
+    <pattern color="red">skull</pattern>
+    <pattern color="silver">border</pattern>
+  </item>
+
+:xml
+  <locales>
+    <locale lang="en">
+      <special-sword>Stone Dagger</special-sword>
+      <special-sword-1>Small, but deadly. It's said to</special-sword-1>
+      <special-sword-2>have been used to slay dragons.</special-sword-2>
+    </locale>
+  </locales>
+
+  <!-- a special sword that's unbreakable and has enchantments and localized name/lore -->
+  <item material="stone sword" title="^b{special-sword}" unbreakable="true" flags="hide enchants">
+    <lore>^c{special-sword-1}</lore>
+    <lore>^c{special-sword-2}</lore>
+    <enchantment level="3">damage all</enchantment>
+    <enchantment level="1">knockback</enchantment>
+  </item>
+
+
+:xml
+  <!-- a funky skull -->
+  <item material="skull item" skull="funkystudios"/>
