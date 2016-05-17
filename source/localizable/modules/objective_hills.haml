@@ -40,7 +40,7 @@
     </hills>
   </objectives>
 
-= attribute_table('Monument Attributes') do
+= attribute_table('Hill Attributes') do
   = attribute_row_id(false)
   = attribute_row(true) do
     = attribute_name('name')
@@ -58,15 +58,10 @@
     = attribute_type_element(:iterable_region)
     = attribute_column
   = attribute_row do
-    = attribute_name('capture-condition')
-    = attribute_desc('The condition a player must match to capture the hill.', 'By default, all players and teams can capture the hill.')
-    = attribute_type_element(:condition)
-    = attribute_column
-  = attribute_row do
     = attribute_name('capture-rule')
     = attribute_desc('Rule used to determine which team is currently capturing the hill.')
     = attribute_column do
-      = link_to 'Capture condition', '#capture_condition'
+      = link_to 'Capture rule', '#capture_rule'
     = attribute_default('exclusive')
   = attribute_row do
     = attribute_name('capture-time')

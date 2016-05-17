@@ -43,8 +43,6 @@ module ElementHelpers
       case type
         when :team
           label('Element ID') + tag('br') + link(text ? text : 'Team', '/modules/teams')
-        when :condition
-          label('Element ID') + tag('br') + link(text ? text : 'Condition', '/modules/conditions')
         when :region
           label('Element ID') + tag('br') + link(text ? text : 'Region', '/modules/regions')
         when :bounded_region

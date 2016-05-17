@@ -96,7 +96,7 @@ en:
       attribute_max2: "Premium users and staff are able to join beyond this value."
       attribute_max_overfill: "The maximum number of players allowed on the team."
     attributes:
-      id: "'The unique identifier used to reference this element from elsewhere.'"
+      id: "The globally unique identifier used to reference this element from elsewhere."
       team_color: "Team color"
     regions:
       text: "The regions element is used to store a collection of regions that can be referenced elsewhere by their ID."
@@ -105,6 +105,24 @@ en:
       point: "A point is a single location, designated by its x, y and z coordinates, provided as text within the element. There are no attributes necessary."
       bounded_note: "* This region is only considered bounded if the referenced region is bounded.."
       reference: "Region Reference"
+    spawns:
+      text: "Spawns are regions where players spawn into the map upon joining or respawning after death."
+      attributes: "Spawn Attributes"
+      attributes_team: "The team of which this spawn should apply."
+      attributes_region: "The region into which players should spawn."
+      attributes_region2: "This is only used if regions is not specified within the spawn element."
+      attributes_regions: "The regions into which players should spawn."
+      attributes_look: "The coordinate that the player looks at when spawned."
+      attributes_look2: "This value overrides the pitch and yaw attributes."
+      attributes_yaw: "The yaw (horizontal angle) the player looks when spawned."
+      attributes_pitch: "The pitch (vertical angle) the player looks when spawned."
+      regions: Spawn Regions
+      regions_text: "Regions can be provided within a spawn element. These inline regions can have a yaw or pitch associated with them that overrides the spawn element's yaw and pitch."
+      selection_mode: "Selection Mode"
+      attributes_mode: "Modifies which region is selected for this spawn point."
+      selection_random: "A random region is selected."
+      selection_safe: "The region that is most isolated from enemy teams or players is selected."
+      selection_spread: "The region that is most isolated from all in-game players is selected."
   references:
     colors:
       desc: The following colors can be used for teams.
