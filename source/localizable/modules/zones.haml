@@ -2,21 +2,19 @@
 
 :xml
   <zones>
-    <base team="red">
+    <zone modify="never">
       <region>
-        <cuboid min="50, 0, -50" max="60, 30, -20"/>
+        <invert><cuboid min="-100, 0, -100" max="100, 120, 100"/></invert>
       </region>
-    </base>
+      <message>{errors.outside-map}</message>
+    </zone>
 
-    <base team="blue">
-      <region>
-        <cuboid min="-50, 0, 50" max="-60, 30, 20"/>
-      </region>
-    </base>
-
-    <zone build="false" region="safe-place"/>
-
-    <playable region="map-region"/>
+    <zone>
+      <enter>
+        <team>red</team>
+      </enter>
+      <message>{errors.enemy-base}</message>
+    </zone>
   </zones>
 
 = coming_soon
