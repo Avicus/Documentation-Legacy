@@ -2,6 +2,7 @@
 
 :xml
   <zones>
+    <!-- Prevents building outside of the map. -->
     <zone modify="never">
       <region>
         <invert><cuboid min="-100, 0, -100" max="100, 120, 100"/></invert>
@@ -9,11 +10,15 @@
       <message>{errors.outside-map}</message>
     </zone>
 
-    <zone>
+    <!-- Red can score 3 points in this scorebox. -->
+    <zone region="red-scorebox">
       <enter>
         <team>red</team>
       </enter>
-      <message>{errors.enemy-base}</message>
+      <scorebox points="3"/>
+      <portal>
+        <destination region="red-spawn"/>
+      </portal>
     </zone>
   </zones>
 

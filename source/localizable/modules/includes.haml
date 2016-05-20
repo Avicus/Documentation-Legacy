@@ -1,27 +1,27 @@
-= title(t('pages.imports'))
+= title(t('pages.includes'))
 
 %p
   - tag = capture do
     :xmlcode
-            <import>
+            <include>
 
   - tag2 = capture do
     :xmlcode
             <map>
 
-  = t('modules.imports.text') % {:tag => tag, :tag2 => tag2}
+  = t('modules.includes.text') % {:tag => tag, :tag2 => tag2}
 
 :xml
   <?xml version="1.0"?>
   <map name="Revolution" version="1.5.3">
-    <import src="defaults.xml"/>
-    <import src="rev-classes.xml" local="true"/>
+    <include src="defaults.xml"/>
+    <include src="rev-classes.xml" local="true"/>
 
     ...
 
   </map>
 
-= attribute_table('Import Attributes') do
+= attribute_table('Include Attributes') do
   = attribute_row(true) do
     = attribute_name('src')
     = attribute_desc('The path to another map configuration file.')

@@ -8,7 +8,7 @@ en:
     maps: Maps
     map: Map
     authors: Authors
-    imports: Imports
+    includes: Includes
     teams: Teams
     spawns: Spawns
     regions: Regions
@@ -83,9 +83,9 @@ en:
       attributes: Author Attributes
       attributes_uuid: The Minecraft UUID that identifies a player.
       attributes_role: The role this author played in the creation of the map.
-    imports:
+    includes:
       text: >
-        Imports are used to split a large and redundant configuration file into multiple smaller files. %{tag}
+        Includes are used to split a large and redundant configuration file into multiple smaller files. %{tag}
         elements should only be found directly as a child of the main %{tag2} element.
     teams:
       text: "This module is used to define how many and what attributes teams should possess in the match."
