@@ -123,6 +123,12 @@ en:
       selection_random: "A random region is selected."
       selection_safe: "The region that is most isolated from enemy teams or players is selected."
       selection_spread: "The region that is most isolated from all in-game players is selected."
+      respawn_behavior: "Respawn Behavior"
+      spawns_attributes: "Spawns Attributes"
+      attributes_respawn_delay: "The minimum amount of time a player must wait to respawn."
+      attributes_auto_respawn: "Enable auto respawning, disabling the typical punch to respawn feature."
+      attributes_respawn_freeze: "When enabled, the player is frozen while respawning. Otherwise they can spectate the match."
+      respawn_behavior_text: "After a player dies, they typically enter a state where they are expected to respawn back into the match. This state can be customized to a certain extent using attributes in this module."
   references:
     colors:
       desc: The following colors can be used for teams.

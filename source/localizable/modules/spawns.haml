@@ -86,3 +86,24 @@
     %code spread
     \-
     = t('modules.spawns.selection_spread')
+
+= subtitle(t('modules.spawns.respawn_behavior'))
+%p
+  = t('modules.spawns.respawn_behavior_text')
+  
+= attribute_table((t'modules.spawns.spawns_attributes')) do
+  = attribute_row do
+    = attribute_name('respawn-delay')
+    = attribute_desc(t('modules.spawns.attributes_respawn_delay'))
+    = attribute_type(:duration)
+    = attribute_default('2s')
+  = attribute_row do
+    = attribute_name('auto-respawn')
+    = attribute_desc(t('modules.spawns.attributes_auto_respawn'))
+    = attribute_type(:boolean)
+    = attribute_default('false')
+  = attribute_row do
+    = attribute_name('respawn-freeze')
+    = attribute_desc(t('modules.spawns.attributes_respawn_freeze'))
+    = attribute_type(:boolean)
+    = attribute_default('true')
