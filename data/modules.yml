@@ -5,7 +5,7 @@
   - name: authors
     path: /modules/authors
   - name: imports
-    path: /modules/imports
+    path: /modules/includes
 
 - name: Game Components
   modules:
