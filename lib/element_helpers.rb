@@ -49,6 +49,10 @@ module ElementHelpers
           label('Element ID') + tag('br') + link(text ? text : 'Bounded region', '/modules/regions')
         when :iterable_region
           label('Element ID') + tag('br') + link(text ? text : 'Iterable region', '/modules/regions')
+        when :zone
+          label('Element ID') + tag('br') + link(text ? text : 'Zone', '/modules/zones')
+        when :check
+          label('Element ID') + tag('br') + link(text ? text : 'Check', '/modules/checks')
         else
           raise "#{type} is not a valid attribute_type_reference"
       end
