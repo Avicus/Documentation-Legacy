@@ -21,14 +21,14 @@
 
   </map>
 
-= attribute_table('Include Attributes') do
+= attribute_table(t('modules.includes.attributes')) do
   = attribute_row(true) do
     = attribute_name('src')
-    = attribute_desc('The path to another map configuration file.')
+    = attribute_desc(t('modules.includes.src-desc'))
     = attribute_type(:text)
     = attribute_column
   = attribute_row do
     = attribute_name('local')
-    = attribute_desc('If set to to true, it will search for the import in the same directory as the map.xml, otherwise it searches in the shared maps directory.')
+    = attribute_desc(t('modules.includes.local-desc'))
     = attribute_type(:boolean)
     = attribute_default('false')

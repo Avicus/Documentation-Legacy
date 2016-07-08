@@ -1,7 +1,7 @@
 = title(t('pages.elimination'))
 
 %p
-  Use this module to limit the number of lives a player has on the map.
+  = t('modules.elimination.text-1')
 
 :xml
   <elimination lives="3"/>
@@ -9,6 +9,6 @@
 = attribute_table("Elimination Attributes") do
   = attribute_row(true) do
     = attribute_name('lives')
-    = attribute_desc("The amount of lives each player has.")
+    = attribute_desc(t('modules.elimination.lives-desc'))
     = attribute_type(:number)
     = attribute_default(1)

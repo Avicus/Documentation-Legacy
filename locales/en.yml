@@ -100,6 +100,9 @@ en:
       text: >
         Includes are used to split a large and redundant configuration file into multiple smaller files. %{tag}
         elements should only be found directly as a child of the main %{tag2} element.
+      attributes: "Include Attributes"
+      src-desc: "The path to another map configuration file."
+      local-desc: "If set to to true, it will search for the import in the same directory as the map.xml, otherwise it searches in the shared maps directory."
     teams:
       text: "This module is used to define how many and what attributes teams should possess in the match."
       name: "Note that the team name is not an attribute but rather is defined as text within the element. Team names should be localized, short, easy to remember and not contain "
@@ -240,6 +243,10 @@ en:
               sub check can be used to determine information about the person who inflicted the damage.
               You can also check for location and any information related to the player who is being damaged.
             </p>
+    elimination:
+      text: "Use this module to limit the number of lives a player has on the map."
+      attributes: "Elimination Attributes"
+      lives-desc: "The amount of lives each player has."
   references:
     colors:
       desc: The following colors can be used for teams.
