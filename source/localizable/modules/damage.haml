@@ -1,7 +1,7 @@
 = title(t('pages.damage'))
 
 %p
-  Use this module to disable damage across the entire map.
+  = t('modules.damage.text-1')
 
 :xml
 
@@ -12,9 +12,4 @@
     </any>
   </damage>
 
-%p
-  The
-  :xmlcode
-    <attacker>
-  sub check can be used to determine information about the person who inflicted the damage.
-  You can also check for location and any information related to the player who is being damaged.
+= t('modules.damage.text-2')

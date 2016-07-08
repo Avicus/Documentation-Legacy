@@ -232,6 +232,14 @@ en:
               </p>
       target-desc: "The location for the compass to target. You can also provide <code>enemy</code> which will target the nearest enemy."
       check-desc: "Check to be run on the player before targeting them."
+    damage:
+      text-1: "Use this module to disable damage across the entire map."
+      text-2: <p>
+              The
+              <code class=" language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>attacker</span><span class="token punctuation">&gt;</span></span></code>
+              sub check can be used to determine information about the person who inflicted the damage.
+              You can also check for location and any information related to the player who is being damaged.
+            </p>
   references:
     colors:
       desc: The following colors can be used for teams.
