@@ -93,8 +93,6 @@ module ElementHelpers
             label('ID')
           when :player
             label('Player')
-          when :double
-            label("Double")
           else
             raise "#{type} is not a valid attribute_type"
         end
