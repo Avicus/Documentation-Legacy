@@ -69,10 +69,10 @@ module ElementHelpers
         end
       else
         case type
-          when :string
-            label('String')
+          when :text
+            label('Text')
           when :localizable
-            label('Localizable String')
+            label('Localizable Text')
           when :number
             label('Number')
           when :dye
