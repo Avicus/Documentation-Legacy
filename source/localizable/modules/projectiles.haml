@@ -1,0 +1,48 @@
+= title(t('pages.projectiles'))
+
+%p
+  Use this module to create custom projectiles. These can be referenced by id in loadouts.
+
+:xml
+  <projectiles>
+    <projectile id="tnt" name="TNT Bow" type="TNTPrimed" cooldown="11s"/>
+  </projectiles>
+
+= attribute_table("Projectile Attributes") do
+  = attribute_row_id
+  = attribute_row(true) do
+    = attribute_name('name')
+    = attribute_desc("Name of the custom projectile for use in death messages and cool-down alerts.")
+    = attribute_type(:string)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('type')
+    = attribute_desc("The type of entity to shoot out of the player.")
+    = attribute_desc(label('Entity Type')) do
+      = link_to('Entity Types' ,'https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html')
+    = attribute_column
+  = attribute_row do
+    = attribute_name('damage')
+    = attribute_desc("Amount of damage the projectile will do when it hits the player.")
+    = attribute_type(:double)
+    = attribute_default(1.0)
+  = attribute_row do
+    = attribute_name('velocity')
+    = attribute_desc("The velocity of the projectile.")
+    = attribute_type(:double)
+    = attribute_default(1.0)
+  = attribute_row do
+    = attribute_name('loadout')
+    = attribute_desc("The loadout to apply to the player who is struck.")
+    = attribute_type_element(:loadout)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('cooldown')
+    = attribute_desc("The time it takes for the projectile item to be used again after use.")
+    = attribute_type(:duration)
+    = attribute_default(0)
+  = attribute_row do
+    = attribute_name('mount')
+    = attribute_desc("If the player should mount the projectile after it is fired.")
+    = attribute_type(:boolean)
+    = attribute_default(false)

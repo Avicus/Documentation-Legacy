@@ -31,6 +31,7 @@ en:
     damage: "Damage"
     elimination: "Elimination"
     kills-deaths: "Kills/Deaths"
+    projectiles: "Custom Projectiles"
   home:
     main:
       Atlas Game Manager is a Minecraft server modification for

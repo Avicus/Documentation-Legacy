@@ -52,3 +52,5 @@
     path: /modules/damage
   - name: kills-deaths
     path: /modules/kills-deaths
+  - name: projectiles
+    path: /modules/projectiles
