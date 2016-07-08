@@ -4,10 +4,10 @@
   %table.table.table-condensed
     %thead
       %tr
-        %th{:style => 'width: 18%'} Attribute
-        %th Description
-        %th Type
+        %th{:style => 'width: 18%'}= rowNames[0]
+        %th= rowNames[1]
+        %th= rowNames[2]
         - if default
-          %th{:style => 'width: 13%'} Default
+          %th{:style => 'width: 13%'}= rowNames[3]
     %tbody
       = capture(&block)
