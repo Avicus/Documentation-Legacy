@@ -1,2 +1,60 @@
 = title(t('pages.checks'))
-= coming_soon
+
+%p
+  Checks are different types of methods that can be used in order to narrow down the possible chances for an event to occur.
+%p
+  An example of this would be narrowing down the players who can capture a flag, enter a zone, or break blocks.
+
+%p
+  All checks are defined inside the
+  :xmlcode
+    <checks>
+  tag and then referenced by id in the rest of the XML.
+
+= subtitle('Variables')
+%p
+  Variables are different sources of information that a check can be supplied with in order to narrow down the scope of what is being checked against.
+  Some examples of this are what the weather currently is, the type of block a player is placing, or the type of entity that is attacking a player.
+
+= attribute_table('Variables', false, ["Name", "Description", "Information Type"]) do
+  = attribute_row do
+    = attribute_name('Attacker')
+    = attribute_desc("A wrapper variable that contains player and location information about the cause of an attack.")
+    = attribute_type(:player)
+  = attribute_row do
+    = attribute_name('Damage')
+    = attribute_desc("The type of damage inflicted on a player.")
+    = attribute_desc(label('Damage Cause')) do
+      = link_to('Damage Types' ,'https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html')
+  = attribute_row do
+    = attribute_name('Entity')
+    = attribute_desc("The type of entity that the check is being performed against.")
+    = attribute_desc(label('Entity Type')) do
+      = link_to('Entity Types' ,'https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html')
+  = attribute_row do
+    = attribute_name('Item')
+    = attribute_desc("The type of item that the check is being performed against. This variable includes all of an item's attributes")
+    = attribute_desc(label('Item')) do
+      = link("Item Attributes", "/modules/loadouts")
+  = attribute_row do
+    = attribute_name('Location')
+    = attribute_desc("The location in the world where the action is taking place.")
+    = attribute_type(:xyz)
+  = attribute_row do
+    = attribute_name('Material')
+    = attribute_desc("Similar to the item variable but only includes the material of the item (or block) being checked against.")
+    = attribute_desc(label('Material')) do
+      = link_to("Material Types", "https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html")
+  = attribute_row do
+    = attribute_name('Player')
+    = attribute_desc("The player who is performing the checked action. This is then generalized into the player's team in order to broaden the check")
+    = attribute_type(:player)
+  = attribute_row do
+    = attribute_name('Spawn Reason')
+    = attribute_desc("Reason the entity being checked spawned.")
+    = attribute_desc(label('Spawn Reason')) do
+      = link_to("Spawn Reason Types", "https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html")
+  = attribute_row do
+    = attribute_name('Victim')
+    = attribute_desc("A wrapper variable that contains player and location information about the victim of the attack.")
+    = attribute_type(:player)
