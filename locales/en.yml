@@ -29,6 +29,7 @@ en:
     items_and_drops: "Items & Drops"
     compasses: "Compasses"
     damage: "Damage"
+    elimination: "Elimination"
   home:
     main:
       Atlas Game Manager is a Minecraft server modification for

@@ -17,6 +17,11 @@
     path: /modules/spawns
   - name: loadouts
     path: /modules/loadouts
+  - name: elimination
+    path: /modules/elimination
+
+- name: Locations & Checks
+  modules:
   - name: regions
     path: /modules/regions
   - name: zones
