@@ -89,6 +89,8 @@ module ElementHelpers
             label('Comparator')
           when :id
             label('ID')
+          when :player
+            label('Player')
           else
             raise "#{type} is not a valid attribute_type"
         end
