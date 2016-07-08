@@ -53,6 +53,8 @@ module ElementHelpers
           label('Element ID') + tag('br') + link(text ? text : 'Zone', '/modules/zones')
         when :check
           label('Element ID') + tag('br') + link(text ? text : 'Check', '/modules/checks')
+        when :loadout
+          label('Element ID') + tag('br') + link(text ? text : 'Loadout', '/modules/loadouts')
         else
           raise "#{type} is not a valid attribute_type_reference"
       end
@@ -91,6 +93,8 @@ module ElementHelpers
             label('ID')
           when :player
             label('Player')
+          when :double
+            label("Double")
           else
             raise "#{type} is not a valid attribute_type"
         end
