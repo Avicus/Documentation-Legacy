@@ -1,0 +1,20 @@
+= title(t('pages.kills-deaths'))
+
+%p
+  Use this module to add checks that allow/deny kills and deaths.
+
+:xml
+  <kills>
+    <kill-check id="only-red"/>
+    <death-check id="in-mid"/>
+  </kills>
+
+= attribute_table("Checks", false) do
+  = attribute_row do
+    = attribute_name('kill-check')
+    = attribute_desc("Check that is run before any kill will occur.")
+    = attribute_type_element(:check)
+  = attribute_row do
+    = attribute_name('death-check')
+    = attribute_desc("Check that is run before any death will occur.")
+    = attribute_type_element(:check)

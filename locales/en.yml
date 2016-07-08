@@ -30,6 +30,7 @@ en:
     compasses: "Compasses"
     damage: "Damage"
     elimination: "Elimination"
+    kills-deaths: "Kills/Deaths"
   home:
     main:
       Atlas Game Manager is a Minecraft server modification for
