@@ -6,7 +6,8 @@
       %tr
         %th{:style => 'width: 18%'}= rowNames[0]
         %th= rowNames[1]
-        %th= rowNames[2]
+        - if rowNames[2].present?
+          %th= rowNames[2]
         - if default
           %th{:style => 'width: 13%'}= rowNames[3]
     %tbody
