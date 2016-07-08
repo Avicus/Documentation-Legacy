@@ -4,7 +4,7 @@
     path: /modules/map
   - name: authors
     path: /modules/authors
-  - name: imports
+  - name: includes
     path: /modules/includes
 
 - name: Game Components
@@ -13,22 +13,22 @@
     path: /modules/teams
   - name: spawns
     path: /modules/spawns
-  - name: regions
-    path: /modules/regions
-  - name: zones
-    path: /modules/zones
-  - name: objectives
-    path: /modules/objectives
   - name: loadouts
     path: /modules/loadouts
   - name: items_and_drops
     path: /modules/items_and_drops
-  - name: checks
-    path: /modules/checks
   - name: world
     path: /modules/world
   - name: localization
     path: /modules/localization
+  - name: regions
+    path: /modules/regions
+  - name: zones
+    path: /modules/zones
+  - name: checks
+    path: /modules/checks
+  - name: compasses
+    path: /modules/compasses
 
 - name: Objectives
   modules:
