@@ -47,7 +47,7 @@
       = link_to("Material Types", "https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html")
   = attribute_row do
     = attribute_name('Player')
-    = attribute_desc("The player who is performing the checked action. This is then generalized into the player's team in order to broaden the check")
+    = attribute_desc("The player who is performing the checked action. This holds all information about a player but is never used to find a specific player by name.")
     = attribute_type(:player)
   = attribute_row do
     = attribute_name('Spawn Reason')
@@ -58,3 +58,78 @@
     = attribute_name('Victim')
     = attribute_desc("A wrapper variable that contains player and location information about the victim of the attack.")
     = attribute_type(:player)
+
+= subtitle('Check Types')
+
+%p
+  There are many different types of checks that can be applied to different in-game events. These checks can also be combined and negated (as stated below). Each check takes one or more of the variables listed above.
+
+= attribute_table('Check', false, ["Type", "Description", "Notes"]) do
+  = attribute_row do
+    = attribute_name('Attacker')
+    = attribute_desc("A wrapper check that contains player information about the cause of an attack.")
+    = attribute_column
+  = attribute_row do
+    = attribute_name('Carrying')
+    = attribute_desc("Checks the type of item a player is holding in their inventory.")
+    = attribute_desc("Written exactly like an item tag in a loadout.")
+  = attribute_row do
+    = attribute_name('Damage')
+    = attribute_desc("Checks the type of damage a player is receiving.")
+    = attribute_column
+  = attribute_row do
+    = attribute_name('Entity Type')
+    = attribute_desc("Checks the type of entity that is causing the event.")
+    = attribute_column
+  = attribute_row do
+    = attribute_name('Holding')
+    = attribute_desc("Checks the type of item a player is holding in their hand.")
+    = attribute_desc("Written exactly like an item tag in a loadout.")
+  = attribute_row do
+    = attribute_name('Inside')
+    = attribute_desc("Checks if the player is in a certain region.")
+    = attribute_desc("Region is defined by ID")
+  = attribute_row do
+    = attribute_name('Item')
+    = attribute_desc("Checks the type of item involved in the event.")
+    = attribute_desc("Written exactly like an item tag in a loadout.")
+  = attribute_row do
+    = attribute_name('Material')
+    = attribute_desc("Checks the type of material involved in the event.")
+    = attribute_desc("Only checks type of item.")
+  = attribute_row do
+    = attribute_name('Objective')
+    = attribute_desc("Checks to see if an objective is complete.")
+    = attribute_desc("A team ID can be supplied to check if a team completed the objective.")
+  = attribute_row do
+    = attribute_name('Random')
+    = attribute_desc("Randomly returns true based on the supplied amount of randomness.")
+    = attribute_desc("Randomness should be written as a double (The higher the number, the greater chance of it happening).")
+  = attribute_row do
+    = attribute_name('Sometimes')
+    = attribute_desc("Helper method for the above check with a randomness of 0.5")
+    = attribute_column
+  = attribute_row do
+    = attribute_name('Spawn')
+    = attribute_desc("Checks the reason an entity spawned.")
+    = attribute_column
+  = attribute_row do
+    = attribute_name('Team')
+    = attribute_desc("Checks the team the player is on who is causing the event.")
+    = attribute_column
+  = attribute_row do
+    = attribute_name('Time')
+    = attribute_desc("Checks the match time in comparison with the supplied value.")
+    = attribute_desc("A `compare` attribute can be added to change the comparison method (Default '=')")
+  = attribute_row do
+    = attribute_name('Victim')
+    = attribute_desc("A wrapper check that contains player information about the victim of an attack.")
+    = attribute_column
+  = attribute_row do
+    = attribute_name('Wearing')
+    = attribute_desc("Checks the type of item a player is wearing in any of their amor slots.")
+    = attribute_desc("Written exactly like an armor tag in a loadout.")
+  = attribute_row do
+    = attribute_name('Weather')
+    = attribute_desc("Checks the weather in the match world.")
+    = attribute_desc("Types of weather are DOWNFALL and CLEAR")
