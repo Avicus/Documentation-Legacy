@@ -5,8 +5,15 @@
 
 :xml
   <projectiles>
-    <projectile id="tnt" name="TNT Bow" type="TNTPrimed" cooldown="11s"/>
+    <projectile id="tnt" name="{tnt-bow}" type="primed tnt" cooldown="11s"/>
   </projectiles>
+  
+  <!-- Translate {tnt-bow} -->
+  <locales>
+    <locale lang="en">
+      <tnt-bow>TNT Bow</tnt-bow>
+    </locale>
+  </locales>
 
 = attribute_table("Projectile Attributes") do
   = attribute_row_id
