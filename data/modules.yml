@@ -6,6 +6,8 @@
     path: /modules/authors
   - name: includes
     path: /modules/includes
+  - name: localization
+    path: /modules/localization
 
 - name: Game Components
   modules:
@@ -15,20 +17,12 @@
     path: /modules/spawns
   - name: loadouts
     path: /modules/loadouts
-  - name: items_and_drops
-    path: /modules/items_and_drops
-  - name: world
-    path: /modules/world
-  - name: localization
-    path: /modules/localization
   - name: regions
     path: /modules/regions
   - name: zones
     path: /modules/zones
   - name: checks
     path: /modules/checks
-  - name: compasses
-    path: /modules/compasses
 
 - name: Objectives
   modules:
@@ -40,3 +34,14 @@
     path: /modules/objective_wools
   - name: flags
     path: /modules/objective_flags
+
+- name: Game Modification
+  modules:
+  - name: items_and_drops
+    path: /modules/items_and_drops
+  - name: world
+    path: /modules/world
+  - name: compasses
+    path: /modules/compasses
+  - name: damage
+    path: /modules/damage
