@@ -1,184 +1,170 @@
 = title(t('pages.checks'))
 
-%p
-  Checks are different types of methods that can be used in order to narrow down the possible chances for an event to occur.
-%p
-  An example of this would be narrowing down the players who can capture a flag, enter a zone, or break blocks.
+= t('modules.checks.text')
 
+= subtitle(t('modules.checks.variables.variables'))
 %p
-  All checks are defined inside the
-  :xmlcode
-    <checks>
-  tag and then referenced by id in the rest of the XML.
+=  t('modules.checks.variables.text')
 
-= subtitle('Variables')
-%p
-  Variables are different sources of information that a check can be supplied with in order to narrow down the scope of what is being checked against.
-  Some examples of this are what the weather currently is, the type of block a player is placing, or the type of entity that is attacking a player.
-
-= attribute_table('Variables', false, ["Name", "Description", "Information Type"]) do
+= attribute_table(t('modules.checks.variables.variables'), false, [t('table.name'), t('table.description'), t('table.information')]) do
   = attribute_row do
-    = attribute_name('Attacker')
-    = attribute_desc("A wrapper variable that contains player and location information about the cause of an attack.")
+    = attribute_name("Attacker")
+    = attribute_desc(t('modules.checks.variables.attacker-desc'))
     = attribute_type(:player)
   = attribute_row do
     = attribute_name('Damage')
-    = attribute_desc("The type of damage inflicted on a player.")
+    = attribute_desc(t('modules.checks.variables.damage-desc'))
     = attribute_desc(label('Damage Cause')) do
       = link_to('Damage Types' ,'https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html')
   = attribute_row do
     = attribute_name('Entity')
-    = attribute_desc("The type of entity that the check is being performed against.")
+    = attribute_desc(t('modules.checks.variables.entity-desc'))
     = attribute_desc(label('Entity Type')) do
       = link_to('Entity Types' ,'https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html')
   = attribute_row do
     = attribute_name('Item')
-    = attribute_desc("The type of item that the check is being performed against. This variable includes all of an item's attributes")
+    = attribute_desc(t('modules.checks.variables.item-desc'))
     = attribute_desc(label('Item')) do
       = link("Item Attributes", "/modules/loadouts")
   = attribute_row do
     = attribute_name('Location')
-    = attribute_desc("The location in the world where the action is taking place.")
+    = attribute_desc(t('modules.checks.variables.location-desc'))
     = attribute_type(:xyz)
   = attribute_row do
     = attribute_name('Material')
-    = attribute_desc("Similar to the item variable but only includes the material of the item (or block) being checked against.")
+    = attribute_desc(t('modules.checks.variables.material-desc'))
     = attribute_desc(label('Material')) do
       = link_to("Material Types", "https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html")
   = attribute_row do
     = attribute_name('Player')
-    = attribute_desc("The player who is performing the checked action. This holds all information about a player but is never used to find a specific player by name.")
+    = attribute_desc(t('modules.checks.variables.player-desc'))
     = attribute_type(:player)
   = attribute_row do
     = attribute_name('Spawn Reason')
-    = attribute_desc("Reason the entity being checked spawned.")
+    = attribute_desc(t('modules.checks.variables.spawn-desc'))
     = attribute_desc(label('Spawn Reason')) do
       = link_to("Spawn Reason Types", "https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html")
   = attribute_row do
     = attribute_name('Victim')
-    = attribute_desc("A wrapper variable that contains player and location information about the victim of the attack.")
+    = attribute_desc(t('modules.checks.variables.victim-desc'))
     = attribute_type(:player)
 
-= subtitle('Static Checks')
+= subtitle(t('modules.checks.static.static'))
 
 %p
-  These are helper checks that will always return the same value.
+  = t('modules.checks.static.text')
 
-= attribute_table('Check', false, ["Type", "Description"]) do
+= attribute_table(t('modules.checks.check'), false, [t('table.type'), t('table.description')]) do
   = attribute_row do
     = attribute_name('Always')
-    = attribute_desc("Always passes.")
+    = attribute_desc(t('modules.checks.static.always-desc'))
   = attribute_row do
     = attribute_name('Never')
-    = attribute_desc("Always fails.")
+    = attribute_desc(t('modules.checks.static.never-desc'))
 
 
 
-= subtitle('Check Types')
+= subtitle(t('modules.checks.types.types'))
 
 %p
-  There are many different types of checks that can be applied to different in-game events. These checks can also be combined and negated (as stated below). Each check takes one or more of the variables listed above.
-  %code
-    NOTE:
-  All of the tag names should be in lower case.
+  = t('modules.checks.types.text')
 
-= attribute_table('Check', false, ["Type", "Description", "Notes"]) do
+= attribute_table(t('modules.checks.check'), [t('table.type'), t('table.description'), t('table.notes')]) do
   = attribute_row do
     = attribute_name('Attacker')
-    = attribute_desc("A wrapper check that contains player information about the cause of an attack.")
+    = attribute_desc(t('modules.checks.types.attacker-desc'))
     = attribute_column
   = attribute_row do
     = attribute_name('Carrying')
-    = attribute_desc("Checks the type of item a player is holding in their inventory.")
-    = attribute_desc("Written exactly like an item tag in a loadout.")
+    = attribute_desc(t('modules.checks.types.carrying-desc'))
+    = attribute_desc(t('modules.checks.types.carrying-notes'))
   = attribute_row do
     = attribute_name('Damage')
-    = attribute_desc("Checks the type of damage a player is receiving.")
+    = attribute_desc(t('modules.checks.types.damage-desc'))
     = attribute_column
   = attribute_row do
     = attribute_name('Entity')
-    = attribute_desc("Checks the type of entity that is causing the event.")
+    = attribute_desc(t('modules.checks.types.entity-desc'))
     = attribute_column
   = attribute_row do
     = attribute_name('Holding')
-    = attribute_desc("Checks the type of item a player is holding in their hand.")
-    = attribute_desc("Written exactly like an item tag in a loadout.")
+    = attribute_desc(t('modules.checks.types.holding-desc'))
+    = attribute_desc(t('modules.checks.types.holding-notes'))
   = attribute_row do
     = attribute_name('Inside')
-    = attribute_desc("Checks if the player is in a certain region.")
-    = attribute_desc("Region is defined by ID")
+    = attribute_desc(t('modules.checks.types.inside-desc'))
+    = attribute_desc(t('modules.checks.types.inside-notes'))
   = attribute_row do
     = attribute_name('Item')
-    = attribute_desc("Checks the type of item involved in the event.")
-    = attribute_desc("Written exactly like an item tag in a loadout.")
+    = attribute_desc(t('modules.checks.types.item-desc'))
+    = attribute_desc(t('modules.checks.types.item-notes'))
   = attribute_row do
     = attribute_name('Material')
-    = attribute_desc("Checks the type of material involved in the event.")
-    = attribute_desc("Only checks type of item.")
+    = attribute_desc(t('modules.checks.types.material-desc'))
+    = attribute_desc(t('modules.checks.types.material-notes'))
   = attribute_row do
     = attribute_name('Objective')
-    = attribute_desc("Checks to see if an objective is complete.")
-    = attribute_desc("A team ID can be supplied to check if a team completed the objective.")
+    = attribute_desc(t('modules.checks.types.objective-desc'))
+    = attribute_desc(t('modules.checks.types.objective-notes'))
   = attribute_row do
     = attribute_name('Random')
-    = attribute_desc("Randomly returns true based on the supplied amount of randomness.")
-    = attribute_desc("Randomness should be written as a number between 0 and 1 (The higher the number, the greater chance of it happening).")
+    = attribute_desc(t('modules.checks.types.random-desc'))
+    = attribute_desc(t('modules.checks.types.random-notes'))
   = attribute_row do
     = attribute_name('Sometimes')
-    = attribute_desc("Helper method for the above check with a randomness of 0.5")
+    = attribute_desc(t('modules.checks.types.sometimes-desc'))
     = attribute_column
   = attribute_row do
     = attribute_name('Spawn')
-    = attribute_desc("Checks the reason an entity spawned.")
+    = attribute_desc(t('modules.checks.types.spawn-desc'))
     = attribute_column
   = attribute_row do
     = attribute_name('Team')
-    = attribute_desc("Checks the team the player is on who is causing the event.")
+    = attribute_desc(t('modules.checks.types.team-desc'))
     = attribute_column
   = attribute_row do
     = attribute_name('Time')
-    = attribute_desc("Checks the match time in comparison with the supplied value.")
-    = attribute_desc("A `compare` attribute can be added to change the comparison method (Default '=')")
+    = attribute_desc(t('modules.checks.types.time-desc'))
+    = attribute_desc(t('modules.checks.types.time-notes'))
   = attribute_row do
     = attribute_name('Victim')
-    = attribute_desc("A wrapper check that contains player information about the victim of an attack.")
+    = attribute_desc(t('modules.checks.types.victim-desc'))
     = attribute_column
   = attribute_row do
     = attribute_name('Wearing')
-    = attribute_desc("Checks the type of item a player is wearing in any of their amor slots.")
-    = attribute_desc("Written exactly like an armor tag in a loadout.")
+    = attribute_desc(t('modules.checks.types.wearing-desc'))
+    = attribute_desc(t('modules.checks.types.wearing-notes'))
   = attribute_row do
     = attribute_name('Weather')
-    = attribute_desc("Checks the weather in the match world.")
-    = attribute_desc("Types of weather are DOWNFALL and CLEAR")
+    = attribute_desc(t('modules.checks.types.weather-desc'))
+    = attribute_desc(t('modules.checks.types.weather-notes'))
 
 
-= subtitle('Combinations')
+= subtitle(t('modules.checks.combinations.combinations'))
 
 %p
-  These are elements used to combine checks in order to broaden (or narrow) the result scope.
+  = t('modules.checks.combinations.text')
 
-= attribute_table('Combination', false, ["Type", "Description"]) do
+= attribute_table(t('modules.checks.check'), false, [t('table.type'), t('table.description')]) do
   = attribute_row do
     = attribute_name('All')
-    = attribute_desc("Only passes if all of the checks inside the tag pass.")
+    = attribute_desc(t('modules.checks.combinations.all-desc'))
   = attribute_row do
     = attribute_name('Any')
-    = attribute_desc("Passes if any of the checks inside the tag pass.")
+    = attribute_desc(t('modules.checks.combinations.any-desc'))
 
-
-= subtitle('Result Modifiers')
+= subtitle(t('modules.checks.modifiers.modifiers'))
 
 %p
-  These are elements used to modify the result of checks.
+  = t('modules.checks.modifiers.text')
 
-= attribute_table('Modifier', false, ["Type", "Description"]) do
+= attribute_table(t('modules.checks.modifiers.modifier'), false, [t('table.type'), t('table.description')]) do
   = attribute_row do
     = attribute_name('Allow')
-    = attribute_desc("Only passes if the enclosed check is checked and passes.")
+    = attribute_desc(t('modules.checks.modifiers.allow-desc'))
   = attribute_row do
     = attribute_name('Deny')
-    = attribute_desc("Only passes if the enclosed check is checked and does not pass.")
+    = attribute_desc(t('modules.checks.modifiers.deny-desc'))
   = attribute_row do
     = attribute_name('Not')
-    = attribute_desc("Inverts the result of the enclosed check.")
+    = attribute_desc(t('modules.checks.modifiers.not-desc'))

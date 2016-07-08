@@ -1,5 +1,13 @@
 ---
 en:
+  generic:
+    note: "NOTE:"
+  table:
+    name: "Name"
+    description: "Description"
+    information: "Information Type"
+    type: "Type"
+    notes: "Notes"
   pages:
     modules: Modules
     references: References
@@ -134,6 +142,84 @@ en:
       attributes_auto_respawn: "Enable auto respawning, disabling the typical punch to respawn feature."
       attributes_respawn_freeze: "When enabled, the player is frozen while respawning. Otherwise they can spectate the match."
       respawn_behavior_text: "After a player dies, they typically enter a state where they are expected to respawn back into the match. This state can be customized to a certain extent using attributes in this module."
+    checks:
+      check: "Check"
+      text: <p>
+              Checks are different types of methods that can be used in order to narrow down the possible chances for an event to occur.
+            </p>
+            <p>
+              An example of this would be narrowing down the players who can capture a flag, enter a zone, or break blocks.
+            </p>
+            <p>
+              All checks are defined inside the
+              <code class='language-xml'><span class='token tag'><span class='token tag'><span class='token punctuation'>&lt;</span>checks</span><span class='token punctuation'>&gt;</span></span></code>
+              tag and then referenced by id in the rest of the XML.
+            </p>
+      variables:
+        variables: "Variables"
+        text: "Variables are different sources of information that a check can be supplied with in order to narrow down the scope of what is being checked against.
+        Some examples of this are what the weather currently is, the type of block a player is placing, or the type of entity that is attacking a player."
+        attacker-desc: "A wrapper variable that contains player and location information about the cause of an attack."
+        damage-desc: "The type of damage inflicted on a player."
+        entity-desc: "The type of entity that the check is being performed against."
+        item-desc: "The type of item that the check is being performed against. This variable includes all of an item's attributes."
+        location-desc: "The location in the world where the action is taking place."
+        material-desc: "Similar to the item variable but only includes the material of the item (or block) being checked against."
+        player-desc: "The player who is performing the checked action. This holds all information about a player but is never used to find a specific player by name."
+        spawn-desc: "Reason the entity being checked spawned."
+        victim-desc: "A wrapper variable that contains player and location information about the victim of the attack."
+      static:
+        static: "Static Checks"
+        text: "These are helper checks that will always return the same value."
+        always-desc: "Always passes"
+        never-desc: "Always fails"
+      types:
+        types: "Check Types"
+        text:
+          <p>
+            There are many different types of checks that can be applied to different in-game events. These checks can also be combined and negated (as stated below). Each check takes one or more of the variables listed above.
+            <code>NOTE:</code>
+            All of the tag names should be in lower case.
+          </p>
+        attacker-desc: "A wrapper check that contains player information about the cause of an attack."
+        carrying-desc: "Checks the type of item a player is holding in their inventory."
+        carrying-notes: "Written exactly like an item tag in a loadout."
+        damage-desc: "Checks the type of damage a player is receiving."
+        entity-desc: "Checks the type of entity that is causing the event."
+        holding-desc: "Checks the type of item a player is holding in their hand."
+        holding-notes: "Written exactly like an item tag in a loadout."
+        inside-desc: "Checks if the player is in a certain region."
+        inside-notes: "Region is defined by ID"
+        item-desc: "Checks the type of item involved in the event."
+        item-notes: "Written exactly like an item tag in a loadout."
+        material-desc: "Checks the type of material involved in the event."
+        material-notes: "Only checks type of item."
+        objective-desc: "Checks to see if an objective is complete."
+        objective-notes: "A team ID can be supplied to check if a team completed the objective."
+        random-desc: "Randomly returns true based on the supplied amount of randomness."
+        random-notes: "Randomness should be written as a number between 0 and 1 (The higher the number, the greater chance of it happening)."
+        sometimes-desc: "Helper method for the above check with a randomness of 0.5	"
+        spawn-desc: "Checks the reason an entity spawned."
+        team-desc: "Checks the team the player is on who is causing the event."
+        time-desc: "Checks the match time in comparison with the supplied value."
+        time-notes: "A `compare` attribute can be added to change the comparison method (Default '=')"
+        victim-desc: "A wrapper check that contains player information about the victim of an attack."
+        wearing-desc: "Checks the type of item a player is wearing in any of their amor slots."
+        wearing-notes: "Written exactly like an armor tag in a loadout."
+        weather-desc: "Checks the weather in the match world."
+        weather-notes: "Types of weather are DOWNFALL and CLEAR"
+      combinations:
+        combinations: "Combinations"
+        text: "These are elements used to combine checks in order to broaden (or narrow) the result scope."
+        all-desc: "Only passes if all of the checks inside the tag pass."
+        any-desc: "Passes if any of the checks inside the tag pass."
+      modifiers:
+        modifier: "Modifier"
+        modifiers: "Result Modifiers"
+        text: "These are elements used to modify the result of checks."
+        allow-desc: "Only passes if the enclosed check is checked and passes."
+        deny-desc: "Only passes if the enclosed check is checked and does not pass."
+        not-desc: "Inverts the result of the enclosed check."
   references:
     colors:
       desc: The following colors can be used for teams.
