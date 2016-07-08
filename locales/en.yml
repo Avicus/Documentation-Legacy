@@ -220,6 +220,18 @@ en:
         allow-desc: "Only passes if the enclosed check is checked and passes."
         deny-desc: "Only passes if the enclosed check is checked and does not pass."
         not-desc: "Inverts the result of the enclosed check."
+    compasses:
+      attributes: "Compass Attributes"
+      text: "<p>
+              The compass module is used to set the location of a player's compass based on different conditions.
+            </p>"
+      text-2: <p>
+                The module is defined by the
+                <code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>compasses</span><span class="token punctuation">/&gt;</span></span></code>
+                tag. Multiple compasses can be defined in this tag and checks can be used in order to determine who the compasses points to.
+              </p>
+      target-desc: "The location for the compass to target. You can also provide <code>enemy</code> which will target the nearest enemy."
+      check-desc: "Check to be run on the player before targeting them."
   references:
     colors:
       desc: The following colors can be used for teams.
