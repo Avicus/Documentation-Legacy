@@ -59,10 +59,28 @@
     = attribute_desc("A wrapper variable that contains player and location information about the victim of the attack.")
     = attribute_type(:player)
 
+= subtitle('Static Checks')
+
+%p
+  These are helper checks that will always return the same value.
+
+= attribute_table('Check', false, ["Type", "Description"]) do
+  = attribute_row do
+    = attribute_name('Always')
+    = attribute_desc("Always passes.")
+  = attribute_row do
+    = attribute_name('Never')
+    = attribute_desc("Always fails.")
+
+
+
 = subtitle('Check Types')
 
 %p
   There are many different types of checks that can be applied to different in-game events. These checks can also be combined and negated (as stated below). Each check takes one or more of the variables listed above.
+  %code
+    NOTE:
+  All of the tag names should be in lower case.
 
 = attribute_table('Check', false, ["Type", "Description", "Notes"]) do
   = attribute_row do
@@ -78,7 +96,7 @@
     = attribute_desc("Checks the type of damage a player is receiving.")
     = attribute_column
   = attribute_row do
-    = attribute_name('Entity Type')
+    = attribute_name('Entity')
     = attribute_desc("Checks the type of entity that is causing the event.")
     = attribute_column
   = attribute_row do
@@ -133,3 +151,34 @@
     = attribute_name('Weather')
     = attribute_desc("Checks the weather in the match world.")
     = attribute_desc("Types of weather are DOWNFALL and CLEAR")
+
+
+= subtitle('Combinations')
+
+%p
+  These are elements used to combine checks in order to broaden (or narrow) the result scope.
+
+= attribute_table('Combination', false, ["Type", "Description"]) do
+  = attribute_row do
+    = attribute_name('All')
+    = attribute_desc("Only passes if all of the checks inside the tag pass.")
+  = attribute_row do
+    = attribute_name('Any')
+    = attribute_desc("Passes if any of the checks inside the tag pass.")
+
+
+= subtitle('Result Modifiers')
+
+%p
+  These are elements used to modify the result of checks.
+
+= attribute_table('Modifier', false, ["Type", "Description"]) do
+  = attribute_row do
+    = attribute_name('Allow')
+    = attribute_desc("Only passes if the enclosed check is checked and passes.")
+  = attribute_row do
+    = attribute_name('Deny')
+    = attribute_desc("Only passes if the enclosed check is checked and does not pass.")
+  = attribute_row do
+    = attribute_name('Not')
+    = attribute_desc("Inverts the result of the enclosed check.")
