@@ -1,58 +1,358 @@
-= title('Loadouts')
-= coming_soon
+= title(t('pages.loadouts'))
 
+%p
+  = t('modules.loadouts.text')
+
+= section(t('modules.loadouts.root'))
 
 :xml
   <loadouts>
-    <loadout id="default">
-      <helmet material="iron helmet"/>
-      <chestplate materal="leather chestplate" team-color="true">
-        <enchantment level="2">protection all</enchantment>
-      </chestplate>
-
-      <item slot="0" material="stone sword"/>
-      <item slot="1" material="bow"/>
-      <item slot="8" material="arrow" amount="16"/>
-      <item slot="2" material="wool" color="red"/>
-      <glow/>
+    <loadout id="main" force="true">
+      ...
+    </loadout>
+    <loadout id="second" parent="main" force="true">
+      ...
     </loadout>
   </loadouts>
 
+= attribute_table(t('modules.loadouts.root-attributes')) do
+  = attribute_row_id
+  = attribute_row do
+    = attribute_name('parent')
+    = attribute_desc(t('modules.loadouts.parent-desc'))
+    = attribute_type_element(:loadout)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('force')
+    = attribute_desc(t('modules.loadouts.force-desc'))
+    = attribute_type(:boolean)
+    = attribute_default('false')
+
+= subtitle(t('modules.loadouts.item.title'))
+
+%p
+  = t('modules.loadouts.item.text')
+
 :xml
-  <!-- a black banner with a silver border and red skull -->
-  <item material="banner" color="black">
-    <pattern color="red">skull</pattern>
-    <pattern color="silver">border</pattern>
+  <item slot="0" material="iron sword"/>
+  <item slot="1" material="bow">
+    <enchantment>arrow_infinite</enchantment>
+  </item>
+  <item slot="2" material="diamond pickaxe"/>
+  <item slot="3" material="golden apple"/>
+  <item slot="4" material="cobblestone" amount="48"/>
+  <item slot="5" material="log" damage="1" amount="32"/>
+  <item slot="6" material="leaves" damage="3" amount="32"/>
+  <item slot="7" material="cooked fish" amount="32"/>
+  <item slot="8" material="iron axe"/>
+  <item slot="28" material="arrow" amount="1"/>
+
+= attribute_table(t('modules.loadouts.item.attributes')) do
+  = attribute_row do
+    = attribute_name('slot')
+    = attribute_desc(t('modules.loadouts.item.slot-desc'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('material')
+    = attribute_desc(t('modules.loadouts.item.material-desc'))
+    = attribute_type(:material)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('damage')
+    = attribute_desc(t('modules.loadouts.item.damage-desc'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('amount')
+    = attribute_desc(t('modules.loadouts.item.amount-desc'))
+    = attribute_type(:number)
+    = attribute_default(1)
+  = attribute_row do
+    = attribute_name('unbreakable')
+    = attribute_desc(t('modules.loadouts.item.unbreakable-desc'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+  = attribute_row do
+    = attribute_name('flags')
+    = attribute_desc(t('modules.loadouts.item.flags-desc'))
+    = attribute_type(:text)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('color')
+    = attribute_desc(t('modules.loadouts.item.color-desc'))
+    = attribute_type(:color)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('team-color')
+    = attribute_desc(t('modules.loadouts.item.team-color-desc'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+  = attribute_row do
+    = attribute_name('potion')
+    = attribute_desc(t('modules.loadouts.item.potion-type-desc'))
+    = attribute_desc(label('Potion Type')) do
+      = link_to("Types", "https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionType.html")
+    = attribute_column
+
+= section("Enchantments")
+
+:xml
+  <item ...>
+    <enchantment>arrow_infinite</enchantment>
   </item>
 
-:xml
-  <locales>
-    <locale lang="en">
-      <special-sword>Stone Dagger</special-sword>
-      <special-sword-1>Small, but deadly. It's said to</special-sword-1>
-      <special-sword-2>have been used to slay dragons.</special-sword-2>
-    </locale>
-    <locale lang="es">
-      <special-sword>Daga de piedra</special-sword>
-      <special-sword-1>Pequeño, pero maton. Se decía que</special-sword-1>
-      <special-sword-2>se utilizaba para matar dragones.</special-sword-2>
-    </locale>
-    <locale lang="sv">
-      <special-sword>Sten knivar</special-sword>
-      <special-sword-1>Liten, men dödlig. Det är sagt att</special-sword-1>
-      <special-sword-2>den har använts till att döda drakar.</special-sword-2>
-    </locale>
-  </locales>
+= attribute_table(t('modules.loadouts.item.enchantment.attributes')) do
+  = attribute_row(true) do
+    = attribute_name('type')
+    = attribute_desc(t('modules.loadouts.item.enchantment.type'))
+    = attribute_desc(label('Enchantment Type')) do
+      = link_to("Types", "https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/enchantments/Enchantment.html")
+    = attribute_column
+  = attribute_row do
+    = attribute_name('level')
+    = attribute_desc(t('modules.loadouts.item.enchantment.level'))
+    = attribute_type(:number)
+    = attribute_default(1)
 
-  <!-- a special sword that's unbreakable and has enchantments and localized name/lore -->
-  <item material="stone sword" name="^b{special-sword}" unbreakable="true" flags="hide enchants">
-    <lore>^c{special-sword-1}</lore>
-    <lore>^c{special-sword-2}</lore>
-    <enchantment level="3">damage all</enchantment>
-    <enchantment level="1">knockback</enchantment>
+
+= section("Effects")
+
+:xml
+  <item ...>
+    <effect amplifier="1" duration="22s">speed</effect>
   </item>
 
+= attribute_table(t('modules.loadouts.item.effect.attributes')) do
+  = attribute_row(true) do
+    = attribute_name('type')
+    = attribute_desc(t('modules.loadouts.item.effect.type'))
+    = attribute_desc(label('Effect Type')) do
+      = link_to("Types", "https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html")
+    = attribute_column
+  = attribute_row do
+    = attribute_name('amplifier')
+    = attribute_desc(t('modules.loadouts.item.effect.amplifier'))
+    = attribute_type(:number)
+    = attribute_default(1)
+  = attribute_row do
+    = attribute_name('duration')
+    = attribute_desc(t('modules.loadouts.item.effect.duration'))
+    = attribute_type(:duration)
+    = attribute_default("1s")
+
+= section("Banner")
+
+%p
+  = t('modules.loadouts.item.banner.text')
+
+= attribute_table(t('modules.loadouts.item.banner.attributes')) do
+  = attribute_row(true) do
+    = attribute_name('pattern')
+    = attribute_desc(t('modules.loadouts.item.banner.pattern'))
+    = attribute_desc(label('Pattern Type')) do
+      = link_to("Types", "https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/banner/PatternType.html")
+    = attribute_column
+  = attribute_row do
+    = attribute_name('color')
+    = attribute_desc(t('modules.loadouts.item.banner.color'))
+    = attribute_type(:color)
+    = attribute_column
+
+= subtitle("Helper Methods")
+
+%p
+  = t('modules.loadouts.helper.armor')
+
+
+= subtitle("Heads")
+
+%p
+  = t('modules.loadouts.head')
 
 :xml
-  <!-- a funky skull -->
-  <item material="skull item" skull="funkystudios"/>
+  <plqyer-head slot="1">069a79f444e94726a5befca90e38aaf5</plqyer-head>
+
+
+= subtitle("Effects")
+
+:xml
+  <loadout>
+    ...
+    <effect amplifier="1" duration="22s">speed</effect>
+  </loadout>
+
+= attribute_table(t('modules.loadouts.effect.attributes')) do
+  = attribute_row(true) do
+    = attribute_name('type')
+    = attribute_desc(t('modules.loadouts.item.effect.type'))
+    = attribute_desc(label('Effect Type')) do
+      = link_to("Types", "https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html")
+    = attribute_column
+  = attribute_row do
+    = attribute_name('amplifier')
+    = attribute_desc(t('modules.loadouts.item.effect.amplifier'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('duration')
+    = attribute_desc(t('modules.loadouts.item.effect.duration'))
+    = attribute_type(:duration)
+    = attribute_default("1s")
+
+= subtitle("Compass")
+
+%p
+  = t('modules.loadouts.compass')
+
+:xml
+  <loadout>
+    ...
+    <compass>1, 1, 1</compass>
+  </loadout>
+
+
+= subtitle("Glow")
+
+%p
+  = t('modules.loadouts.glow')
+
+:xml
+  <loadout>
+    ...
+    <glow>true</glow>
+  </loadout>
+
+= subtitle("Weather")
+
+%p
+  = t('modules.loadouts.weather')
+
+:xml
+  <loadout>
+    ...
+    <weather>sunny</weather>
+  </loadout>
+
+%br
+%br
+%h4{style: "text-align: center"}
+  %i
+    = t('modules.loadouts.number-action')
+
+%hr
+
+= subtitle("Time")
+
+%p
+  = t('modules.loadouts.Time')
+
+:xml
+  <loadout>
+    ...
+    <time action="add">10000</time>
+  </loadout>
+
+= subtitle("Health")
+
+:xml
+  <loadout>
+    ...
+    <health action="add">4</health>
+    <max-health action="subtract">2</max-health>
+    <health-scale action="multiply">2</health-scale>
+  </loadout>
+
+= attribute_table(t('modules.loadouts.health.attributes'), false) do
+  = attribute_row do
+    = attribute_name('health')
+    = attribute_desc(t('modules.loadouts.health.current'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('max-health')
+    = attribute_desc(t('modules.loadouts.health.max'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('health-scale')
+    = attribute_desc(t('modules.loadouts.health.scale'))
+    = attribute_type(:number)
+    = attribute_column
+
+= subtitle("Food")
+
+:xml
+  <loadout>
+    ...
+    <food-level action="add">4</food-level>
+    <saturation action="subtract">2</saturation>
+    <exhaustion action="multiply">2</exhaustion>
+  </loadout>
+
+= attribute_table(t('modules.loadouts.food.attributes'), false) do
+  = attribute_row do
+    = attribute_name('food-level')
+    = attribute_desc(t('modules.loadouts.food.level'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('saturation')
+    = attribute_desc(t('modules.loadouts.food.saturation'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('exhaustion')
+    = attribute_desc(t('modules.loadouts.food.exhaustion'))
+    = attribute_type(:number)
+    = attribute_column
+
+
+= subtitle("Experience")
+
+:xml
+  <loadout>
+    ...
+    <exp-level action="add">4</exp-level>
+    <exp-points action="subtract">2</exp-points>
+    <exp-total action="multiply">2</exp-total>
+  </loadout>
+
+= attribute_table(t('modules.loadouts.exp.attributes'), false) do
+  = attribute_row do
+    = attribute_name('exp-level')
+    = attribute_desc(t('modules.loadouts.exp.level'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('exp-points')
+    = attribute_desc(t('modules.loadouts.exp.points'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('exp-total')
+    = attribute_desc(t('modules.loadouts.exp.total'))
+    = attribute_type(:number)
+    = attribute_column
+
+
+= subtitle("Movement Speed")
+
+:xml
+  <loadout>
+    ...
+    <fly-speed action="add">4</fly-speed>
+    <walk-speed action="subtract">2</walk-speed>
+  </loadout>
+
+= attribute_table(t('modules.loadouts.speed.attributes'), false) do
+  = attribute_row do
+    = attribute_name('fly-speed')
+    = attribute_desc(t('modules.loadouts.speed.fly'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('walk-speed')
+    = attribute_desc(t('modules.loadouts.speed.walk'))
+    = attribute_type(:number)
+    = attribute_column

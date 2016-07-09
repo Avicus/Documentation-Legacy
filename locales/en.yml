@@ -21,7 +21,7 @@ en:
     spawns: Spawns
     regions: Regions
     objectives: Objectives
-    loadouts: Loadouts
+    loadouts: Items & Loadouts
     events: Events
     conditions: Conditions
     triggers: Triggers
@@ -247,6 +247,72 @@ en:
       text: "Use this module to limit the number of lives a player has on the map."
       attributes: "Elimination Attributes"
       lives-desc: "The amount of lives each player has."
+    loadouts:
+      text: "You can use this module to create sets of items and other player attributes that can be given to players at different times."
+      root: "The Root Element"
+      root-attributes: "Loadout Attributes"
+      parent-desc: "Use this to reference another loadout that this loadout should inherit attributes from."
+      force-desc: "If the items should be forced into already occupied item slots."
+      item:
+        title: "Items"
+        text: "Items can have many attributes, and are the main element of loadouts."
+        attributes: "Item Attributes"
+        slot-desc: "Slot in the inventory where the item should be placed. (If no slot is specified, the item will be put in the first available slot)"
+        material-desc: "The material of the item."
+        damage-desc: "The damage value of the item. (This can be used to color wool or to change the durability of a pickaxe.)"
+        amount-desc: "The amount of the item to be given to the player. (Use -1 for infinite stacks)"
+        unbreakable-desc: "If the item should never run out of durability."
+        flags-desc: "The flags that should be applied to the item. Separate each flag with a <code>,</code>"
+        color-desc: "The color to be applied to the item. (This item must be a colorable item, or a parser error will be thrown)"
+        team-color-desc: "If the player's team color should be used to color the item. This will override the other color attribute"
+        potion-type-desc: "The type of the potion that will be displayed. (This will not override the effects added by the <code>effects</code> tag)"
+        enchant:
+          attributes: "Enchantment Attributes"
+          type-desc: "The type of enchantment to apply to the item."
+          level-desc: "The level of the enchantment to be applied to the item."
+        effect:
+          attributes: "Effect Attributes"
+          type: "The type of the effect that the potion will cause."
+          amplifier: "The amplifier of the potion effect."
+          duration: "The duration of the effect."
+        banner:
+          text: "Banner designs can also be created via XML, and can be combined to create complex designs. Designs are applied in the order that they are written."
+          attributes: "Banner Attributes"
+          pattern: "The name of the type of pattern to be applied."
+          color: "The color of the pattern."
+        projectile-desc: "ID of the custom projectile to be applied to the item."
+      helper:
+        armor: "Armor slot names can be used instead of the <code>item</code> tag in order to simplify putting items in armor slots."
+      head: "You can use this tag to give player heads in loadouts. UUIDs are required"
+      effect:
+        attributes: "Effect Attributes"
+        type: "The type of the effect that the player will receive."
+        amplifier: "The amplifier of the effect."
+        duration: "The duration of the effect."
+      compass: "Set the player's compass target to a fixed position. (The compass module will override this)"
+      glow: "Use this to achieve the glowing effect as if a player was shot by a spectral arrow. (1.9 ONLY)"
+      weather: "Use this to set the player's personal weather state."
+      number-action: "You can use number actions for the below tags."
+      time: "You can use this module to set the player's personal time."
+      health:
+        attributes: "Health Modifiers"
+        current: "Set the player's current health."
+        max: "Set the player's maximum health."
+        scale: "Set the player's health scale."
+      food:
+        attributes: "Food Modifiers"
+        level: "Set the player's level of hunger."
+        saturation: "Set the player's amount of saturation. (This is the value that represents amount of hunger above full)"
+        exhaustion: "Set the player's level of exhaustion (This ranges from 0.0 to 4.0. When the exhaustion level reaches above 4.0 it will get subtracted by 4.0 and subtracts 1 point of hunger or saturation.)"
+      exp:
+        attributes: "Experience Modifiers"
+        level: "Set the player's experience level. (This is the number above the bar)"
+        points: "Set the player's experience points. (This is the value on the bar)"
+        total: "Set the player's total experience level. (This will override both of the above values)"
+      speed:
+        attributes: "Speed Modifiers"
+        fly: "Set the player's speed of flight"
+        walk: "Set the player's walk speed."
   references:
     colors:
       desc: The following colors can be used for teams.
