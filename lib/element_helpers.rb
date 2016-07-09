@@ -93,6 +93,10 @@ module ElementHelpers
             label('ID')
           when :player
             label('Player')
+          when :color
+            label("Color")
+          when :action
+            label("Number Action")
           else
             raise "#{type} is not a valid attribute_type"
         end
