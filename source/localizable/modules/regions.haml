@@ -59,7 +59,7 @@
 %p
   = t('modules.regions.point')
 :xml
-  <point>24, 15, 60</point>
+  <point>24, 15.5, 60</point>
 
 = section('Cuboid') do
   %small
@@ -86,19 +86,19 @@
   %code height
   \.
 :xml
-  <cylinder origin="23, 50, 15" radius="5" height="10"/>
+  <cylinder base="23, 50, 15" radius="5" height="10"/>
 
 = section('Circle') do
   %small
     = label('Bounded', 'info')
 %p
   A circle is essentially a cylinder with a height of 1. Its base is specified in
-  %code base
+  %code center
   and has a radius as specified in
   %code radius
   \.
 :xml
-  <circle origin="23, 50, 15" radius="5"/>
+  <circle center="23, 50, 15" radius="5"/>
 
 = section('Sphere') do
   %small
@@ -111,6 +111,17 @@
   \.
 :xml
   <sphere origin="50, 18, 30" radius="12"/>
+
+= section('Box') do
+  %small
+    = label('Bounded', 'info')
+%p
+  A box is a helper region that will return a cuboid region based on supplied coordinate modifiers and a center.
+:xml
+  <box center="4,3,1" x="4" y="5" z="11"/>
+  <!-- A cuboid that centers at 4,3,1 spreads out above and below the supplied coordinates. -->
+  <!-- If x,y, or z isn't supplied, 0 will be used for the value -->
+
 
 = subtitle('Abstract Regions')
 %p
@@ -186,3 +197,50 @@
   <above y="25"/> <!-- everything above y=25 -->
   <above x="25" z="21"/>  <!-- any block in below x=25, z=21 -->
   <below x="32" y="18" z="52"/> <!-- you get the idea -->
+
+= section('Void')
+%p
+  The void region selects all blocks that have only air at
+  %code Y=5
+  and below.
+:xml
+  <void/> <!-- everything that has void under it. -->
+
+= section('Sector')
+%p
+  Represents a sector of a circle that covers all Y values.
+:xml
+  <sector x="11" z="22" start="120.0" end="130.0"> <!-- everything between angle 120 and 130 in a circle that has a base at the supplied coords. -->
+
+= section('Nowhere')
+%p
+  Represents... well, nowhere at all.
+:xml
+  <nowhere/> <!-- no blocks at any location -->
+
+= section('Everywhere')
+%p
+  Represents the entire minecraft world.
+:xml
+  <everywhere/> <!-- every block -->
+
+= section('Fill')
+%p
+  Represents the coordinates of each block matching the defined material within the bounds supplied.
+:xml
+  <fill bounds="a-cuboid" materials="dirt;grass" start="3,2,1"/>
+  <!-- every block that is either dirt or grass within the bounds -->
+
+= attribute_table('Region Attributes', false) do
+  = attribute_row(true) do
+    = attribute_name('bounds')
+    = attribute_desc('Boundary cuboid for the region to search')
+    = attribute_type_element(:iterable_region)
+  = attribute_row(true) do
+    = attribute_name('materials')
+    = attribute_desc('Types of blocks to be found within the region')
+    = attribute_type(:materials)
+  = attribute_row do
+    = attribute_name('start')
+    = attribute_desc('Location to start the search from. (Defaults to center of boundary)')
+    = attribute_type(:xyz)
