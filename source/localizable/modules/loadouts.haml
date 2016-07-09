@@ -94,6 +94,12 @@
     = attribute_desc(label('Potion Type')) do
       = link_to("Types", "https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionType.html")
     = attribute_column
+  = attribute_row do
+    = attribute_name('projectile')
+    = attribute_desc(t('modules.loadouts.item.projectile-desc'))
+    = attribute_type_element(:text)
+    = attribute_desc(label('Element ID')) do
+      = link("Custom Projectile", "/modules/projectiles")
 
 = section("Enchantments")
 
