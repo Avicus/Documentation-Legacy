@@ -18,10 +18,19 @@
 
   <!-- then you can do -->
   <zones>
-    <zone build="false" region="the-north">
+    <zone build="never" region="the-north">
       <build-message>{errors.build-north}</build-message>
     </zone>
   </zones>
 
+= t('modules.localization.text')
 
-= coming_soon
+= attribute_table(t('modules.localization.attributes'), false) do
+  = attribute_row(true) do
+    = attribute_name('lang')
+    = attribute_desc(t('modules.localization.lang'))
+    = attribute_type(:text)
+  = attribute_row do
+    = attribute_name('country')
+    = attribute_desc(t('modules.localization.country'))
+    = attribute_type(:text)

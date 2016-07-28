@@ -313,6 +313,12 @@ en:
         attributes: "Speed Modifiers"
         fly: "Set the player's speed of flight"
         walk: "Set the player's walk speed."
+    localization:
+      text: "Localization is a requirement for all maps to accepted, we ask that you <strong>DO NOT</strong> simply google translate the localizations and if you need assistance translating your messages, to ask the translation team. <br><br>Localizations are defined inside of this tag and can be as deeply nested as need be. <br><br>
+            Each new nesting is denoted by a <code>.</code> when referencing the locale in other parts of the XML. <br><br> Default localized items can be found <a href='https://maps.avicus.net/atlas/Shared/locales.xml'>here.</a>"
+      attributes: "Locale Attributes"
+      lang: "The language of the translated text."
+      country: "The country of the translated text (For example, to use Canadian English,  you would define the lang as english and the country as canada)."
   references:
     colors:
       desc: The following colors can be used for teams.
