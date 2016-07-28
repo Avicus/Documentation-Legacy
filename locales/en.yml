@@ -40,6 +40,7 @@ en:
     elimination: "Elimination"
     kills-deaths: "Kills/Deaths"
     projectiles: "Custom Projectiles"
+    results: "Results"
   home:
     main:
       Atlas Game Manager is a Minecraft server modification for
@@ -318,7 +319,18 @@ en:
             Each new nesting is denoted by a <code>.</code> when referencing the locale in other parts of the XML. <br><br> Default localized items can be found <a href='https://maps.avicus.net/atlas/Shared/locales.xml'>here.</a>"
       attributes: "Locale Attributes"
       lang: "The language of the translated text."
-      country: "The country of the translated text (For example, to use Canadian English,  you would define the lang as english and the country as canada)."
+      country: "The country of the translated text (For example, to use Canadian English,  you would define the lang as <code>en</code> and the country as <code>ca</code>)."
+    results:
+      text: "The results module can be used to determine how and when a match should end, and how the winner should be decided."
+      win-attributes: "Win Attributes"
+      scenario: "The scenario that should be executed if the check passes."
+      scenarios: "Scenarios"
+      scenario-text: "Scenarios are what course Atlas will take to determine a winner of a match. There are currently only 2 supported scenario results."
+      places: "This attribute determines how many win places will be displayed and how many places of winners will receive some type of reward. This only works with the objectives result type and it is possible for multiple teams to score in the same place."
+      scenario-types: "Scenario Types"
+      objectives: "The objectives result type will choose the winner based on which team has the most objectives. This can also result in a match tie."
+      team: "The team result type will reward the win to the team specified."
+      check: "The check that needs to pass in order for the result to execute. The check can be referenced by ID or placed inside of the tag."
   references:
     colors:
       desc: The following colors can be used for teams.

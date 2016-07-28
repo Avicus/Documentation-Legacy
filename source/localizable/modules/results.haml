@@ -1,0 +1,49 @@
+= title(t('pages.results'))
+
+%p
+  = t('modules.results.text')
+
+:xml
+
+  <results>
+    <!-- Match will end with the team who has the most objectives after 11 minutes. -->
+    <win scenario="objectives">
+      <time>11m</time>
+    </win>
+
+    <!-- Red will win 50% of the time the check is performed. (Check is performed 20 times a second) -->
+    <win scenario="team" team="red">
+      <sometimes/>
+    </win>
+  </results>
+
+= attribute_table(t('modules.results.win-attributes')) do
+  = attribute_row do
+    = attribute_name('scenario')
+    = attribute_desc(t('modules.results.scenario'))
+    = attribute_desc(label('Scenario Type')) do
+      %p See below.
+    = attribute_default("objectives")
+  = attribute_row(true) do
+    = attribute_name('check')
+    = attribute_desc(t('modules.results.check'))
+    = attribute_type_element(:check)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('places')
+    = attribute_desc(t('modules.results.places'))
+    = attribute_type(:number)
+    = attribute_default(1)
+
+
+= subtitle(t('modules.results.scenarios'))
+
+= t('modules.results.scenario-text')
+
+= attribute_table(t('modules.results.scenario-types'), false, [t('table.name'), t('table.description')]) do
+  = attribute_row do
+    = attribute_name('objectives')
+    = attribute_desc(t('modules.results.objectives'))
+  = attribute_row do
+    = attribute_name('team')
+    = attribute_desc(t('modules.results.team'))

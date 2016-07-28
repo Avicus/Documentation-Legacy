@@ -19,6 +19,8 @@
     path: /modules/loadouts
   - name: elimination
     path: /modules/elimination
+  - name: results
+    path: /modules/results
 
 - name: Locations & Checks
   modules:
