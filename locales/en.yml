@@ -8,6 +8,7 @@ en:
     information: "Information Type"
     type: "Type"
     notes: "Notes"
+    format: "Format"
   pages:
     modules: Modules
     references: References
@@ -331,6 +332,60 @@ en:
       objectives: "The objectives result type will choose the winner based on which team has the most objectives. This can also result in a match tie."
       team: "The team result type will reward the win to the team specified."
       check: "The check that needs to pass in order for the result to execute. The check can be referenced by ID or placed inside of the tag."
+    zones:
+      attributes-text: "Zone Attributes"
+      check:
+        text: "Checks can be used to filter what players are allowed to to in zones. Checks can be defined as a zone attribute, or can be defined as sub tags."
+        checks: "Checks"
+        enter: "This check is applied to all players before they are allowed to enter the zone."
+        leave: "This check is applied to all players before they are allowed to leave the zone."
+        modify: "This check is applied to all players before they are allowed to place/break blocks and use items in the zone."
+        place: "This check is applied to all players before they are allowed to place blocks in the zone."
+        break: "This check is applied to all players before they are allowed to break blocks in the zone."
+        use: "This check is applied to all players before they are allowed to use items (such as buckets) in the zone."
+      sub:
+        text: "Zone Sub-Elements"
+        message:
+          message: "Failure Message"
+          text: "This defines the message that is displayed if a player tries to do something they cannot."
+          types: "Format Types"
+        scorebox:
+          scorebox: "Score Box"
+          text: "A score box is an area of a map that rewards points to a team when entered by a player."
+          attributes: "Score Box Attributes"
+          check: "Check to be ran to determine if the player should receive a reward."
+          points: "The amount of points to be rewarded to a player who enters the box."
+          growth: "The multiplier of points after each reward."
+          rewards:
+            rewards: "Item Rewards"
+            text: "Item rewards are special amounts of points given to players for having certain items in their inventory."
+            text-2: "The points attribute of the tag determines how many points extra should be rewarded for having the item."
+        portal:
+          portal: "Portal"
+          attributes: "Portal Attributes"
+          text: "Portals teleport players to locations on the map when they are entered."
+          check: "Check to be ran to determine if the player should be teleported."
+          destination: "The destination of the portal."
+          sound: "If the enderman teleport sound should be played on teleport."
+          reset-velocity: "If the player's velocity should be reset when they are teleported."
+          heal: "If the player should be healed to max health after they are teleported."
+          feed: "If the player should be fed after they are teleported."
+          look: "Location the player should be facing when they leave the portal."
+          yaw: "Yaw of the player when they are teleported."
+          pitch: "Pitch of the player when they are teleported."
+        post:
+          post: "Flag Post"
+          text: "These define where flags should be placed."
+          check: "Check to be ran to determine if the player can pickup the flag."
+          yaw: "Yaw orientation of the banner."
+        net:
+          net: "Flag Capture Net"
+          text: "Nets are locations that flags can be captured at. A flag can have multiple net possibilities, and nets do not have to be bound to teams."
+          owner: "Owner of the net."
+          points: "Points to be rewarded to the player who captures the flag."
+          check: "Check to be ran to determine if the player can capture the flag at this net."
+          respawn-post: "Post that the flag should respawn at if it is captured at this net. If no post is specified, the flag will return to it's previous post."
+          respawn-together: "If all of the flags enclosed by the <code>flags</code> element should wait until all are captured to respawn, or respawn directly after capture."
   references:
     colors:
       desc: The following colors can be used for teams.

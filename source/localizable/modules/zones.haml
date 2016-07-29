@@ -20,6 +20,224 @@
         <destination region="red-spawn"/>
       </portal>
     </zone>
+
+    <!-- Posts -->
+    <zone id="blue-post">
+        <region>
+            <block>-4, 3, 59</block>
+        </region>
+        <post yaw="90"/>
+    </zone>
+
+    <!-- Nets -->
+    <zone id="green-net">
+        <region>
+            <cuboid min="6, 5, 9" max="3, 3, 9"/>
+        </region>
+        <net owner="green" points="1"/>
+    </zone>
+    <zone id="blue-net">
+        <region>
+            <cuboid min="6, 5, 59" max="3, 3, 59"/>
+        </region>
+        <net owner="blue" points="1"/>
+    </zone>
   </zones>
 
-= coming_soon
+= attribute_table(t('modules.zones.zone-attributes'), false) do
+  = attribute_row_id
+  = attribute_row do
+    = attribute_name('...="check-id"')
+    = attribute_desc(t('modules.zones.check.text'))
+    = attribute_type_element(:check)
+
+%h2=t('modules.zones.sub.text')
+
+= subtitle(t('modules.zones.sub.message.message'))
+
+= t('modules.zones.sub.message.text')
+
+:xml
+  <message format="warning">{errors.outside-map}</message>
+
+= attribute_table(t('modules.zones.sub.message.types'), false, [t('table.name'), t('table.format')]) do
+  = attribute_row do
+    = attribute_name("info")
+    = attribute_name("✳ MESSAGE")
+  = attribute_row(true) do
+    = attribute_name("warning")
+    = attribute_name(" ⚠ MESSAGE")
+  = attribute_row do
+    = attribute_name("none")
+    = attribute_name("MESSAGE")
+
+= subtitle(t('modules.zones.check.checks'))
+
+= t('modules.zones.check.text')
+
+= attribute_table(t('modules.zones.check.checks'), false, [t('table.name'), t('table.description')]) do
+  = attribute_row do
+    = attribute_name("enter")
+    = attribute_desc(t('modules.zones.check.enter'))
+  = attribute_row do
+    = attribute_name("leave")
+    = attribute_desc(t('modules.zones.check.leave'))
+  = attribute_row do
+    = attribute_name("modify")
+    = attribute_desc(t('modules.zones.check.modify'))
+  = attribute_row do
+    = attribute_name("place")
+    = attribute_desc(t('modules.zones.check.place'))
+  = attribute_row do
+    = attribute_name("break")
+    = attribute_desc(t('modules.zones.check.break'))
+  = attribute_row do
+    = attribute_name("use")
+    = attribute_desc(t('modules.zones.check.use'))
+
+= subtitle(t('modules.zones.sub.scorebox.scorebox'))
+
+= t('modules.zones.sub.scorebox.text')
+
+:xml
+  <scorebox points="2"/>
+
+= attribute_table(t('modules.zones.sub.scorebox.attributes'), false) do
+  = attribute_row(true) do
+    = attribute_name("points")
+    = attribute_desc(t('modules.zones.sub.scorebox.points'))
+    = attribute_type(:number)
+  = attribute_row do
+    = attribute_name("points-growth")
+    = attribute_desc(t('modules.zones.sub.scorebox.growth'))
+    = attribute_type(:number)
+  = attribute_row do
+    = attribute_name("check")
+    = attribute_desc(t('modules.zones.sub.scorebox.check'))
+    = attribute_type_element(:check)
+
+= section(t('modules.zones.sub.scorebox.rewards.rewards'))
+
+= t('modules.zones.sub.scorebox.rewards.text')
+
+:xml
+  <item-rewards>
+    <item points="1">cooked beef</item>
+  </item-rewards>
+
+= t('modules.zones.sub.scorebox.rewards.text-2')
+
+= subtitle(t('modules.zones.sub.portal.portal'))
+
+= t('modules.zones.sub.portal.text')
+
+:xml
+  <portal yaw="90">
+      <destination>
+          <point>26, 67, -31</point>
+      </destination>
+  </portal>
+
+= attribute_table(t('modules.zones.sub.portal.attributes')) do
+  = attribute_row(true) do
+    = attribute_name("destination")
+    = attribute_desc(t('modules.zones.sub.portal.destination'))
+    = attribute_type_element(:region)
+    = attribute_column
+  = attribute_row do
+    = attribute_name("check")
+    = attribute_desc(t('modules.zones.sub.portal.check'))
+    = attribute_type_element(:check)
+    = attribute_column
+  = attribute_row do
+    = attribute_name("sound")
+    = attribute_desc(t('modules.zones.sub.portal.sound'))
+    = attribute_type(:boolean)
+    = attribute_default(true)
+  = attribute_row do
+    = attribute_name("reset-velocity")
+    = attribute_desc(t('modules.zones.sub.portal.reset-velocity'))
+    = attribute_type(:boolean)
+    = attribute_default(true)
+  = attribute_row do
+    = attribute_name("heal")
+    = attribute_desc(t('modules.zones.sub.portal.heal'))
+    = attribute_type(:boolean)
+    = attribute_default(true)
+  = attribute_row do
+    = attribute_name("feed")
+    = attribute_desc(t('modules.zones.sub.portal.feed'))
+    = attribute_type(:boolean)
+    = attribute_default(true)
+  = attribute_row do
+    = attribute_name("look")
+    = attribute_desc(t('modules.zones.sub.portal.look'))
+    = attribute_type(:xyz)
+    = attribute_column
+  = attribute_row do
+    = attribute_name("yaw")
+    = attribute_desc(t('modules.zones.sub.portal.yaw'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name("pitch")
+    = attribute_desc(t('modules.zones.sub.portal.pitch'))
+    = attribute_type(:number)
+    = attribute_column
+
+= subtitle(t('modules.zones.sub.post.post'))
+
+= t('modules.zones.sub.post.text')
+
+:xml
+  <post yaw="90"/>
+
+= attribute_table(t('modules.zones.sub.post.attributes'), false) do
+  = attribute_row(true) do
+    = attribute_name("yaw")
+    = attribute_desc(t('modules.zones.sub.post.yaw'))
+    = attribute_type(:number)
+  = attribute_row do
+    = attribute_name("check")
+    = attribute_desc(t('modules.zones.sub.post.check'))
+    = attribute_type_element(:check)
+
+= subtitle(t('modules.zones.sub.net.net'))
+
+= t('modules.zones.sub.net.text')
+
+:xml
+  <net owner="green" points="1"/>
+
+  <net owner="blue" points="1" respawn-togather="true">
+    <!-- Flag IDs -->
+    <flag>red-1</flag>
+    <flag>red-2</flag>
+  </net>
+
+= attribute_table(t('modules.zones.sub.net.attributes')) do
+  = attribute_row do
+    = attribute_name("owner")
+    = attribute_desc(t('modules.zones.sub.net.owner'))
+    = attribute_type_element(:team)
+    = attribute_column
+  = attribute_row do
+    = attribute_name("points")
+    = attribute_desc(t('modules.zones.sub.net.points'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name("check")
+    = attribute_desc(t('modules.zones.sub.net.check'))
+    = attribute_type_element(:check)
+    = attribute_column
+  = attribute_row do
+    = attribute_name("respawn-together")
+    = attribute_desc(t('modules.zones.sub.net.respawn-together'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+  = attribute_row do
+    = attribute_name("respawn-post")
+    = attribute_desc(t('modules.zones.sub.net.respawn-post'))
+    = attribute_type_element(:zone)
+    = attribute_column
