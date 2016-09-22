@@ -5,8 +5,8 @@ module ElementHelpers
     end
   end
 
-  def attribute_table(header, show_default_column = true, rowNames = ["Attribute", "Description", "Type", "Default"], &block)
-    partial('attribute_table', :locals => {:header => header, :block => block, :default => show_default_column, :rowNames => rowNames})
+  def attribute_table(header, show_default_column = true, row_names = ["Attribute", "Description", "Type", "Default"], &block)
+    partial('attribute_table', :locals => {:header => header, :block => block, :default => show_default_column, :rowNames => row_names})
   end
 
   def attribute_row_id(required = true)

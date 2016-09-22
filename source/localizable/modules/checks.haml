@@ -56,10 +56,14 @@
 
 = attribute_table(t('modules.checks.check'), false, [t('table.type'), t('table.description')]) do
   = attribute_row do
-    = attribute_name('Always')
+    = attribute_column do
+      :xmlcode
+        <always>
     = attribute_desc(t('modules.checks.static.always-desc'))
   = attribute_row do
-    = attribute_name('Never')
+    = attribute_column do
+      :xmlcode
+        <never>
     = attribute_desc(t('modules.checks.static.never-desc'))
 
 
@@ -69,75 +73,173 @@
 %p
   = t('modules.checks.types.text')
 
-= attribute_table(t('modules.checks.check'), [t('table.type'), t('table.description'), t('table.notes')]) do
+= attribute_table(t('modules.checks.check'), false, [t('table.type'), t('table.description')]) do
   = attribute_row do
-    = attribute_name('Attacker')
-    = attribute_desc(t('modules.checks.types.attacker-desc'))
+    = attribute_column do
+      :xmlcode
+        <attacker>
+    = attribute_column do
+      = t('modules.checks.types.attacker-desc')
+      :xml
+        <attacker>
+          <any>
+            <team>red</team>
+            <team>blue</team>
+          </any>
+        </attacker>
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <carrying>
+    = attribute_column do
+      = t('modules.checks.types.carrying-desc')
+      :xml
+        <!-- Player must have a stack of exactly 3 diamonds -->
+        <carrying material="diamond" amount="3"/>
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <damage>
+    = attribute_column do
+      = t('modules.checks.types.damage-desc')
+      :xml
+        <damage>fall</damage>
     = attribute_column
   = attribute_row do
-    = attribute_name('Carrying')
-    = attribute_desc(t('modules.checks.types.carrying-desc'))
-    = attribute_desc(t('modules.checks.types.carrying-notes'))
-  = attribute_row do
-    = attribute_name('Damage')
-    = attribute_desc(t('modules.checks.types.damage-desc'))
+    = attribute_column do
+      :xmlcode
+        <entity>
+    = attribute_column do
+      = t('modules.checks.types.entity-desc')
+      :xml
+        <entity>pig</entity>
     = attribute_column
   = attribute_row do
-    = attribute_name('Entity')
-    = attribute_desc(t('modules.checks.types.entity-desc'))
+    = attribute_column do
+      :xmlcode
+        <holding>
+    = attribute_column do
+      = t('modules.checks.types.holding-desc')
+      :xml
+        <holding material="stone sword"/>
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <inside>
+    = attribute_column do
+      = t('modules.checks.types.inside-desc')
+      :xml
+        <inside region="red-base"/>
+      :xml
+        <inside>
+          <region>
+            <sphere origin="41, 15, 0" radius="5"/>
+          </region>
+        </inside>
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <item>
+    = attribute_column do
+      = t('modules.checks.types.item-desc')
+      :xml
+        <item material="wood" damage="1"/>
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <material>
+    = attribute_column do
+      = t('modules.checks.types.material-desc')
+      :xml
+        <material>log:1</material>
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <objective>
+    = attribute_column do
+      = t('modules.checks.types.objective-desc')
+      :xml
+        <objective>right-hill</objective>
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <random>
+    = attribute_column do
+      = t('modules.checks.types.random-desc')
+      :xml
+        <!-- 10% chance of passing -->
+        <random>0.1</random>
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <sometimes>
+    = attribute_column do
+      = t('modules.checks.types.sometimes-desc')
+      :xml
+        <sometimes/>
     = attribute_column
   = attribute_row do
-    = attribute_name('Holding')
-    = attribute_desc(t('modules.checks.types.holding-desc'))
-    = attribute_desc(t('modules.checks.types.holding-notes'))
+    = attribute_column do
+      :xmlcode
+        <spawn>
+    = attribute_column do
+      = t('modules.checks.types.spawn-desc')
+      :xml
+        <spawn>spawner egg</spawn>
+      :xml
+        <spawn>breeding</spawn>
   = attribute_row do
-    = attribute_name('Inside')
-    = attribute_desc(t('modules.checks.types.inside-desc'))
-    = attribute_desc(t('modules.checks.types.inside-notes'))
+    = attribute_column do
+      :xmlcode
+        <team>
+    = attribute_column do
+      = t('modules.checks.types.team-desc')
+      :xml
+        <team>blue</team>
   = attribute_row do
-    = attribute_name('Item')
-    = attribute_desc(t('modules.checks.types.item-desc'))
-    = attribute_desc(t('modules.checks.types.item-notes'))
+    = attribute_column do
+      :xmlcode
+        <time>
+    = attribute_column do
+      = t('modules.checks.types.time-desc')
+      :xml
+        <!-- Time equals 5 minutes, 0 seconds -->
+        <time>5m</time>
+      :xml
+        <!-- Time is less than 5 minutes -->
+        <time compare="less than">5m</time>
   = attribute_row do
-    = attribute_name('Material')
-    = attribute_desc(t('modules.checks.types.material-desc'))
-    = attribute_desc(t('modules.checks.types.material-notes'))
-  = attribute_row do
-    = attribute_name('Objective')
-    = attribute_desc(t('modules.checks.types.objective-desc'))
-    = attribute_desc(t('modules.checks.types.objective-notes'))
-  = attribute_row do
-    = attribute_name('Random')
-    = attribute_desc(t('modules.checks.types.random-desc'))
-    = attribute_desc(t('modules.checks.types.random-notes'))
-  = attribute_row do
-    = attribute_name('Sometimes')
-    = attribute_desc(t('modules.checks.types.sometimes-desc'))
+    = attribute_column do
+      :xmlcode
+        <victim>
+    = attribute_column do
+      = t('modules.checks.types.victim-desc')
+      :xml
+        <victim>
+          <any>
+            <team>green</team>
+            <team>yellow</team>
+          </any>
+        </victim>
     = attribute_column
   = attribute_row do
-    = attribute_name('Spawn')
-    = attribute_desc(t('modules.checks.types.spawn-desc'))
-    = attribute_column
+    = attribute_column do
+      :xmlcode
+        <wearing>
+    = attribute_column do
+      = t('modules.checks.types.wearing-desc')
+      :xml
+        <wearing material="iron chestplate"/>
   = attribute_row do
-    = attribute_name('Team')
-    = attribute_desc(t('modules.checks.types.team-desc'))
-    = attribute_column
-  = attribute_row do
-    = attribute_name('Time')
-    = attribute_desc(t('modules.checks.types.time-desc'))
-    = attribute_desc(t('modules.checks.types.time-notes'))
-  = attribute_row do
-    = attribute_name('Victim')
-    = attribute_desc(t('modules.checks.types.victim-desc'))
-    = attribute_column
-  = attribute_row do
-    = attribute_name('Wearing')
-    = attribute_desc(t('modules.checks.types.wearing-desc'))
-    = attribute_desc(t('modules.checks.types.wearing-notes'))
-  = attribute_row do
-    = attribute_name('Weather')
-    = attribute_desc(t('modules.checks.types.weather-desc'))
-    = attribute_desc(t('modules.checks.types.weather-notes'))
+    = attribute_column do
+      :xmlcode
+        <weather>
+    = attribute_column do
+      = t('modules.checks.types.weather-desc')
+      :xml
+        <weather>clear</weather>
+      :xml
+        <weather>downfall</weather>
 
 
 = subtitle(t('modules.checks.combinations.combinations'))
@@ -147,10 +249,14 @@
 
 = attribute_table(t('modules.checks.check'), false, [t('table.type'), t('table.description')]) do
   = attribute_row do
-    = attribute_name('All')
+    = attribute_column do
+      :xmlcode
+        <all>
     = attribute_desc(t('modules.checks.combinations.all-desc'))
   = attribute_row do
-    = attribute_name('Any')
+    = attribute_column do
+      :xmlcode
+        <any>
     = attribute_desc(t('modules.checks.combinations.any-desc'))
 
 = subtitle(t('modules.checks.modifiers.modifiers'))
@@ -160,11 +266,25 @@
 
 = attribute_table(t('modules.checks.modifiers.modifier'), false, [t('table.type'), t('table.description')]) do
   = attribute_row do
-    = attribute_name('Allow')
+    = attribute_column do
+      :xmlcode
+        <allow>
     = attribute_desc(t('modules.checks.modifiers.allow-desc'))
   = attribute_row do
-    = attribute_name('Deny')
+    = attribute_column do
+      :xmlcode
+        <deny>
     = attribute_desc(t('modules.checks.modifiers.deny-desc'))
   = attribute_row do
-    = attribute_name('Not')
+    = attribute_column do
+      :xmlcode
+        <not>
     = attribute_desc(t('modules.checks.modifiers.not-desc'))
+
+
+= subtitle(t('modules.checks.examples.examples'))
+%p
+=  t('modules.checks.examples.text')
+
+%p
+= coming_soon

@@ -43,7 +43,7 @@ en:
     projectiles: "Custom Projectiles"
     results: "Results"
   home:
-    main:
+    main: >
       Atlas Game Manager is a Minecraft server modification for
       <a href="https://spigotmc.org">Spigot</a>
       that powers multiplayer, objective-based game modes within Minecraft. Much like the
@@ -52,7 +52,7 @@ en:
       <a href="https://www.halowaypoint.com">Halo</a>,
       one can create their own game modes through modifying the actual layout and design of the world, spawn points, team colors, game rules, weapons, tools, objectives and more.
       Though unlike in Halo Forge, Minecraft is designed around building and design, which enables Atlas map developers to create completely unique maps not based around
-      a pre-existing map. Atlas is also an ever- evolving platform that is driven by the community and the developers behind it.
+      a pre-existing map. Atlas is also an ever-evolving platform that is driven by the community and the developers behind it.
     about: >
       <p>
         This website documents how to create your own maps for the Atlas plugin. Each map has two components:
@@ -149,17 +149,10 @@ en:
       respawn_behavior_text: "After a player dies, they typically enter a state where they are expected to respawn back into the match. This state can be customized to a certain extent using attributes in this module."
     checks:
       check: "Check"
-      text: <p>
-              Checks are different types of methods that can be used in order to narrow down the possible chances for an event to occur.
-            </p>
-            <p>
-              An example of this would be narrowing down the players who can capture a flag, enter a zone, or break blocks.
-            </p>
-            <p>
-              All checks are defined inside the
-              <code class='language-xml'><span class='token tag'><span class='token tag'><span class='token punctuation'>&lt;</span>checks</span><span class='token punctuation'>&gt;</span></span></code>
-              tag and then referenced by id in the rest of the XML.
-            </p>
+      text: 'Checks are utilized by different modules to selectively filter some event. Each check when processed results in either allowing, denying or ignoring that event.'
+      examples:
+        examples: 'Examples'
+        text: 'Below are some examples of checks with explanations of what they perform.'
       variables:
         variables: "Variables"
         text: "Variables are different sources of information that a check can be supplied with in order to narrow down the scope of what is being checked against.
