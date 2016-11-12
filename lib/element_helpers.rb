@@ -97,6 +97,8 @@ module ElementHelpers
             label("Color")
           when :action
             label("Number Action")
+          when :decimal
+            label("Number (With Decimal)")
           else
             raise "#{type} is not a valid attribute_type"
         end

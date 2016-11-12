@@ -44,6 +44,10 @@
 
 - name: Game Modification
   modules:
+  - name: broadcasts
+    path: /modules/broadcasts
+  - name: chests
+    path: /modules/chests
   - name: items_and_drops
     path: /modules/items_and_drops
   - name: world

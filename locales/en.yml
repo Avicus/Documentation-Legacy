@@ -42,6 +42,8 @@ en:
     kills-deaths: "Kills/Deaths"
     projectiles: "Custom Projectiles"
     results: "Results"
+    broadcasts: "Broadcasts"
+    chests: "Chest Generation"
   home:
     main: >
       Atlas Game Manager is a Minecraft server modification for
@@ -93,6 +95,16 @@ en:
       attributes_version: The version of the map.
       attributes_description: A brief description of the map.
       semantic: Semantic version
+    broadcasts:
+      text: This module can be used to display periodic messages in game.
+      attributes: Broadcast Attributes
+      format: "Format of the broadcast."
+      interval: "The time between broadcasts."
+      repetitions: "Max number of times a broadcast should be displayed."
+      check: "Check to be ran before the broadcast is displayed. If not displayed, the repetition count will not be effected."
+      formats:
+        format: "Broadcast Format"
+        text: "These pre-defined formats help you quickly format broadcasts in game."
     authors:
       text: The authors element is provided to give credit to the people that made contributions to the creation of a map. Their minecraft usernames are listed in a variety of locations while the map is being played.
       attributes: Author Attributes
@@ -381,6 +393,24 @@ en:
           check: "Check to be ran to determine if the player can capture the flag at this net."
           respawn-post: "Post that the flag should respawn at if it is captured at this net. If no post is specified, the flag will return to it's previous post."
           respawn-together: "If all of the flags enclosed by the <code>flags</code> element should wait until all are captured to respawn, or respawn directly after capture."
+    chests:
+      text: "Chest generators are used to fill the contents of chests in a region based on various factors automatically or with a refill delay."
+      attributes:
+        text: "Main Generator Attributes"
+        region: "The region that contains the chests to fill."
+        clear: "If the chest's contents should be cleared before population begins."
+        min: "Minimum stack size of items that will be generated."
+        max: "Maximum stack size of items that will be generated."
+        regenerate-count: "Amount of times the chest should regenerate its items."
+        regenerate-countdown: "Duration to wait between regenerate. (This is the timer displayed over chests.)"
+        allow-duplicates: "If multiple items of the same type are selected by the randomizer, if both should be used."
+        check: "Check to be ran before population begins."
+      items:
+        text: "Item Generators"
+        desc: "These are groups of items that carry the same chance of being applied to a chest. If no min/max values are applied here, they will be inherited from above."
+        attributes:
+          text: "Item Generator Attributes"
+          weight: "Chance items from this list will be used."
   references:
     colors:
       desc: The following colors can be used for teams.

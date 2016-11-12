@@ -1,0 +1,83 @@
+= title('Chest Generators')
+
+%p
+  = t('modules.chests.text')
+
+:xml
+  <chests>
+    <generator region="everywhere" min="3" max="10" regenerate-count="1" regenerate-countdown="3m">
+      ...
+    </generator>
+  </chests>
+
+= attribute_table(t('modules.chests.attributes.text')) do
+  = attribute_row(true) do
+    = attribute_name('region')
+    = attribute_desc(t('modules.chests.attributes.region'))
+    = attribute_type_element(:region)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('clear')
+    = attribute_desc(t('modules.chests.attributes.clear'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+  = attribute_row do
+    = attribute_name('min')
+    = attribute_desc(t('modules.chests.attributes.min'))
+    = attribute_type(:number)
+    = attribute_default(1)
+  = attribute_row do
+    = attribute_name('max')
+    = attribute_desc(t('modules.chests.attributes.max'))
+    = attribute_type(:number)
+    = attribute_default(1)
+  = attribute_row do
+    = attribute_name('regenerate-count')
+    = attribute_desc(t('modules.chests.attributes.regenerate-count'))
+    = attribute_type(:number)
+    = attribute_default(0)
+  = attribute_row do
+    = attribute_name('regenerate-countdown')
+    = attribute_desc(t('modules.chests.attributes.regenerate-countdown'))
+    = attribute_type(:duration)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('allow-duplicates')
+    = attribute_desc(t('modules.chests.attributes.allow-duplicates'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+  = attribute_row do
+    = attribute_name('check')
+    = attribute_desc(t('modules.chests.attributes.check'))
+    = attribute_type_element(:check)
+    = attribute_column
+
+= subtitle(t('modules.chests.items.text'))
+%p
+  = t('modules.chests.items.desc')
+
+:xml
+  <chest-items max="1" weight="10">
+      <item material="leather helmet"/>
+      <item material="leather chestplate"/>
+      <item material="leather leggings"/>
+      <item material="leather boots"/>
+      <item material="wood sword"/>
+  </chest-items>
+
+= attribute_table(t('modules.chests.items.attributes.text')) do
+  = attribute_row do
+    = attribute_name('min')
+    = attribute_desc(t('modules.chests.attributes.min'))
+    = attribute_type(:number)
+    = attribute_default(1)
+  = attribute_row do
+    = attribute_name('max')
+    = attribute_desc(t('modules.chests.attributes.max'))
+    = attribute_type(:number)
+    = attribute_default(1)
+  = attribute_row do
+    = attribute_name('weight')
+    = attribute_desc(t('modules.chests.items.attributes.weight'))
+    = attribute_type(:decimal)
+    = attribute_default(1.0)
