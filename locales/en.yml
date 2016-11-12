@@ -261,10 +261,10 @@ en:
         color-desc: "The color to be applied to the item. (This item must be a colorable item, or a parser error will be thrown)"
         team-color-desc: "If the player's team color should be used to color the item. This will override the other color attribute"
         potion-type-desc: "The type of the potion that will be displayed. (This will not override the effects added by the <code>effects</code> tag)"
-        enchant:
+        enchantment:
           attributes: "Enchantment Attributes"
-          type-desc: "The type of enchantment to apply to the item."
-          level-desc: "The level of the enchantment to be applied to the item."
+          type: "The type of enchantment to apply to the item."
+          level: "The level of the enchantment to be applied to the item."
         effect:
           attributes: "Effect Attributes"
           type: "The type of the effect that the potion will cause."
@@ -326,7 +326,7 @@ en:
       team: "The team result type will reward the win to the team specified."
       check: "The check that needs to pass in order for the result to execute. The check can be referenced by ID or placed inside of the tag."
     zones:
-      attributes-text: "Zone Attributes"
+      zone-attributes: "Zone Attributes"
       check:
         text: "Checks can be used to filter what players are allowed to to in zones. Checks can be defined as a zone attribute, or can be defined as sub tags."
         checks: "Checks"
@@ -368,11 +368,13 @@ en:
           pitch: "Pitch of the player when they are teleported."
         post:
           post: "Flag Post"
+          attributes: "Post Attrivutes"
           text: "These define where flags should be placed."
           check: "Check to be ran to determine if the player can pickup the flag."
           yaw: "Yaw orientation of the banner."
         net:
           net: "Flag Capture Net"
+          attributes: "Net Attributes"
           text: "Nets are locations that flags can be captured at. A flag can have multiple net possibilities, and nets do not have to be bound to teams."
           owner: "Owner of the net."
           points: "Points to be rewarded to the player who captures the flag."
