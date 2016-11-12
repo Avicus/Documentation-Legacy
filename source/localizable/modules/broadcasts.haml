@@ -9,10 +9,10 @@
     <broadcast format="alert" interval="2m">{broadcasts.some-broadcast-2}</broadcast>
   </broadcasts>
 
-= attribute_table(t(:modules)[:broadcasts][:attributes]) do
+= attribute_table(t('modules.broadcasts.attributes')) do
   = attribute_row do
     = attribute_name('format')
-    = attribute_desc(t(:modules)[:broadcasts][:format])
+    = attribute_desc(t('modules.broadcasts.format'))
     = attribute_desc(label(t('modules.broadcasts.formats.format')))
     = attribute_default("DEFAULT")
   = attribute_row(true) do
