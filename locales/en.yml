@@ -33,6 +33,7 @@ en:
     colors: Colors
     wools: Wools
     checks: "Checks"
+    decay: Block Phases/Decay
     world: "World"
     zones: "Zones"
     localization: "Localization"
@@ -101,6 +102,16 @@ en:
       attributes: Channels Attributes
       team: If players are allowed to use team chat.
       global: If players are allowed to use global chat.
+    decay:
+      text: This module is used to automatically change blocks under players as they walk.
+      area:
+        attributes: Decay Area Attributes
+        region: Region where decay/block phases should occur.
+        delay: Delay after the last phase is applied for the blocks to fall. Delays below 1s will cause ghost blocks.
+      phase:
+        attributes: Decay Phase Attributes
+        delay: Delay before this phase is applied. Delays below 1s will cause ghost blocks.
+        material: Material to change the block to.
     broadcasts:
       text: This module can be used to display periodic messages in game.
       attributes: Broadcast Attributes

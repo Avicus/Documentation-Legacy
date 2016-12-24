@@ -1,0 +1,38 @@
+= title('Block Decay & Phases')
+
+%p
+  = t('modules.decay.text')
+
+:xml
+  <decay>
+    <area region="map" fall-delay="1.3s">
+      <phase delay="1.5s">stained clay:5</phase>
+      <phase delay="1.5s">stained clay:4</phase>
+      <phase delay="1.5s">stained clay:1</phase>
+      <phase delay="1.5s">stained clay:14</phase>
+    </area>
+  </decay>
+
+= attribute_table(t('modules.decay.area.attributes')) do
+  = attribute_row(true) do
+    = attribute_name('region')
+    = attribute_desc(t('modules.decay.area.region'))
+    = attribute_type_element(:region)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('fall-delay')
+    = attribute_desc(t('modules.decay.area.delay'))
+    = attribute_type(:number)
+    = attribute_default(4)
+
+= attribute_table(t('modules.decay.phase.attributes')) do
+  = attribute_row(true) do
+    = attribute_name('material')
+    = attribute_desc(t('modules.decay.phase.material'))
+    = attribute_type(:material)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('delay')
+    = attribute_desc(t('modules.decay.phase.delay'))
+    = attribute_type(:number)
+    = attribute_default(3)

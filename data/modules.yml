@@ -50,6 +50,8 @@
     path: /modules/broadcasts
   - name: chests
     path: /modules/chests
+  - name: decay
+    path: /modules/decay
   - name: items_and_drops
     path: /modules/items_and_drops
   - name: world
