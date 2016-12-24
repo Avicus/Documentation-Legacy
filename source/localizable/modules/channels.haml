@@ -1,0 +1,19 @@
+= title('Chat Channels')
+
+%p
+  = t('modules.channels.text')
+
+:xml
+  <channels team-chat="true" global-chat="true"/>
+
+= attribute_table(t('modules.channels.attributes')) do
+  = attribute_row do
+    = attribute_name('team-chat')
+    = attribute_desc(t('modules.channels.team'))
+    = attribute_type(:boolean)
+    = attribute_default(true)
+  = attribute_row do
+    = attribute_name('global-chat')
+    = attribute_desc(t('modules.channels.global'))
+    = attribute_type(:boolean)
+    = attribute_default(true)

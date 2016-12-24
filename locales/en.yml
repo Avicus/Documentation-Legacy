@@ -24,6 +24,7 @@ en:
     objectives: Objectives
     loadouts: Items & Loadouts
     events: Events
+    channels: Chat Channels
     conditions: Conditions
     triggers: Triggers
     monuments: Monuments
@@ -95,6 +96,11 @@ en:
       attributes_version: The version of the map.
       attributes_description: A brief description of the map.
       semantic: Semantic version
+    channels:
+      text: This module is used to determine if players are allowed to use team/global chat.
+      attributes: Channels Attributes
+      team: If players are allowed to use team chat.
+      global: If players are allowed to use global chat.
     broadcasts:
       text: This module can be used to display periodic messages in game.
       attributes: Broadcast Attributes

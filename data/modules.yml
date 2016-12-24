@@ -21,6 +21,8 @@
     path: /modules/elimination
   - name: results
     path: /modules/results
+  - name: channels
+    path: /modules/channels
 
 - name: Locations & Checks
   modules:
