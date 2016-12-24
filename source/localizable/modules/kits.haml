@@ -1,0 +1,81 @@
+= title('Kits')
+
+%p
+  = t('modules.kits.text')
+
+:xml
+  <kits>
+    <kit name="{kits.medic}" description="{kits.medic-description}" loadout="medic">
+        <icon material="potion" damage="16421"/>
+    </kit>
+    <kit name="{kits.bunny}" description="{kits.bunny-description}" loadout="bunny">
+        <icon material="potion" damage="16426"/>
+    </kit>
+  </kits>
+
+= attribute_table(t('modules.kits.attributes')) do
+  = attribute_row(true) do
+    = attribute_name('name')
+    = attribute_desc(t('modules.kits.name'))
+    = attribute_type(:localizable)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('description')
+    = attribute_desc(t('modules.kits.desc'))
+    = attribute_type(:localizable)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('icon')
+    = attribute_desc(t('modules.kits.icon'))
+    = attribute_type(:material)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('loadout')
+    = attribute_desc(t('modules.kits.loadout'))
+    = attribute_type_element(:loadout)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('default')
+    = attribute_desc(t('modules.kits.default'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+
+= subtitle(t('modules.kits.ability.text'))
+
+%p
+  = t('modules.kits.ability.desc')
+
+= section(t('modules.kits.ability.jump.text'))
+
+%p
+  = t('modules.kits.ability.jump.desc')
+
+= attribute_table(t('modules.kits.ability.jump.attributes')) do
+  = attribute_row(true) do
+    = attribute_name('push')
+    = attribute_desc(t('modules.kits.ability.jump.push'))
+    = attribute_type(:decimal)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('icarus')
+    = attribute_desc(t('modules.kits.ability.jump.icarus'))
+    = attribute_type(:decimal)
+    = attribute_column
+
+= section(t('modules.kits.ability.health.text'))
+
+%p
+  = t('modules.kits.ability.health.desc')
+
+= attribute_table(t('modules.kits.ability.health.attributes')) do
+  = attribute_row(true) do
+    = attribute_name('health')
+    = attribute_desc(t('modules.kits.ability.health.health'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('effect')
+    = attribute_desc(t('modules.kits.ability.health.effect'))
+    = attribute_desc(label('Effect Type')) do
+      = link_to("Types", "https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html")
+    = attribute_column

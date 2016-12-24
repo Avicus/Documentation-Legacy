@@ -24,6 +24,7 @@ en:
     regions: Regions
     objectives: Objectives
     loadouts: Items & Loadouts
+    kits: Kits
     events: Events
     channels: Chat Channels
     conditions: Conditions
@@ -162,6 +163,29 @@ en:
       formats:
         format: "Broadcast Format"
         text: "These pre-defined formats help you quickly format broadcasts in game."
+    kits:
+      text: Kits are selectable loadouts that a player can select using a GUI or a command.
+      attributes: Kit Attributes
+      name: The name of the kit.
+      desc: The description of the kit.
+      icon: The icon of the kit used for the menu.
+      loadout: Loadout that the kit should apply.
+      default: If this kit is the default kit.
+      ability:
+        text: Kit Abilities
+        desc: Kit abilities are special modifiers that are given to players who have the kit.
+        jump:
+          text: Double Jump Ability
+          desc: This ability allows the player to jump higher than normal.
+          attributes: Double Jump Attributes
+          push: How far forward the player should go.
+          icarus: How high the player should go.
+        health:
+          text: Health Effect Ability
+          desc: This ability applies a potion effect to a player when they reach a certain health.
+          attributes: Health Effect Attributes
+          effect: Effect to apply to the player.
+          health: Health level that will trigger the effect.
     authors:
       text: The authors element is provided to give credit to the people that made contributions to the creation of a map. Their minecraft usernames are listed in a variety of locations while the map is being played.
       attributes: Author Attributes

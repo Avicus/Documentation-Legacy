@@ -58,6 +58,8 @@
     path: /modules/phases
   #- name: items_and_drops
   #  path: /modules/items_and_drops
+  - name: kits
+    path: /modules/kits
   - name: world
     path: /modules/world
   - name: compasses
