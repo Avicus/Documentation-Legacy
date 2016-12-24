@@ -1,0 +1,30 @@
+= title('Custom Resource Packs')
+
+%p
+  = t('modules.resource-packs.text')
+
+= attribute_table(t('modules.resource-packs.packs.attributes')) do
+  = attribute_row_id
+  = attribute_row(true) do
+    = attribute_name('name')
+    = attribute_desc(t('modules.resource-packs.packs.name'))
+    = attribute_type(:localizable)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('url')
+    = attribute_desc(t('modules.resource-packs.packs.url'))
+    = attribute_type(:text)
+    = attribute_column
+
+= attribute_table(t('modules.resource-packs.request.attributes')) do
+  = attribute_row(true) do
+    = attribute_name('id')
+    = attribute_desc(t('modules.resource-packs.request.id'))
+    = attribute_column do
+      = label("Resource Pack")
+    = attribute_column
+  = attribute_row do
+    = attribute_name('force')
+    = attribute_desc(t('modules.resource-packs.request.force'))
+    = attribute_type(:boolean)
+    = attribute_default(false)

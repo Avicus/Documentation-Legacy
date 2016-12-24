@@ -29,6 +29,7 @@ en:
     channels: Chat Channels
     conditions: Conditions
     triggers: Triggers
+    resource-packs: Custom Resource Packs
     monuments: Monuments
     hills: Hills
     flags: Flags
@@ -163,6 +164,16 @@ en:
       formats:
         format: "Broadcast Format"
         text: "These pre-defined formats help you quickly format broadcasts in game."
+    resource-packs:
+      text: This module is used to request a custom resource pack during matches.
+      pack:
+        attributes: Resource Pack Attributes
+        name: The name of the resource pack.
+        url: Direct URL of the resource pack. (Zip folder)
+      request:
+        attributes: Resource Pack Request Attributes
+        id: ID of the resource pack to request.
+        force: If the pack is required in order for the player to join teams.
     kits:
       text: Kits are selectable loadouts that a player can select using a GUI or a command.
       attributes: Kit Attributes

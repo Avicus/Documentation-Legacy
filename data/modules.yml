@@ -70,3 +70,5 @@
     path: /modules/kills-deaths
   - name: projectiles
     path: /modules/projectiles
+  - name: resource-packs
+    path: /modules/resource_packs
