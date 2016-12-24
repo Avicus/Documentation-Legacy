@@ -20,6 +20,7 @@ en:
     includes: Includes
     teams: Teams
     spawns: Spawns
+    phases: Destroyable Phases
     regions: Regions
     objectives: Objectives
     loadouts: Items & Loadouts
@@ -102,6 +103,24 @@ en:
       attributes: Channels Attributes
       team: If players are allowed to use team chat.
       global: If players are allowed to use global chat.
+    phases:
+      text: This module is used to automatically change the blocks of (and needed to repair) Destroyable objectives based on a delay and check.
+      leakables: "A default set of phases used for all DTC maps can be included from <code>Shared/phases.xml</code>"
+      attributes: Phases Attributes
+      name: The name of the phase. (Used for display). This goes in the are directly under the definition tag. (See above)
+      countdown: "The message that is used for the countdown that is displayed in chat and on the boss bar. <br>FORMAT: {0} = the name of the phase, {1} = the amount of time until the phase will be applied."
+      change-success: The message that is displayed when the phase is successfully applied.
+      change-fail: The message that is displayed when the phase fails to be applied.
+      delay: Delay before the phase is applied.
+      check: Check to be ran before the phase is applied.
+      retry: Number of times the phase should be attempted to be re-applied if the check fails.
+      retry-delay: Delay between retry attempts.
+      fail-phase: Phase that will be applied if the check fails and there are no retry attempts remaining.
+      pass-phase: Phase that will be applied if the check passes.
+      materials:
+        attributes: Find/Replace Attributes
+        find: Materials to search for.
+        replace: Single material to replace the found blocks with.
     decay:
       text: This module is used to automatically change blocks under players as they walk.
       area:

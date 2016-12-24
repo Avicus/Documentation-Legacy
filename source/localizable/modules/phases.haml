@@ -1,0 +1,90 @@
+= title('Destroyable Phases')
+
+%p
+  = t('modules.phases.text')
+
+.alert.alert-info
+  = t('modules.phases.leakables')
+
+:xml
+  <phases countdown-message="{phases.transition}" fail-message="{phases.cores.fail}">
+      <phase id="gold" success-message="{phases.core.gold}" delay="25m" pass-phase="glass">
+          ^eGold
+          <materials>
+              <material find="obsidian" replace="gold block"/>
+          </materials>
+      </phase>
+      <phase id="glass" success-message="{phases.core.glass}" delay="20m">
+          Glass
+          <materials>
+              <material find="gold block" replace="glass"/>
+          </materials>
+      </phase>
+  </phases>
+
+= attribute_table(t('modules.phases.attributes')) do
+  = attribute_row_id(true)
+  = attribute_row(true) do
+    = attribute_name('name')
+    = attribute_desc(t('modules.phases.name'))
+    = attribute_type(:text)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('countdown-message')
+    = attribute_desc(t('modules.phases.countdown'))
+    = attribute_type(:text)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('success-message')
+    = attribute_desc(t('modules.phases.change-success'))
+    = attribute_type(:text)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('fail-message')
+    = attribute_desc(t('modules.phases.change-fail'))
+    = attribute_type(:text)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('delay')
+    = attribute_desc(t('modules.phases.delay'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('check')
+    = attribute_desc(t('modules.phases.check'))
+    = attribute_type_element(:check)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('retry-attempts')
+    = attribute_desc(t('modules.phases.retry'))
+    = attribute_type(:number)
+    = attribute_default(0)
+  = attribute_row do
+    = attribute_name('retry-delay')
+    = attribute_desc(t('modules.phases.retry-delay'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('pass-phase')
+    = attribute_desc(t('modules.phases.pass-phase'))
+    = attribute_column do
+      = label('Phase ID')
+    = attribute_column
+  = attribute_row do
+    = attribute_name('fail-phase')
+    = attribute_desc(t('modules.phases.fail-phase'))
+    = attribute_column do
+      = label('Phase ID')
+    = attribute_column
+
+= attribute_table(t('modules.phases.materials.attributes')) do
+  = attribute_row(true) do
+    = attribute_name('find')
+    = attribute_desc(t('modules.phases.materials.find'))
+    = attribute_type(:material)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('replace')
+    = attribute_desc(t('modules.phases.materials.replace'))
+    = attribute_type(:material)
+    = attribute_column
