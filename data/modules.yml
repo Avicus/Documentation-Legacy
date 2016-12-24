@@ -37,6 +37,8 @@
   modules:
   - name: monuments
     path: /modules/objective_monuments
+  - name: leakables
+    path: /modules/objective_leakables
   - name: hills
     path: /modules/objective_hills
   - name: wools

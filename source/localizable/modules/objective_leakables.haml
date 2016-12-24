@@ -1,0 +1,30 @@
+= title('Leakables')
+
+%p
+  = t('modules.leakables.text')
+
+:xml
+  <leakables materials="obsidian" first-phase="gold">
+      <leakables owner="orange">
+          <leakable name="コア (Core)" leak-distance="1" repairable="true">
+              <region>
+                <cuboid min="10, 40, -30" max="14, 46, -34"/>
+              </region>
+          </leakable>
+      </leakables>
+      <leakables owner="red">
+          <leakable name="コア (Core)" leak-distance="1" repairable="true">
+              <region>
+                  <cuboid min="64, 40, 4" max="59, 46, 8"/>
+              </region>
+          </leakable>
+      </leakables>
+  </leakables>
+
+= attribute_table(t('modules.leakables.attributes')) do
+  = render_partial("destroyable_attributes")
+  = attribute_row(true) do
+    = attribute_name('leak-distance')
+    = attribute_desc(t('modules.leakables.leak-distance'))
+    = attribute_type(:number)
+    = attribute_column

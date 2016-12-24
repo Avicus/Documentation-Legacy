@@ -43,40 +43,4 @@
   </objectives>
 
 = attribute_table('Monument Attributes') do
-  = attribute_row_id(false)
-  = attribute_row(true) do
-    = attribute_name('name')
-    = attribute_desc('The name of the monument.')
-    = attribute_type(:localizable)
-    = attribute_column
-  = attribute_row(true) do
-    = attribute_name('materials')
-    = attribute_desc('The materials that can be destroyed.')
-    = attribute_type(:materials)
-    = attribute_column
-  = attribute_row(true) do
-    = attribute_name('owner')
-    = attribute_desc('The owner of the monument.')
-    = attribute_type_element(:team)
-    = attribute_column
-  = attribute_row(true) do
-    = attribute_name('region')
-    = attribute_desc('The region that encapsulates the monument.')
-    = attribute_type_element(:iterable_region)
-    = attribute_column
-  = attribute_row do
-    = attribute_name('completed-state')
-    = attribute_desc('The material that blocks change to once broken.')
-    = attribute_type(:material)
-    = attribute_default('air')
-  = attribute_row do
-    = attribute_name('completion')
-    = attribute_desc('The percentage necessary to consider the objective complete.')
-    = attribute_type do
-      [0, 100]
-    = attribute_default(1.0)
-  = attribute_row do
-    = attribute_name('fireworks')
-    = attribute_desc('Spawn a firework effect and sound to players when a block is broken.')
-    = attribute_type(:boolean)
-    = attribute_default('false')
+  = render_partial("destroyable_attributes")

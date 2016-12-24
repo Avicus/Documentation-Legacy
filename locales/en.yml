@@ -33,6 +33,7 @@ en:
     flags: Flags
     colors: Colors
     wools: Wools
+    leakables: Leakables
     checks: "Checks"
     decay: Block Phases/Decay
     world: "World"
@@ -131,6 +132,26 @@ en:
         attributes: Decay Phase Attributes
         delay: Delay before this phase is applied. Delays below 1s will cause ghost blocks.
         material: Material to change the block to.
+    leakables:
+      text: Leakables are like monuments but contain a liquid inside that must be leaked in order to be marked as completed.
+      attributes: Leakable Attributes
+      leak-distance: Distance the liquid must leak from the bottom of the region in order for the objective to be marked as completed.
+    destroyable:
+      name: The name of the objective.
+      materials: The materials that can be destroyed.
+      owner: The owner of the objective.
+      region: The region that encapsulates the objective.
+      completed: The material that blocks change to once broken,
+      fireworks: Spawn a firework effect and sound to players when a block is broken.
+      completion: The percentage necessary to consider the objective complete
+      destroyable: If the objective can be destroyed using TNT.
+      repairable: If the objective can be repaired by its owner.
+      points: The amount of points rewarded to the team who completes the objective.
+      points-block: The amount of points rewarded to a team when a player breaks a block.
+      break-check: Check to be ran to see if the player can break the objective.
+      repair-check: Check to be ran to see if the player can repair the objective.
+      phase: First phase that the objective should attempt to switch to.
+      any-repair: If any block can be used to repair the objective.
     broadcasts:
       text: This module can be used to display periodic messages in game.
       attributes: Broadcast Attributes
