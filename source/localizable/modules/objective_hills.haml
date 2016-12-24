@@ -88,3 +88,8 @@
     = attribute_desc('If a hill is controlled and no team is capturing it, the completion will depreciate over time.')
     = attribute_type(:boolean)
     = attribute_default('false')
+  = attribute_row do
+    = attribute_name('ignored-blocks')
+    = attribute_desc('Specific types of blocks that should be ignored during progress indication.')
+    = attribute_type(:materials)
+    = attribute_column
