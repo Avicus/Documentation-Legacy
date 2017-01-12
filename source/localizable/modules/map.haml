@@ -8,7 +8,7 @@
 
 :xml
   <?xml version="1.0"?>
-  <map name="Revolution" version="1.5.3">
+  <map name="Revolution" version="1.5.3" spec="1.0.0">
     ...
   </map>
 
@@ -17,6 +17,11 @@
     = attribute_name('name')
     = attribute_desc(t(:modules)[:map][:attributes_name])
     = attribute_type(:text)
+    = attribute_row(true) do
+      = attribute_name('spec')
+      = attribute_desc(t(:modules)[:map][:attributes_spec])
+      = attribute_column do
+        = link_to(t(:modules)[:map][:semantic], 'http://semver.org')
   = attribute_row(true) do
     = attribute_name('version')
     = attribute_desc(t('modules.map.attributes_version'))
