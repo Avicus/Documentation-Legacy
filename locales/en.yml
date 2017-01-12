@@ -99,6 +99,7 @@ en:
       attributes: Map Attributes
       attributes_name: The name of the map.
       attributes_version: The version of the map.
+      attributes_spec: The version of the XML. (This need to be in the file or will not work in Atlas)
       attributes_description: A brief description of the map.
       semantic: Semantic version
     channels:
