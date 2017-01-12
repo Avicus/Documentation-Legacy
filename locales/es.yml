@@ -21,6 +21,7 @@ es:
       attributes: Atributos del Mapa
       attributes_name: El nombre del mapa.
       attributes_version: La versión del mapa.
+      attributes_spec: La versión del XML. (Esto necesita estar en el archivo ya que no funcinaría en Atlas)
       semantic: Versión semántica
     authors:
       text: El elemento autores sirve para dar crédito a las personas que contribuyeron a la creación de un mapa. Sus nombres de usuario de minecraft aparecen en diferentes lugares mientras que el mapa se está jugando.
