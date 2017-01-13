@@ -198,6 +198,26 @@
   <above x="25" z="21"/>  <!-- any block in below x=25, z=21 -->
   <below x="32" y="18" z="52"/> <!-- you get the idea -->
 
+= section('Bounds')
+%p
+  Selects the area around the region specified. Similar to the WorldEdit //walls command.
+  %code x-axis
+  ,
+  %code y-axis
+  or
+  %code z-axis
+  which are
+  %code true
+  by default. If
+  %code false
+  , the blocks on that axis will not be selected.
+:xml
+  <bounds id="bound" y-axis="false">
+    <region>
+      <cuboid min="11, 10, -13" max="2, 10, -5"/>
+    </region>
+  </bounds>
+
 = section('Void')
 %p
   The void region selects all blocks that have only air at
