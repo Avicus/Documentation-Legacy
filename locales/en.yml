@@ -98,7 +98,7 @@ en:
       text: This is the main, root element the all maps must provide. Every subsequent element is nested inside the map element. Note that for an XML file to be valid, it must contain the %s header.
       attributes: Map Attributes
       attributes_name: The name of the map.
-      attributes_version: The version of the map.
+      attributes_version: The version of the Atlas XML specification.
       attributes_spec: The version of the XML. (This need to be in the file or will not work in Atlas)
       attributes_description: A brief description of the map.
       semantic: Semantic version
