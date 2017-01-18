@@ -5,6 +5,7 @@ set :application, 'atlas.avicus.net'
 set :repo_url, 'git@github.com:Avicus/atlas.avicus.net.git'
 set :keep_releases, 3
 set :deploy_via, :copy
+set :git_keep_meta, true
 
 namespace :deploy do
   desc 'Build middleman.'

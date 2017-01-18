@@ -21,6 +21,7 @@ de:
       attributes_name: Der Name der Map.
       attributes_version: Die Version der Map.
       semantic: Semantische Version
+      attributes_spec: The version of the Atlas XML specification. (This need to be in the file or will not work in Atlas)
     authors:
       text: Das Autoren Element ist vorgesehen um den Spielern Anerkennung zu geben, die bei der Erstellung der Map beigetragen haben. Ihre Minecraft Nutzernamen werden in einer Vielzahl von Stellen aufgelistet, während die Map gespielt wird.
       attributes: Autoren Attribute
