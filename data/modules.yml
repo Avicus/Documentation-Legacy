@@ -54,6 +54,8 @@
     path: /modules/chests
   - name: decay
     path: /modules/decay
+  - name: executors
+    path: /modules/executors
   - name: phases
     path: /modules/phases
   #- name: items_and_drops

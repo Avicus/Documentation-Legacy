@@ -34,6 +34,8 @@ en:
     hills: Hills
     flags: Flags
     colors: Colors
+    executors: Executors
+    structures: Structures
     wools: Wools
     leakables: Leakables
     checks: "Checks"
@@ -165,6 +167,134 @@ en:
       formats:
         format: "Broadcast Format"
         text: "These pre-defined formats help you quickly format broadcasts in game."
+    executors:
+      text: This module is used to define specified actions that can be triggered during matches.
+      generic:
+        attributes: Executor Attributes
+        text: All executors must have the following attributes.
+        check: Check that must pass in order for the executor to run.
+        action: Number action to be applied to the current value.
+        region: Region this executor acts inside of.
+      triggers:
+        title: Executor Triggers
+        note: Triggers which are hi-lighted are called extremely often and should be used with caution.
+        attributes: Triggers
+        block-break: Called when a block is broken.
+        block-explode: Called when a block explodes.
+        block-place: Called when a block is placed.
+        creature-spawn: Called when a mob spawns.
+        firework-explode: Called when a firework rocket explodes.
+        projectile-hit: Called when a projectile hits an entity.
+        item-drop: Called when an item is dropped.
+        lightning-strike: Called when a lightning bolt strikes.
+        item-break: Called when a tool/armor breaks.
+        item-consume: Called when a player consumes an item. (Eating/Drinkable Potions)
+        item-pickup: Called when a player picks up an item.
+        toggle-flight: Called when a player's flying status changes.
+        toggle-sneak: Called when a player's sneaking status changes.
+        toggle-sprint: Called when a player's sprinting status changes.
+        toggle-on-ground: Called when a player touches ground.
+        player-death: Called when a player dies.
+        player-spawn: Called when a player spawns.
+        player-eliminate: Called when a player is eliminated during elimination.
+        weather-change: Called when the weather in the match changes.
+        state-change: Called when the state of a match changes. starting->playing->cycling->
+        match-open: Called right after the match loads.
+        leakable-leak: Called when a leakable is leaked.
+        monument-destroy: Called when a monument is destroyed.
+        flag-capture: Called when a flag is captured.
+        hill-capture: Called when a hill is captured.
+        wool-place: Called when a wool is placed at it's monument.
+        destroyable-touch: Called when a destroyable is marked as touched.
+        wool-pickup: Called when a wool is picked up.
+        destroyable-damage: Called when a destroyable objective is damaged.
+        destroyable-repair: Called when a destroyable objective is repaired.
+        flag-drop: Called when the flag is dropped.
+        flag-pickup: Called when a flag is picked up from the ground.
+        flag-steal: Called when a flag is stolen from a post.
+        hill-owner-change: Called when the owner of a hill changes.
+        point-earn: Called when a player/team earns a point.
+      types:
+        text: Executor Types
+        modify-lives:
+          title: Modify Lives - <code>modify-lives</code>
+          text: An executor that is used to modify the amount of lives a player has remaining.
+          amount: Amount of lives to modify.
+        toggle-elimination:
+          title: Toggle Elimination - <code>toggle-elimination</code>
+          text: An executor used to toggle elimination on/off for a match.
+          toggle: What elimination should be set to. If this is not specified, it will just be toggled.
+        block-replace:
+          title: Replace Blocks - <code>replace-block</code>
+          text: An executor that will rapidly replace blocks inside of a region.
+          find: Material to search for.
+          replace: Material to replace found blocks with.
+        enchant:
+          title: Enchant Items - <code>enchant</code>
+          text: An executor that enchants items in player inventories based on various criteria.
+          selector: Part of inventory to look inside of.
+          matcher: Items to look for.
+          enchantment: Enchantment to be applied.
+          level: Level of the enchantment.
+          only-natural: Only enchants items that can naturally be enchanted with this type of enchantment.
+        play-sound:
+          title: Play Sound - <code>play-sound</code>
+          text: An executor that plays a sound to a player.
+          sound: Type of sound to be played.
+          volume: Volume of the sound.
+          pitch: Pitch of the sound.
+          location: Location the sound should be played at. If no location is supplied, a player's location will be used.
+        summon-entity:
+          title: Summon Entity - <code>summon-entity</code>
+          text: An executor that summons entities into the world with specified attributes.
+          type: Type of entity to be spawned.
+          name: Custom name for the entity.
+          equipment:
+            title: Equipment
+            slot: Slot the equipment should be placed in.
+            item: Item type of the equipment. You can use any specifiers that can be used in loadouts.
+            drop: If the equipment should be dropped when the entity dies.
+          effects: Potion effects to apply to the entity. These are written in the same manner as in loadouts.
+          count: Number of entities that should be spawned.
+          firework:
+            title: Firework Attributes
+            power: The power of the firework.
+            team-color: If the team color (if it can be inferred) should be a part of the firework.
+            team-color-fade: If the team color (if it can be inferred) should be a part of the firework's fade.
+            effect:
+              text: Firework Effect Attributes
+              effect: Type of effect to be applied.
+              flicker: If the effect should flicker.
+              trail: If the effect should have a trail.
+              color: The color of the effect.
+              fade: If the effect should fade.
+        take-item:
+          title: Take Items - <code>take-item</code>
+          text: An executor that takes items from player inventories based on criteria.
+          take: Items to take.
+        teleport:
+          title: Teleport Player - <code>teleport-player</code>
+          text: An executor that teleports a player to a location inside of a region.
+        apply-loadout:
+          title: Apply Loadout - <code>apply-loadout</code>
+          text: An executor that gives a loadout to a player.
+          loadout: ID of the loadout to apply.
+        modify-score:
+          title: Modify Score - <code>modify-score</code>
+          text: An executor that will modify a player's points using a value and action.
+          score: Amount of points to modify the score by.
+        paste-schematic:
+          title: Paste Schematic - <code>paste-schematic</code>
+          text: An executor that spawns a loaded schematic at a location.
+          schematic: ID of the schematic to be pasted.
+          natural: If block place effects should be played when blocks are pasted.
+          random: If the blocks should be pasted in a random order.
+          ignore-air: If air blocks in the schematic should be skipped.
+          delay: Delay between each block being placed.
+        change-time:
+          title: Change Word Time - <code>change-world-time</code>
+          text: An executor that is used to change the world time of a match.
+          by: Amount of time (in ticks) to change the time by.
     resource-packs:
       text: This module is used to request a custom resource pack during matches.
       pack:

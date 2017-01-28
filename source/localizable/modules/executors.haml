@@ -1,0 +1,426 @@
+= title(t('pages.executors'))
+
+%p= t('modules.executors.text')
+
+:xml
+  <!-- Plays the sound of an ender dragon dying. -->
+  <executors>
+      <executor id="do-this" check="only-coal">
+        <play-sound sound="enderdragon death" volume="1" pitch="1"/>
+      </executor>
+  </executors>
+
+  <checks>
+    <material id="only-coal">coal block</material>
+  </checks>
+
+  <!-- When a player breaks a coal block, the executor will run. -->
+  <triggers>
+      <trigger on="block-break" execute="do-this"/>
+  </triggers>
+
+%h5
+  %code IMPORTANT:
+  = t('modules.executors.generic.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), false) do
+  = attribute_row_id(true)
+  = attribute_row(true) do
+    = attribute_name('check')
+    = attribute_desc(t('modules.executors.generic.check'))
+    = attribute_type_element(:check)
+
+= subtitle(t('modules.executors.triggers.title'))
+
+%h4
+  %code NOTE:
+  = t('modules.executors.triggers.note')
+
+= attribute_table(t('modules.executors.triggers.attributes'), false, ["Trigger", t('table.description'), "Data Supplied By Events for Checks"], ) do
+  = attribute_row(true, "warning") do
+    = attribute_name('block-break')
+    = attribute_desc(t('modules.executors.triggers.block-break'))
+    = attribute_desc(code_list("Location", "Breaker", "Block Type"))
+  = attribute_row(true, "warning") do
+    = attribute_name('block-explode')
+    = attribute_desc(t('modules.executors.triggers.block-explode'))
+    = attribute_desc(code_list("Location", "Block Type"))
+  = attribute_row(true, "warning") do
+    = attribute_name('block-place')
+    = attribute_desc(t('modules.executors.triggers.block-place'))
+    = attribute_desc(code_list("Location", "Placer", "Block Type"))
+  = attribute_row do
+    = attribute_name('creature-spawn')
+    = attribute_desc(t('modules.executors.triggers.creature-spawn'))
+    = attribute_desc(code_list("Location", "Entity"))
+  = attribute_row do
+    = attribute_name('firework-explode')
+    = attribute_desc(t('modules.executors.triggers.firework-explode'))
+    = attribute_desc(code_list("Location", "Entity"))
+  = attribute_row(true, "warning") do
+    = attribute_name('projectile-hit')
+    = attribute_desc(t('modules.executors.triggers.projectile-hit'))
+    = attribute_desc(code_list("Location", "Entity"))
+  = attribute_row do
+    = attribute_name('lightning-strike')
+    = attribute_desc(t('modules.executors.triggers.lightning-strike'))
+    = attribute_desc(code_list("Location"))
+  = attribute_row(true, "warning") do
+    = attribute_name('item-drop')
+    = attribute_desc(t('modules.executors.triggers.item-drop'))
+    = attribute_desc(code_list("Location", "Item Type"))
+  = attribute_row do
+    = attribute_name('item-break')
+    = attribute_desc(t('modules.executors.triggers.item-break'))
+    = attribute_desc(code_list("Location", "Player", "Item Type"))
+  = attribute_row do
+    = attribute_name('item-consume')
+    = attribute_desc(t('modules.executors.triggers.item-consume'))
+    = attribute_desc(code_list("Location", "Player", "Item Type"))
+  = attribute_row(true, "warning") do
+    = attribute_name('item-pickup')
+    = attribute_desc(t('modules.executors.triggers.item-pickup'))
+    = attribute_desc(code_list("Location", "Player", "Item Type"))
+  = attribute_row do
+    = attribute_name('toggle-flight')
+    = attribute_desc(t('modules.executors.triggers.toggle-flight'))
+    = attribute_desc(code_list("Location", "Player"))
+  = attribute_row(true, "warning") do
+    = attribute_name('toggle-sneak')
+    = attribute_desc(t('modules.executors.triggers.toggle-sneak'))
+    = attribute_desc(code_list("Location", "Player"))
+  = attribute_row(true, "warning") do
+    = attribute_name('toggle-sprint')
+    = attribute_desc(t('modules.executors.triggers.toggle-sprint'))
+    = attribute_desc(code_list("Location", "Player"))
+  = attribute_row(true, "warning") do
+    = attribute_name('toggle-on-ground')
+    = attribute_desc(t('modules.executors.triggers.toggle-on-ground'))
+    = attribute_desc(code_list("Location", "Player"))
+  = attribute_row(true, "warning") do
+    = attribute_name('player-death')
+    = attribute_desc(t('modules.executors.triggers.player-death'))
+    = attribute_desc(code_list("Location", "Player"))
+  = attribute_row(true, "warning") do
+    = attribute_name('player-spawn')
+    = attribute_desc(t('modules.executors.triggers.player-spawn'))
+    = attribute_desc(code_list("Location", "Player"))
+  = attribute_row do
+    = attribute_name('player-eliminate')
+    = attribute_desc(t('modules.executors.triggers.player-eliminate'))
+    = attribute_desc(code_list("Location", "Player"))
+  = attribute_row do
+    = attribute_name('weather-change')
+    = attribute_desc(t('modules.executors.triggers.weather-change'))
+    = attribute_column
+  = attribute_row do
+    = attribute_name('state-change')
+    = attribute_desc(t('modules.executors.triggers.state-change'))
+    = attribute_column
+  = attribute_row do
+    = attribute_name('match-open')
+    = attribute_desc(t('modules.executors.triggers.match-open'))
+    = attribute_column
+  = attribute_row do
+    = attribute_name('leakable-leak')
+    = attribute_desc(t('modules.executors.triggers.leakable-leak'))
+    = attribute_desc(code_list("Location", "Leaker"))
+  = attribute_row do
+    = attribute_name('monument-destroy')
+    = attribute_desc(t('modules.executors.triggers.monument-destroy'))
+    = attribute_desc(code_list("Location", "Destroyer"))
+  = attribute_row do
+    = attribute_name('flag-capture')
+    = attribute_desc(t('modules.executors.triggers.flag-capture'))
+    = attribute_desc(code_list("Location", "Player"))
+  = attribute_row do
+    = attribute_name('hill-capture')
+    = attribute_desc(t('modules.executors.triggers.hill-capture'))
+    = attribute_column
+  = attribute_row do
+    = attribute_name('flag-drop')
+    = attribute_desc(t('modules.executors.triggers.flag-drop'))
+    = attribute_desc(code_list("Location", "Player"))
+  = attribute_row do
+    = attribute_name('flag-pickup')
+    = attribute_desc(t('modules.executors.triggers.flag-pickup'))
+    = attribute_desc(code_list("Location", "Player"))
+  = attribute_row do
+    = attribute_name('flag-steal')
+    = attribute_desc(t('modules.executors.triggers.flag-steal'))
+    = attribute_desc(code_list("Location", "Player"))
+  = attribute_row do
+    = attribute_name('hill-owner-change')
+    = attribute_desc(t('modules.executors.triggers.hill-owner-change'))
+  = attribute_row(true, "warning") do
+    = attribute_name('point-earn')
+    = attribute_desc(t('modules.executors.triggers.point-earn'))
+    = attribute_desc(code_list("Location", "Player"))
+
+%h2= (t('modules.executors.types.text'))
+
+= subtitle(t('modules.executors.types.modify-lives.title'))
+%p= t('modules.executors.types.modify-lives.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), false) do
+  = attribute_row do
+    = attribute_name('action')
+    = attribute_desc(t('modules.executors.generic.action'))
+    = attribute_type(:action)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('amount')
+    = attribute_desc(t('modules.executors.types.modify-lives.amount'))
+    = attribute_type(:number)
+    = attribute_default(1)
+
+= subtitle(t('modules.executors.types.toggle-elimination.title'))
+%p= t('modules.executors.types.toggle-elimination.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), false) do
+  = attribute_row do
+    = attribute_name('toggle')
+    = attribute_desc(t('modules.executors.types.toggle-elimination.toggle'))
+    = attribute_type(:boolean)
+
+= subtitle(t('modules.executors.types.block-replace.title'))
+%p= t('modules.executors.types.block-replace.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), false) do
+  = attribute_row(true) do
+    = attribute_name('find')
+    = attribute_desc(t('modules.executors.types.block-replace.find'))
+    = attribute_type(:material)
+  = attribute_row(true) do
+    = attribute_name('replace')
+    = attribute_desc(t('modules.executors.types.block-replace.replace'))
+    = attribute_type(:material)
+
+= subtitle(t('modules.executors.types.enchant.title'))
+%p= t('modules.executors.types.enchant.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), true) do
+  = attribute_row(true) do
+    = attribute_name('selector')
+    = attribute_desc(t('modules.executors.types.enchant.selector'))
+    = attribute_column do
+      %code INVENTORY, HOTBAR, ARMOR, HAND
+    = attribute_column
+  = attribute_row do
+    = attribute_name('matcher')
+    = attribute_desc(t('modules.executors.types.enchant.matcher'))
+    = attribute_type(:materials)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('ELEMENT TEXT')
+    = attribute_desc(t('modules.executors.types.enchant.enchantment'))
+    = attribute_desc(label('Enchantment Type')) do
+      = link_to("Types", "https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/enchantments/Enchantment.html")
+    = attribute_column
+  = attribute_row do
+    = attribute_name('level')
+    = attribute_desc(t('modules.executors.types.enchant.level'))
+    = attribute_type(:number)
+    = attribute_default(1)
+  = attribute_row do
+    = attribute_name('only-natural')
+    = attribute_desc(t('modules.executors.types.enchant.only-natural'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+
+= subtitle(t('modules.executors.types.play-sound.title'))
+%p= t('modules.executors.types.play-sound.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), false) do
+  = attribute_row(true) do
+    = attribute_name('sound')
+    = attribute_desc(t('modules.executors.types.play-sound.sound'))
+    = attribute_column do
+      .label.label-primary Sound
+  = attribute_row(true) do
+    = attribute_name('volume')
+    = attribute_desc(t('modules.executors.types.play-sound.volume'))
+    = attribute_type(:decimal)
+  = attribute_row(true) do
+    = attribute_name('pitch')
+    = attribute_desc(t('modules.executors.types.play-sound.pitch'))
+    = attribute_type(:decimal)
+  = attribute_row do
+    = attribute_name('region')
+    = attribute_desc(t('modules.executors.generic.region'))
+    = attribute_type_element(:bounded_region)
+
+= subtitle(t('modules.executors.types.summon-entity.title'))
+%p= t('modules.executors.types.summon-entity.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), false) do
+  = attribute_row(true) do
+    = attribute_name('type')
+    = attribute_desc(t('modules.executors.types.summon-entity.type'))
+    = attribute_column do
+      .label.label-primary Entity Type
+  = attribute_row do
+    = attribute_name('name')
+    = attribute_desc(t('modules.executors.types.summon-entity.name'))
+    = attribute_type(:text)
+  = attribute_row do
+    = attribute_name("effects")
+    = attribute_desc(t('modules.executors.types.summon-entity.effects'))
+    = attribute_column
+  = attribute_row do
+    = attribute_name("count")
+    = attribute_desc(t('modules.executors.types.summon-entity.count'))
+    = attribute_type(:number)
+  = attribute_row do
+    = attribute_name('region')
+    = attribute_desc(t('modules.executors.generic.region'))
+    = attribute_type_element(:bounded_region)
+
+= attribute_table(t('modules.executors.types.summon-entity.equipment.title'), false) do
+  = attribute_row(true) do
+    = attribute_name('slot')
+    = attribute_desc(t('modules.executors.types.summon-entity.equipment.slot'))
+    = attribute_column do
+      .label.label-primary Equipment Slot
+  = attribute_row(true) do
+    = attribute_name('items')
+    = attribute_desc(t('modules.executors.types.summon-entity.equipment.item'))
+    = attribute_type(:material)
+
+= attribute_table(t('modules.executors.types.summon-entity.firework.title'), true) do
+  = attribute_row do
+    = attribute_name('power')
+    = attribute_desc(t('modules.executors.types.summon-entity.firework.power'))
+    = attribute_type(:number)
+    = attribute_default(1)
+  = attribute_row do
+    = attribute_name('team-color')
+    = attribute_desc(t('modules.executors.types.summon-entity.firework.team-color'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+  = attribute_row do
+    = attribute_name('team-color-fade')
+    = attribute_desc(t('modules.executors.types.summon-entity.firework.team-color-fade'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+
+= attribute_table(t('modules.executors.types.summon-entity.firework.effect.text'), true) do
+  = attribute_row do
+    = attribute_name('effect')
+    = attribute_desc(t('modules.executors.types.summon-entity.firework.effect.effect'))
+    = attribute_column do
+      .label.label-primary Firework Effect Type
+    = attribute_column
+  = attribute_row do
+    = attribute_name('flicker')
+    = attribute_desc(t('modules.executors.types.summon-entity.firework.effect.flicker'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+  = attribute_row do
+    = attribute_name('trail')
+    = attribute_desc(t('modules.executors.types.summon-entity.firework.effect.trail'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+  = attribute_row do
+    = attribute_name('color')
+    = attribute_desc(t('modules.executors.types.summon-entity.firework.effect.color'))
+    = attribute_type(:color)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('fade')
+    = attribute_desc(t('modules.executors.types.summon-entity.firework.effect.fade'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+
+= subtitle(t('modules.executors.types.take-item.title'))
+%p= t('modules.executors.types.take-item.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), false) do
+  = attribute_row(true) do
+    = attribute_name('take')
+    = attribute_desc(t('modules.executors.types.take-item.take'))
+    = attribute_type(:materials)
+
+= subtitle(t('modules.executors.types.teleport.title'))
+%p= t('modules.executors.types.teleport.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), false) do
+  = attribute_row do
+    = attribute_name('region')
+    = attribute_desc(t('modules.executors.generic.region'))
+    = attribute_type_element(:bounded_region)
+
+= subtitle(t('modules.executors.types.apply-loadout.title'))
+%p= t('modules.executors.types.apply-loadout.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), false) do
+  = attribute_row(true) do
+    = attribute_name('loadout')
+    = attribute_desc(t('modules.executors.types.apply-loadout.loadout'))
+    = attribute_type_element(:loadout)
+
+= subtitle(t('modules.executors.types.modify-score.title'))
+%p= t('modules.executors.types.modify-score.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), false) do
+  = attribute_row(true) do
+    = attribute_name('action')
+    = attribute_desc(t('modules.executors.generic.action'))
+    = attribute_type(:action)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('score')
+    = attribute_desc(t('modules.executors.types.modify-score.score'))
+    = attribute_type(:number)
+    = attribute_default(1)
+
+= subtitle(t('modules.executors.types.paste-schematic.title'))
+%p= t('modules.executors.types.paste-schematic.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), true) do
+  = attribute_row(true) do
+    = attribute_name('schematic')
+    = attribute_desc(t('modules.executors.types.paste-schematic.schematic'))
+    = attribute_column do
+      .label.label-primary Structure ID
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('region')
+    = attribute_desc(t('modules.executors.generic.region'))
+    = attribute_type_element(:bounded_region)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('natural')
+    = attribute_desc(t('modules.executors.types.paste-schematic.natural'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+  = attribute_row do
+    = attribute_name('random')
+    = attribute_desc(t('modules.executors.types.paste-schematic.random'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+  = attribute_row do
+    = attribute_name('ignore-air')
+    = attribute_desc(t('modules.executors.types.paste-schematic.ignore-air'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+  = attribute_row do
+    = attribute_name('delay')
+    = attribute_desc(t('modules.executors.types.paste-schematic.delay'))
+    = attribute_type(:number)
+    = attribute_default(0)
+
+= subtitle(t('modules.executors.types.change-time.title'))
+%p= t('modules.executors.types.change-time.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), true) do
+  = attribute_row(true) do
+    = attribute_name('by')
+    = attribute_desc(t('modules.executors.types.change-time.by'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('action')
+    = attribute_desc(t('modules.executors.generic.action'))
+    = attribute_type(:action)
+    = attribute_default("add")

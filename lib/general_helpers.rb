@@ -19,6 +19,13 @@ module GeneralHelpers
     block_given? ? content_tag(:a, options, &block) : content_tag(:a, name, options)
   end
 
+  def code_list(*args)
+    res = "<code>"
+    res += args.join("</code>,<code>")
+    res += "</code>"
+    res
+  end
+
   def link_link(link)
     link(link, link)
   end

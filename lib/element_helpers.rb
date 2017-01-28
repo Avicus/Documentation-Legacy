@@ -112,8 +112,8 @@ module ElementHelpers
     end
   end
 
-  def attribute_row(required = false, &block)
-    content_tag(:tr, :class => (required ? 'info' : '')) do
+  def attribute_row(required = false, style = "info", &block)
+    content_tag(:tr, :class => (required ? "#{style}" : '')) do
       capture(&block)
     end
   end
