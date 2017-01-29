@@ -294,7 +294,7 @@ en:
         change-time:
           title: Change Word Time - <code>change-world-time</code>
           text: An executor that is used to change the world time of a match.
-          by: Amount of time (in ticks) to change the time by.
+          time: Amount of time (in ticks) to change the time by.
     resource-packs:
       text: This module is used to request a custom resource pack during matches.
       pack:
