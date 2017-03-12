@@ -1,4 +1,4 @@
-# atlas.avicus.net
+# docs.avicus.net
 Documentation for Atlas map configuration files.
 
 1. Get Ruby
