@@ -33,6 +33,7 @@ en:
     monuments: Monuments
     modify-damage: Modify Damage
     hills: Hills
+    fakegui: Fake GUIs
     flags: Flags
     colors: Colors
     executors: Executors
@@ -361,6 +362,15 @@ en:
       mod-desc: How much the damage should be modified by.
       action-desc: Number action to perform on the damage.
       check-desc: Check to be ran before performing the action on the damage.
+    fakegui:
+      text: "This module is used to open fake GUIs for players in place of real ones.
+          These GUIs are fully functional and stay open when the source block is broken.
+          This is a useful tool to prevent griefing."
+      attributes: "Fake GUI Attributes"
+      benches-desc: If a fake crafting inventory should be displayed to players when they open crafting tables.
+      anvils-desc: If a fake crafting inventory should be displayed to players when they open anvils.
+      tables-desc: If a fake crafting inventory should be displayed to players when they open enchantment tables.
+
     teams:
       text: "This module is used to define how many and what attributes teams should possess in the match."
       name: "Note that the team name is not an attribute but rather is defined as text within the element. Team names should be localized, short, easy to remember and not contain "

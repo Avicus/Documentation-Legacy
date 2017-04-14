@@ -1,0 +1,24 @@
+= title(t('pages.fakegui'))
+
+%p
+  = t('modules.fakegui.text')
+
+:xml
+  <fake-guis fake-anvils="true"/>
+
+= attribute_table(t('modules.fakegui.attributes')) do
+  = attribute_row do
+    = attribute_name('fake-benches')
+    = attribute_desc(t('modules.fakegui.benches-desc'))
+    = attribute_type(:boolean)
+    = attribute_default(true)
+  = attribute_row do
+    = attribute_name('fake-anvils')
+    = attribute_desc(t('modules.fakegui.anvils-desc'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+  = attribute_row do
+    = attribute_name('fake-enchant-tables')
+    = attribute_desc(t('modules.fakegui.tables-desc'))
+    = attribute_type(:boolean)
+    = attribute_default(true)

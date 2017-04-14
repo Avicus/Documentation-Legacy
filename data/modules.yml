@@ -52,6 +52,8 @@
     path: /modules/broadcasts
   - name: chests
     path: /modules/chests
+  - name: fakegui
+    path: /modules/fakegui
   - name: decay
     path: /modules/decay
   - name: executors
