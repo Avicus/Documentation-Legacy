@@ -39,6 +39,11 @@
     = attribute_desc(t('modules.kits.default'))
     = attribute_type(:boolean)
     = attribute_default(false)
+  = attribute_row do
+    = attribute_name('check')
+    = attribute_desc(t('modules.kits.check'))
+    = attribute_type_element(:check)
+    = attribute_column
 
 = subtitle(t('modules.kits.ability.text'))
 

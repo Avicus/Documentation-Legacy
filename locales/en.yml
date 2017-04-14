@@ -329,6 +329,7 @@ en:
       icon: The icon of the kit used for the menu.
       loadout: Loadout that the kit should apply.
       default: If this kit is the default kit.
+      check: Check to be ran on the player before they can view or select the kit. If a player respawns with the kit and check fails, they will be given the default kit if there is one, or have no kit.
       ability:
         text: Kit Abilities
         desc: Kit abilities are special modifiers that are given to players who have the kit.
