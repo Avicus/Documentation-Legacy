@@ -1,5 +1,8 @@
 = title(t('pages.items_and_drops'))
 
+%p
+  = t('modules.items_and_drops.text')
+
 :xml
   <items>
     <!-- remove all glass and wood when dropped -->
@@ -32,23 +35,21 @@
         <material>diamond helmet</material>
       </any>
     </keep-armor>
-
-
   </items>
 
-= coming_soon
+%h4
+  = t('modules.items_and_drops.desc')
 
-%p
-  Potential modules...
-
-:xml
-  <items>
-    <modify-drops>
-      <!-- change cobblestone to stone -->
-      <item material="stone">
-        <any>
-          <material>cobblestone</material>
-        </any>
-      </item>
-    </modify-drops>
-  </items>
+= attribute_table(t('modules.items_and_drops.sub-types'), false, [t('table.name'), t('table.description')]) do
+  = attribute_row do
+    = attribute_name('remove-drops')
+    = attribute_desc(t('modules.items_and_drops.drops-desc'))
+  = attribute_row do
+    = attribute_name('keep-items')
+    = attribute_desc(t('modules.items_and_drops.items-desc'))
+  = attribute_row do
+    = attribute_name('keep-armor')
+    = attribute_desc(t('modules.items_and_drops.armor-desc'))
+  = attribute_row do
+    = attribute_name('repair-tools')
+    = attribute_desc(t('modules.items_and_drops.tools-desc'))

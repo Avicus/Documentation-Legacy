@@ -370,7 +370,14 @@ en:
       benches-desc: If a fake crafting inventory should be displayed to players when they open crafting tables.
       anvils-desc: If a fake crafting inventory should be displayed to players when they open anvils.
       tables-desc: If a fake crafting inventory should be displayed to players when they open enchantment tables.
-
+    items_and_drops:
+      text: This module is used to modify the items which can be dropped and the items which are kept on death.
+      desc: Each sub-element should contain a check to compare the items against.
+      sub-types: "Sub-Element Names/Explanations"
+      drops-desc: This element defines items which should be removed when they are dropped. This includes breaking blocks, dying, breaking chests, or dropping from inventories.
+      items-desc: This element defines items which should be kept from life-to-life.
+      armor-desc: This element defines armor which should be kept from life-to-life
+      tools-desc: This element defines tools which should be automatically combined and repaired when picked up by a player who has the same tool in their inventory.
     teams:
       text: "This module is used to define how many and what attributes teams should possess in the match."
       name: "Note that the team name is not an attribute but rather is defined as text within the element. Team names should be localized, short, easy to remember and not contain "
