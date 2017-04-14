@@ -99,6 +99,8 @@ module ElementHelpers
             label("Number Action")
           when :decimal
             label("Number (With Decimal)")
+          when :metric
+            label('Distance Calculation Metric')
           else
             raise "#{type} is not a valid attribute_type"
         end
@@ -109,6 +111,22 @@ module ElementHelpers
   def attribute_default(default)
     attribute_column do
       content_tag(:code, default)
+    end
+  end
+
+  def attribute_metric_row(prefix = "", description, default, horiz)
+    prefix = prefix + "-" unless prefix.empty?
+    attribute_row do
+      attribute_name(prefix + 'dist-metric') +
+      attribute_desc(description) +
+      attribute_type(:metric) +
+      attribute_default(default)
+    end +
+    attribute_row do
+      attribute_name(prefix + 'dist-horiz') +
+      attribute_desc("If only horizontal distance should be used for calculation.") +
+      attribute_type(:boolean) +
+      attribute_default(horiz)
     end
   end
 
