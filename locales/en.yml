@@ -159,6 +159,7 @@ en:
       repair-check: Check to be ran to see if the player can repair the objective.
       phase: First phase that the objective should attempt to switch to.
       any-repair: If any block can be used to repair the objective.
+      enforce-anti-repair: When off, this allows blocks to be placed in the region that do not match and thus will not repair. 
     broadcasts:
       text: This module can be used to display periodic messages in game.
       attributes: Broadcast Attributes

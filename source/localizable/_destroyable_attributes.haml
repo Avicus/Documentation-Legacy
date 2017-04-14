@@ -46,6 +46,11 @@
   = attribute_type(:boolean)
   = attribute_default('false')
 = attribute_row do
+  = attribute_name('enforce-anti-repair')
+  = attribute_desc(t('modules.destroyable.enforce-anti-repair'))
+  = attribute_type(:boolean)
+  = attribute_default('false')
+= attribute_row do
   = attribute_name('any-repair')
   = attribute_desc(t('modules.destroyable.any-repair'))
   = attribute_type(:boolean)
@@ -76,3 +81,6 @@
   = attribute_desc(t('modules.destroyable.points-block'))
   = attribute_type(:number)
   = attribute_column
+= attribute_metric_row("pre-touch", "Calculation metric used to calculate distance from objective before touched", "player", true)
+= attribute_metric_row("post-touch", "Calculation metric used to calculate distance from objective after touch but before completion", "player", true)
+= attribute_metric_row("post-complete", "Calculation metric used to calculate distance from objective after completion", "player", true)
