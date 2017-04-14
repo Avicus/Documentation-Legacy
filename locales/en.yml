@@ -560,6 +560,10 @@ en:
       helper:
         armor: "Armor slot names can be used instead of the <code>item</code> tag in order to simplify putting items in armor slots."
       head: "You can use this tag to give player heads in loadouts. UUIDs are required"
+      disguise:
+        attributes: "Disguise Attributes"
+        baby: "If the disguise should be a baby. (Only for creatures which support this.)"
+        material: "If the diguise is a block, what material the block should be."
       effect:
         attributes: "Effect Attributes"
         type: "The type of the effect that the player will receive."

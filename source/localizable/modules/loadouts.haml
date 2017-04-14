@@ -180,6 +180,27 @@
   <player-head slot="1" uuid="069a79f444e94726a5befca90e38aaf5"/>
 
 
+= subtitle("Disguises")
+
+:xml
+  <loadout>
+    ...
+    <disguise material="Workbench">falling block</disguise> <!-- Become crafty -->
+  </loadout>
+
+= attribute_table(t('modules.loadouts.disguise.attributes')) do
+  = attribute_row do
+    = attribute_name('baby')
+    = attribute_desc(t('modules.loadouts.disguise.baby'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
+  = attribute_row do
+    = attribute_name('material')
+    = attribute_desc(t('modules.loadouts.disguise.material'))
+    = attribute_type(:material)
+    = attribute_column
+
+
 = subtitle("Effects")
 
 :xml
