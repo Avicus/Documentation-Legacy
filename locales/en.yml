@@ -410,6 +410,7 @@ en:
       attributes_yaw: "The yaw (horizontal angle) the player looks when spawned."
       attributes_pitch: "The pitch (vertical angle) the player looks when spawned."
       attributes_check: "Check to ran on the player before they can spawn at this location."
+      attributes_check-air: "When determining a position, if there is air below the selection, another position will be found. This should be used sparingly."
       regions: Spawn Regions
       regions_text: "Regions can be provided within a spawn element. These inline regions can have a yaw or pitch associated with them that overrides the spawn element's yaw and pitch."
       selection_mode: "Selection Mode"

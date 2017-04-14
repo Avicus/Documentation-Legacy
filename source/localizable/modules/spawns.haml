@@ -62,6 +62,11 @@
     = attribute_desc(t('modules.spawns.attributes_check'))
     = attribute_type_element(:check)
     = attribute_column
+  = attribute_row do
+    = attribute_name('check-air')
+    = attribute_desc(t('modules.spawns.attributes_check-air'))
+    = attribute_type(:boolean)
+    = attribute_default(false)
 
 = subtitle(t('modules.spawns.regions'))
 %p
