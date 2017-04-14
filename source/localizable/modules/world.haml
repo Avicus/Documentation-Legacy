@@ -1,7 +1,7 @@
 = title(t('pages.world'))
 
 :xml
-  <world>
+  <world path="special-one">
     <!-- set the world difficulty -->
     <difficulty>hard</difficulty>
 
@@ -21,6 +21,65 @@
         </all>
       </any>
     </mobs>
+
+    <!-- Disable storm on match load. -->
+    <storm>false</storm>
+
+    <!-- Always change weather -->
+    <weather check="always"/>
+
+    <!-- Make the world a superflat world (No horizon line). -->
+    <type>flat</type>
   </world>
 
-= coming_soon
+%br
+= title("World Elements")
+
+= subtitle("Path")
+%p This can be used to specify a sub-directory that contains the level files for the world. The XML should still be in the folder root. This is useful for using different worlds with conditionals.
+:xml
+  <world path="some-path">....
+
+= subtitle("Difficulty")
+%p Use this to set the world difficulty.
+:xml
+  <difficulty>hard</difficulty>
+
+= subtitle("Game Rules")
+%p Use this to add minecraft game rules to the world on match load.
+:xml
+  <gamerules>
+    <doDaylightCycle>false</doDaylightCycle>
+    <doFireTick>false</doFireTick>
+  </gamerules>
+
+= subtitle("Mobs")
+%p Use this add checks that should be ran to allow mobs to spawn. Checks can use the spawn reason, location, and mob type.
+:xml
+  <mobs>
+    <any>
+      <entity>cow</entity>
+      <all>
+        <entity>pig</entity>
+        <spawn>spawner egg</spawn>
+      </all>
+    </any>
+  </mobs>
+
+= subtitle("Storm")
+%p If the weather should be stormy when the match opens.
+:xml
+  <storm>false</storm>
+
+= subtitle("Weather")
+%p Check to be ran before weather is allowed to change.
+:xml
+  <weather check="always"/>
+
+= subtitle("Type")
+%p
+  Use this to set the type of the match world.
+  A list of world types can be found
+  %a{href: "https://jd.bukkit.org/org/bukkit/WorldType.html"} here
+:xml
+  <type>flat</type>
