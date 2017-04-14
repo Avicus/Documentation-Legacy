@@ -1,0 +1,23 @@
+= title(t('pages.modify-damage'))
+
+%p
+  = t('modules.modify-damage.text')
+
+:xml
+  <modify-damage>
+    <mod mod="300" action="set">fall</mod> <!-- Fall damage is always deadly -->
+  </modify-damage>
+
+= attribute_table(t('modules.modify-damage.attributes'), false) do
+  = attribute_row(true) do
+    = attribute_name('mod')
+    = attribute_desc(t('modules.modify-damage.mod-desc'))
+    = attribute_type(:number)
+  = attribute_row(true) do
+    = attribute_name('action')
+    = attribute_desc(t('modules.modify-damage.action-desc'))
+    = attribute_type(:action)
+  = attribute_row(true) do
+    = attribute_name('check')
+    = attribute_desc(t('modules.modify-damage.check-desc'))
+    = attribute_type_element(:check)

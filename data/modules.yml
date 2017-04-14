@@ -58,6 +58,8 @@
     path: /modules/executors
   - name: phases
     path: /modules/phases
+  - name: modify-damage
+    path: /modules/modifydamage
   #- name: items_and_drops
   #  path: /modules/items_and_drops
   - name: kits
