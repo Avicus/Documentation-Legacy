@@ -491,6 +491,9 @@ en:
       text: "Use this module to limit the number of lives a player has on the map."
       attributes: "Elimination Attributes"
       lives-desc: "The amount of lives each player has."
+      enabled-desc: "If elimination should be enabled on match start. If this is false, an executor will need to enable it for it to take effect."
+      strike-on-eliminate-desc: "If lighting should strike when a player is eliminated."
+      check-desc: "Check to be ran before a life is subtracted from a player."
     loadouts:
       text: "You can use this module to create sets of items and other player attributes that can be given to players at different times."
       root: "The Root Element"
