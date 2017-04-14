@@ -159,7 +159,7 @@ en:
       repair-check: Check to be ran to see if the player can repair the objective.
       phase: First phase that the objective should attempt to switch to.
       any-repair: If any block can be used to repair the objective.
-      enforce-anti-repair: When off, this allows blocks to be placed in the region that do not match and thus will not repair. 
+      enforce-anti-repair: When off, this allows blocks to be placed in the region that do not match and thus will not repair.
     broadcasts:
       text: This module can be used to display periodic messages in game.
       attributes: Broadcast Attributes
@@ -409,6 +409,7 @@ en:
       attributes_look2: "This value overrides the pitch and yaw attributes."
       attributes_yaw: "The yaw (horizontal angle) the player looks when spawned."
       attributes_pitch: "The pitch (vertical angle) the player looks when spawned."
+      attributes_check: "Check to ran on the player before they can spawn at this location."
       regions: Spawn Regions
       regions_text: "Regions can be provided within a spawn element. These inline regions can have a yaw or pitch associated with them that overrides the spawn element's yaw and pitch."
       selection_mode: "Selection Mode"

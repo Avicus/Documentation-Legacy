@@ -57,6 +57,11 @@
     = attribute_column do
       = link_to t('modules.spawns.selection_mode'), '#selection_mode'
     = attribute_default('random')
+  = attribute_row do
+    = attribute_name('check')
+    = attribute_desc(t('modules.spawns.attributes_check'))
+    = attribute_type_element(:check)
+    = attribute_column
 
 = subtitle(t('modules.spawns.regions'))
 %p
@@ -90,7 +95,7 @@
 = subtitle(t('modules.spawns.respawn_behavior'))
 %p
   = t('modules.spawns.respawn_behavior_text')
-  
+
 = attribute_table((t'modules.spawns.spawns_attributes')) do
   = attribute_row do
     = attribute_name('respawn-delay')
