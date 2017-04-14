@@ -10,6 +10,11 @@
     .row
       .col-sm-3
         %ul.nav.nav-pills.nav-stacked.nav-elements
+          %li
+            %h4
+              Latest Map Specification:
+              %a.label.label-warning{href: "#{local_url("/spec-history")}"} 1.0.3
+          %hr
           - any_subtitles = false
           - content_for(:subtitles).each do |title|
             - if title.is_a?(String)
@@ -30,4 +35,3 @@
       .col-sm-9
         .module
           = yield
-    

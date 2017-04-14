@@ -5,6 +5,10 @@ module GeneralHelpers
     end
   end
 
+  def local_url(link)
+    current_page.url[0..2] + link
+  end
+
   def link(*args, &block)
     options  = args.extract_options!
     name = block_given? ? '' : args.shift
