@@ -8,6 +8,8 @@
     path: /modules/includes
   - name: localization
     path: /modules/localization
+  - name: stats
+    path: /modules/stats
 
 - name: Game Components
   modules:
