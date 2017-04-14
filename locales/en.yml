@@ -666,6 +666,18 @@ en:
           check: "Check to be ran to determine if the player can capture the flag at this net."
           respawn-post: "Post that the flag should respawn at if it is captured at this net. If no post is specified, the flag will return to it's previous post."
           respawn-together: "If all of the flags enclosed by the <code>flags</code> element should wait until all are captured to respawn, or respawn directly after capture."
+        tnt:
+          tnt: "TNT Customization"
+          text: "These elements allow various TNT mechanics to be customized within the zone."
+          elements: "TNT Sub-Elements"
+          yield: "The amount of items dropped by the explosion as a percentage"
+          instant: "Instantly ignite TNT when placed."
+          power: "Modify the explosions block radius."
+          fuse: "Time until the TNT explodes once it is ignited."
+          dispenser:
+            text: "Options for dispensers when they are blown up."
+            limit: "Max amount of TNT a dispenser ignites when blown up."
+            multiplier: "Multiplier for the amount of TNT ignited when a dispenser is blown up."
     chests:
       text: "Chest generators are used to fill the contents of chests in a region based on various factors automatically or with a refill delay."
       attributes:

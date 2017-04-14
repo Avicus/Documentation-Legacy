@@ -241,3 +241,56 @@
     = attribute_desc(t('modules.zones.sub.net.respawn-post'))
     = attribute_type_element(:zone)
     = attribute_column
+
+= subtitle(t('modules.zones.sub.tnt.tnt'))
+
+= t('modules.zones.sub.tnt.text')
+
+:xml
+  <tnt>
+    <tnt>
+      <instant-ignite/>
+      <fuse>4h</fuse>
+      <power>3</power>
+      <yield>0.5</yield>
+      <dispenser nuke-limit="4" nuke-multiplier="4"/>
+    </tnt>
+  </tnt>
+
+= attribute_table(t('modules.zones.sub.tnt.elements'), false, [t('table.name'), t('table.description'), "Default"]) do
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <yield>
+    = attribute_desc(t('modules.zones.sub.tnt.yield'))
+    = attribute_default(0.25)
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <instant-ignite/>
+    = attribute_desc(t('modules.zones.sub.tnt.instant'))
+    = attribute_default("disabled")
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <power>
+    = attribute_desc(t('modules.zones.sub.tnt.power'))
+    = attribute_column
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <fuse>
+    = attribute_desc(t('modules.zones.sub.tnt.fuse'))
+    = attribute_default("~ 10 seconds")
+
+= attribute_table(t('modules.zones.sub.tnt.dispenser.text')) do
+  = attribute_row do
+    = attribute_name("nuke-limit")
+    = attribute_desc(t('modules.zones.sub.tnt.dispenser.limit'))
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name("nuke-multiplier")
+    = attribute_desc(t('modules.zones.sub.tnt.dispenser.multiplier'))
+    = attribute_type(:decimal)
+    = attribute_column
