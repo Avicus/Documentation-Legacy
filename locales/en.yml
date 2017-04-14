@@ -199,6 +199,7 @@ en:
         player-eliminate: Called when a player is eliminated during elimination.
         weather-change: Called when the weather in the match changes.
         state-change: Called when the state of a match changes. starting->playing->cycling->
+        match-start: Called when a match begins.
         match-open: Called right after the match loads.
         leakable-leak: Called when a leakable is leaked.
         monument-destroy: Called when a monument is destroyed.
@@ -295,6 +296,19 @@ en:
           title: Change Word Time - <code>change-world-time</code>
           text: An executor that is used to change the world time of a match.
           time: Amount of time (in ticks) to change the time by.
+        send-message:
+          title: Send Message - <code>send-message</code>
+          text: An executor that is used to send messages to players.
+          location: Location on the screen to send the message.
+          message: Message to send.
+          fade-in: Time (in seconds) to fade in titles/subtitles.
+          hold: Time (in seconds) to hold titles/subtitles on the screen.
+          fade-out: Time (in seconds) to fade out titles/subtitles.
+        perform-on-group:
+          title: Perform Executor(s) on group - <code>perform-on-group</code>
+          text: An executor that is used to perform executors on an entire group of players.
+          group: ID of the group to perform the executor on.
+          execute: Child element that is parsed the same as an <code><executor></code>.
     resource-packs:
       text: This module is used to request a custom resource pack during matches.
       pack:

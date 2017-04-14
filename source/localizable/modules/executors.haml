@@ -122,6 +122,10 @@
     = attribute_desc(t('modules.executors.triggers.match-open'))
     = attribute_column
   = attribute_row do
+    = attribute_name('match-start')
+    = attribute_desc(t('modules.executors.triggers.match-start'))
+    = attribute_column
+  = attribute_row do
     = attribute_name('leakable-leak')
     = attribute_desc(t('modules.executors.triggers.leakable-leak'))
     = attribute_desc(code_list("Location", "Leaker"))
@@ -424,3 +428,50 @@
     = attribute_desc(t('modules.executors.generic.action'))
     = attribute_type(:action)
     = attribute_default("add")
+
+= subtitle(t('modules.executors.types.send-message.title'))
+%p= t('modules.executors.types.send-message.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), true) do
+  = attribute_row(true) do
+    = attribute_name('location')
+    = attribute_desc(t('modules.executors.types.send-message.location'))
+    = attribute_column do
+      %code CHAT, TITLE, SUBTITLE
+    = attribute_column
+  = attribute_row do
+    = attribute_name('message')
+    = attribute_desc(t('modules.executors.send-message.message'))
+    = attribute_type(:localizable)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('fade-in')
+    = attribute_desc(t('modules.executors.send-message.fade-in'))
+    = attribute_type(:number)
+    = attribute_default(20)
+  = attribute_row do
+    = attribute_name('hold')
+    = attribute_desc(t('modules.executors.send-message.hold'))
+    = attribute_type(:number)
+    = attribute_default(40)
+  = attribute_row do
+    = attribute_name('fade-out')
+    = attribute_desc(t('modules.executors.send-message.fade-out'))
+    = attribute_type(:number)
+    = attribute_default(20)
+
+= subtitle(t('modules.executors.types.perform-on-group.title'))
+%p= t('modules.executors.types.perform-on-group.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), true) do
+  = attribute_row(true) do
+    = attribute_name('group')
+    = attribute_desc(t('modules.executors.types.perform-on-group.group'))
+    = attribute_type_element(:team)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('execute')
+    = attribute_desc(t('modules.executors.types.perform-on-group.execute'))
+    = attribute_column do
+      .label.label-primary Executor
+    = attribute_column
