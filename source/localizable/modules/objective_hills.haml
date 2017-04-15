@@ -69,9 +69,24 @@
     = attribute_type(:duration)
     = attribute_default('1m')
   = attribute_row do
+    = attribute_name('capture-check')
+    = attribute_desc('Check to be ran before a player is allowed to capture a hill.')
+    = attribute_type_element(:check)
+    = attribute_column
+  = attribute_row do
     = attribute_name('initial-owner')
     = attribute_desc('Set a team to own the hill on match start.')
     = attribute_type_element(:team)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('points')
+    = attribute_desc('Number of points the owning team should score every second.')
+    = attribute_type(:number)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('points-growth')
+    = attribute_desc('Time during point earn before points should be doubled.')
+    = attribute_type(:duration)
     = attribute_column
   = attribute_row do
     = attribute_name('fireworks')
@@ -93,3 +108,10 @@
     = attribute_desc('Specific types of blocks that should be ignored during progress indication.')
     = attribute_type(:materials)
     = attribute_column
+  = attribute_row do
+    = attribute_name('earn-points')
+    = attribute_desc('Rule used to determine when teams should earn points from owning hills.')
+    = attribute_column do
+      .label.label-primary Point Earn Rule
+      %code ALWAYS, STANDING ON, STANDING OFF
+    = attribute_default("standing on")
