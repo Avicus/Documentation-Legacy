@@ -314,6 +314,13 @@ en:
           text: An executor that is used to perform executors on an entire group of players.
           group: ID of the group to perform the executor on.
           execute: Child element that is parsed the same as an <code><executor></code>.
+        loop:
+          title: Perform an executor at a fixed rate - <code>loop</code>
+          text: An executor that is used to perform an executor at a fixed rate that can be dynamically ended based on checks.
+          execute: ID of the executor to execute.
+          stop: Check that will run with each execution to see if it should be ended early.
+          interval: Time between each execution.
+          repetitions: Number of times to execute. If this is not given, the executor will never stop.
     resource-packs:
       text: This module is used to request a custom resource pack during matches.
       pack:

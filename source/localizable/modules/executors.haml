@@ -475,3 +475,29 @@
     = attribute_column do
       .label.label-primary Executor
     = attribute_column
+
+= subtitle(t('modules.executors.types.loop.title'))
+%p= t('modules.executors.types.loop.text')
+
+= attribute_table(t('modules.executors.generic.attributes'), true) do
+  = attribute_row(true) do
+    = attribute_name('execute')
+    = attribute_desc(t('modules.executors.types.loop.execute'))
+    = attribute_column do
+      .label.label-primary Executor
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('stop')
+    = attribute_desc(t('modules.executors.types.loop.stop'))
+    = attribute_type_element(:check)
+    = attribute_column
+  = attribute_row(true) do
+    = attribute_name('interval')
+    = attribute_desc(t('modules.executors.types.loop.stop'))
+    = attribute_type(:duration)
+    = attribute_column
+  = attribute_row do
+    = attribute_name('repetitions')
+    = attribute_desc(t('modules.executors.types.loop.repetitions'))
+    = attribute_type(:number)
+    = attribute_column
