@@ -15,6 +15,7 @@ en:
     contribute: Contribute
     examples: Examples
     maps: Maps
+    conditionals: Conditionals and Module Groups
     map: Map
     stats: Match Statistics
     authors: Authors
@@ -359,6 +360,20 @@ en:
       attributes: "Include Attributes"
       src-desc: "The path to another map configuration file."
       local-desc: "If set to to true, it will search for the import in the same directory as the map.xml, otherwise it searches in the shared maps directory."
+    conditionals-and-groups:
+      conditionals:
+        text: Conditionals are elements which can go anywhere in the XML that will load the enclosed modules if the condition passes.
+        elements: Conditional Sub-Elements
+        if: All elements inside of this will be loaded if the conditional passes.
+        unless: All elements inside of this will be loaded if the conditional fails.
+        else: All elements inside of this will be loaded if all above conditional elements fail. This can only be used in conjunction with one of the above.
+        vars: Conditional Variables
+      groups:
+        text: "Module groups allow groups of modules to be referenced by an ID and then loaded later based on various circumstances.
+        The group ident elements must be at the top level but the load elements can be anywhere. These can be combined with conditionals."
+        example: An example use-case of this would be having a lot of different groups in an include file and then loading them in the XML.
+        attributes: Load Group Attributes
+        chance: Chance that the group will be loaded.
     modify-damage:
       text: This module is used to modify the damage inflicted by numerous causes.
       attributes: "Mod Attributes"

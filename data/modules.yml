@@ -10,6 +10,8 @@
     path: /modules/localization
   - name: stats
     path: /modules/stats
+  - name: conditionals
+    path: /modules/conditionals
 
 - name: Game Components
   modules:

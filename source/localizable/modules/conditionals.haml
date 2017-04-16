@@ -1,0 +1,109 @@
+= title(t('pages.conditionals'))
+
+%p
+  = t('modules.conditionals-and-groups.conditionals.text')
+
+:xml
+  <loadouts>
+      <loadout id="default">
+          <!-- Speed 4 on April Fools Day -->
+          <conditional>
+              <if holiday="april-fools">
+                  <effect duration="45s" amplifier="3">speed</effect>
+              </if>
+              <else>
+                  <effect duration="45s">speed</effect>
+              </else>
+          </conditional>
+      </loadout>
+  </loadouts>
+
+
+= attribute_table(t('modules.conditionals-and-groups.conditionals.elements'), false, ["Element", "Description"]) do
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <if>
+    = attribute_desc(t('modules.conditionals-and-groups.conditionals.if'))
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <unless>
+    = attribute_desc(t('modules.conditionals-and-groups.conditionals.unless'))
+  = attribute_row do
+    = attribute_column do
+      :xmlcode
+        <else>
+    = attribute_desc(t('modules.conditionals-and-groups.conditionals.else'))
+
+
+= attribute_table(t('modules.conditionals-and-groups.conditionals.vars'), false, ["Variable", "Date", "Category"]) do
+  = attribute_row do
+    = attribute_name("winter")
+    = attribute_desc("December, January, February, March")
+    = attribute_name("season")
+  = attribute_row do
+    = attribute_name("spring")
+    = attribute_desc("April, May")
+    = attribute_name("season")
+  = attribute_row do
+    = attribute_name("summer")
+    = attribute_desc("June, July, August, September")
+    = attribute_name("season")
+  = attribute_row do
+    = attribute_name("fall")
+    = attribute_desc("October, November")
+    = attribute_name("season")
+  = attribute_row do
+    = attribute_name("christmas")
+    = attribute_desc("December 15-26")
+    = attribute_name("holiday")
+  = attribute_row do
+    = attribute_name("independence-day")
+    = attribute_desc("July 4")
+    = attribute_name("holiday")
+  = attribute_row do
+    = attribute_name("april-fools")
+    = attribute_desc("April 1")
+    = attribute_name("holiday")
+  = attribute_row do
+    = attribute_name("new-years")
+    = attribute_desc("Last Day of December - Jan 1")
+    = attribute_name("holiday")
+
+:xml
+  <module-group id="reward">
+      <kills>
+        <rewards>
+            <reward loadout="one-golden-apple"/>
+        </rewards>
+    </kills>
+    <loadouts>
+        <loadout id="one-golden-apple">
+            <item material="golden apple"/>
+        </loadout>
+    </loadouts>
+  </module-group>
+
+  <!-- Half the time a reward will be given for kills. -->
+  <load-group id="reward" chance="0.5"/>
+
+  <module-group id="deny-all">
+      <zone region="everywhere" modify="never"/>
+  </module-group>
+
+  <zones>
+      <load-group id="deny-all"/>
+  </zones>
+
+%p
+  = t('modules.conditionals-and-groups.groups.text')
+%p
+  = t('modules.conditionals-and-groups.groups.example')
+
+= attribute_table(t('modules.conditionals-and-groups.groups.attributes'), false) do
+  = attribute_row_id
+  = attribute_row do
+    = attribute_name("chance")
+    = attribute_desc(t('modules.conditionals-and-groups.groups.chance'))
+    = attribute_type(:decimal)
