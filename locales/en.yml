@@ -706,6 +706,16 @@ en:
             text: "Options for dispensers when they are blown up."
             limit: "Max amount of TNT a dispenser ignites when blown up."
             multiplier: "Multiplier for the amount of TNT ignited when a dispenser is blown up."
+        triggers:
+          triggers: "Executor Triggers"
+          attributes: "Trigger Attributes"
+          text: "This can be used to run specific executors based on actions that happen in relation to the zone."
+          enter: "Runs when a player enters the zone region. Checks can use anything related to players."
+          exit: "Runs when a player exits the zone region. Checks can use anything related to players."
+          break: "Runs when a block is broken in the zone region. If a player broke a block, checks can use it. If an entity broke the block, checks have access to the entity. Checks also have access to the material of the block broken."
+          place: "Runs when a block is placed in the zone region. Checks can use anything related to players and materials."
+          use: "Runs when a bucket is used in the zone region. Checks can use anything related to players and materials."
+          modify: "Runs when a block is modified in the zone region. Checks can use the same things as with the break/place triggers."
     chests:
       text: "Chest generators are used to fill the contents of chests in a region based on various factors automatically or with a refill delay."
       attributes:

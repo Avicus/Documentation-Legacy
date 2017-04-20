@@ -294,3 +294,48 @@
     = attribute_desc(t('modules.zones.sub.tnt.dispenser.multiplier'))
     = attribute_type(:decimal)
     = attribute_column
+
+= subtitle(t('modules.zones.sub.triggers.triggers'))
+
+= t('modules.zones.sub.triggers.text')
+
+:xml
+  <triggers enter="do-on-enter" exit="only-exit" break="some-break" place="on-place" use="on-bucket" modify="break-place"/>
+
+= attribute_table(t('modules.zones.sub.triggers.attributes')) do
+  = attribute_row do
+    = attribute_name("enter")
+    = attribute_desc(t('modules.zones.sub.triggers.enter'))
+    = attribute_column do
+      .label.label-primary Executor
+    = attribute_column
+  = attribute_row do
+    = attribute_name("exit")
+    = attribute_desc(t('modules.zones.sub.triggers.exit'))
+    = attribute_column do
+      .label.label-primary Executor
+    = attribute_column
+  = attribute_row do
+    = attribute_name("break")
+    = attribute_desc(t('modules.zones.sub.triggers.break'))
+    = attribute_column do
+      .label.label-primary Executor
+    = attribute_column
+  = attribute_row do
+    = attribute_name("place")
+    = attribute_desc(t('modules.zones.sub.triggers.place'))
+    = attribute_column do
+      .label.label-primary Executor
+    = attribute_column
+  = attribute_row do
+    = attribute_name("use")
+    = attribute_desc(t('modules.zones.sub.triggers.use'))
+    = attribute_column do
+      .label.label-primary Executor
+    = attribute_column
+  = attribute_row do
+    = attribute_name("modify")
+    = attribute_desc(t('modules.zones.sub.triggers.modify'))
+    = attribute_column do
+      .label.label-primary Executor
+    = attribute_column
