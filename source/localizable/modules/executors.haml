@@ -349,8 +349,8 @@
 %p= t('modules.executors.types.teleport.text')
 
 = attribute_table(t('modules.executors.generic.attributes'), false) do
-  = attribute_row do
-    = attribute_name('region')
+  = attribute_row(true) do
+    = attribute_name('to')
     = attribute_desc(t('modules.executors.generic.region'))
     = attribute_type_element(:bounded_region)
 
