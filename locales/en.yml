@@ -303,17 +303,28 @@ en:
           time: Amount of time (in ticks) to change the time by.
         send-message:
           title: Send Message - <code>send-message</code>
-          text: An executor that is used to send messages to players.
+          text: An executor that is used to send messages to players. The message supports contextual attributes based on the actor which are surrounded with [] (square brackets).
           location: Location on the screen to send the message.
           message: Message to send.
           fade-in: Time (in seconds) to fade in titles/subtitles.
           hold: Time (in seconds) to hold titles/subtitles on the screen.
           fade-out: Time (in seconds) to fade out titles/subtitles.
+          context:
+            prefixes: Base prefixes and definitions
+            vectors: Attributes that apply to vectors (velocities, locations)
+            items: Attributes that apply to items
+            group: Attributes that apply to groups
+            entity: Attributes that apply to entities
+            player: Attributes that apply to players
         perform-on-group:
           title: Perform Executor(s) on group - <code>perform-on-group</code>
           text: An executor that is used to perform executors on an entire group of players.
           group: ID of the group to perform the executor on.
-          execute: Child element that is parsed the same as an <code><executor></code>.
+          execute: ID of an executor to execute.
+        perform-on-everone:
+          title: Perform Executor(s) on all players - <code>perform-on-everone</code>
+          text: An executor that is used to perform executors on an all the players currently on the server, including spectators.
+          execute: ID of an executor to execute.
         loop:
           title: Perform an executor at a fixed rate - <code>loop</code>
           text: An executor that is used to perform an executor at a fixed rate that can be dynamically ended based on checks.
