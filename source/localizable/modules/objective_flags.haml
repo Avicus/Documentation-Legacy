@@ -94,3 +94,9 @@
     = attribute_desc('Delay before amount of points earned should be doubled.')
     = attribute_type(:duration)
     = attribute_column
+  = attribute_row do
+    = attribute_name('pickup-method')
+    = attribute_desc('The method a player can pickup the flag')
+    = attribute_column do
+      %code all, interact, move
+    = attribute_default('all')
