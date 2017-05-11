@@ -5,3 +5,11 @@ Documentation for Atlas map configuration files.
 2. `gem install bundle`
 3. `bundle install`
 4. `middleman server`
+
+Download Links:
+
+gem install bundle: http://bundler.io/v1.11/bundle_gem.html
+
+bundle install: http://bundler.io/v1.11/bundle_install.html
+
+middleman server: https://middlemanapp.com/basics/install/
