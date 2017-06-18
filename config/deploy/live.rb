@@ -1,6 +1,6 @@
-server 'athena.avicus.net', user: 'deploy', roles: %w{web app}
+server 'hera.avicus.net', user: 'deploy', roles: %w{web app}
 set :stage, :live
 
 set :branch, 'master'
-set :deploy_to, '/var/www/html/atlas.avicus.net'
-set :tmp_dir, '/home/deploy/tmp'
+set :deploy_to, '/home/deploy/docs.avicus.net'
+set :tmp_dir, '/tmp'
